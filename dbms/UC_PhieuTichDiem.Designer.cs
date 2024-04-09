@@ -63,7 +63,7 @@
             this.dgv_PhieuTichDiem.RowHeadersVisible = false;
             this.dgv_PhieuTichDiem.RowHeadersWidth = 51;
             this.dgv_PhieuTichDiem.RowTemplate.Height = 24;
-            this.dgv_PhieuTichDiem.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_PhieuTichDiem.Size = new System.Drawing.Size(1095, 522);
             this.dgv_PhieuTichDiem.TabIndex = 4;
             this.dgv_PhieuTichDiem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_PhieuTichDiem.ThemeStyle.AlternatingRowsStyle.Font = null;

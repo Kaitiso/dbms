@@ -63,7 +63,7 @@
             this.dgv_HoaDon.RowHeadersVisible = false;
             this.dgv_HoaDon.RowHeadersWidth = 51;
             this.dgv_HoaDon.RowTemplate.Height = 24;
-            this.dgv_HoaDon.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_HoaDon.Size = new System.Drawing.Size(1095, 522);
             this.dgv_HoaDon.TabIndex = 1;
             this.dgv_HoaDon.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_HoaDon.ThemeStyle.AlternatingRowsStyle.Font = null;

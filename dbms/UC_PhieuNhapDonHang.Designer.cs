@@ -63,7 +63,7 @@
             this.dgv_PhieuNhapDonHang.RowHeadersVisible = false;
             this.dgv_PhieuNhapDonHang.RowHeadersWidth = 51;
             this.dgv_PhieuNhapDonHang.RowTemplate.Height = 24;
-            this.dgv_PhieuNhapDonHang.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_PhieuNhapDonHang.Size = new System.Drawing.Size(1095, 522);
             this.dgv_PhieuNhapDonHang.TabIndex = 3;
             this.dgv_PhieuNhapDonHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_PhieuNhapDonHang.ThemeStyle.AlternatingRowsStyle.Font = null;

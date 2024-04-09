@@ -63,7 +63,7 @@
             this.dgv_ViTriHangHoa.RowHeadersVisible = false;
             this.dgv_ViTriHangHoa.RowHeadersWidth = 51;
             this.dgv_ViTriHangHoa.RowTemplate.Height = 24;
-            this.dgv_ViTriHangHoa.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_ViTriHangHoa.Size = new System.Drawing.Size(1095, 522);
             this.dgv_ViTriHangHoa.TabIndex = 6;
             this.dgv_ViTriHangHoa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_ViTriHangHoa.ThemeStyle.AlternatingRowsStyle.Font = null;

@@ -63,7 +63,7 @@
             this.dgv_NhanVienTheoCa.RowHeadersVisible = false;
             this.dgv_NhanVienTheoCa.RowHeadersWidth = 51;
             this.dgv_NhanVienTheoCa.RowTemplate.Height = 24;
-            this.dgv_NhanVienTheoCa.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_NhanVienTheoCa.Size = new System.Drawing.Size(1095, 522);
             this.dgv_NhanVienTheoCa.TabIndex = 2;
             this.dgv_NhanVienTheoCa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_NhanVienTheoCa.ThemeStyle.AlternatingRowsStyle.Font = null;

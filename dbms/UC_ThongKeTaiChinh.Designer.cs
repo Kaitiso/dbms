@@ -63,7 +63,7 @@
             this.dgv_ThongKeTaiChinh.RowHeadersVisible = false;
             this.dgv_ThongKeTaiChinh.RowHeadersWidth = 51;
             this.dgv_ThongKeTaiChinh.RowTemplate.Height = 24;
-            this.dgv_ThongKeTaiChinh.Size = new System.Drawing.Size(1092, 522);
+            this.dgv_ThongKeTaiChinh.Size = new System.Drawing.Size(1095, 522);
             this.dgv_ThongKeTaiChinh.TabIndex = 5;
             this.dgv_ThongKeTaiChinh.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_ThongKeTaiChinh.ThemeStyle.AlternatingRowsStyle.Font = null;
