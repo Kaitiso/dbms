@@ -11,3 +11,16 @@ D:\hệ quản trị csdl\dbms\dbms\obj\Debug\dbms.pdb
 D:\hệ quản trị csdl\dbms\dbms\obj\Debug\dbms.FMenu.resources
 D:\hệ quản trị csdl\dbms\dbms\obj\Debug\dbms.csproj.AssemblyReference.cache
 D:\hệ quản trị csdl\dbms\dbms\obj\Debug\dbms.FLogin.resources
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\bin\Debug\dbms.exe.config
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\bin\Debug\dbms.exe
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\bin\Debug\dbms.pdb
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\bin\Debug\Guna.UI2.dll
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.AssemblyReference.cache
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.FLogin.resources
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.FMenu.resources
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.Properties.Resources.resources
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.GenerateResource.cache
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.CoreCompileInputs.cache
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.CopyComplete
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.exe
+C:\Users\phihi_6b0xaz1\Source\Repos\dbms\dbms\obj\Debug\dbms.pdb
