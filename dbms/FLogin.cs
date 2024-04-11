@@ -12,6 +12,7 @@ namespace dbms
 {
     public partial class FLogin : Form
     {
+        //xem login
         public FLogin()
         {
             InitializeComponent();
@@ -50,6 +51,11 @@ namespace dbms
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

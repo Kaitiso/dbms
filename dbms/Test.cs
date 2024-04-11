@@ -51,5 +51,10 @@ namespace dbms
         {
             uC_ViTriHangHoa1.BringToFront();
         }
+
+        private void uC_ViTriHangHoa1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

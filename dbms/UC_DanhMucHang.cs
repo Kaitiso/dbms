@@ -33,5 +33,10 @@ namespace dbms
                 dgv_DanhMucHang.DataSource = dataTable;
             }
         }
+
+        private void dgv_DanhMucHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
