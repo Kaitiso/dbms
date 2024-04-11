@@ -162,84 +162,57 @@
             this.btn_PhieuTichDiem.TabIndex = 11;
             this.btn_PhieuTichDiem.Text = "Phiếu tích điểm";
             this.btn_PhieuTichDiem.Click += new System.EventHandler(this.btn_PhieuTichDiem_Click);
-            // 
-            // uC_ViTriHangHoa1
-            // 
             this.uC_ViTriHangHoa1.Location = new System.Drawing.Point(286, 8);
             this.uC_ViTriHangHoa1.Name = "uC_ViTriHangHoa1";
-<<<<<<< HEAD
             this.uC_ViTriHangHoa1.Size = new System.Drawing.Size(1350, 505);
             this.uC_ViTriHangHoa1.TabIndex = 6;
-=======
             this.uC_ViTriHangHoa1.Size = new System.Drawing.Size(1098, 528);
             this.uC_ViTriHangHoa1.TabIndex = 6;
             this.uC_ViTriHangHoa1.Load += new System.EventHandler(this.uC_ViTriHangHoa1_Load);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
-            // 
-            // uC_ThongKeTaiChinh1
-            // 
             this.uC_ThongKeTaiChinh1.Location = new System.Drawing.Point(286, 8);
             this.uC_ThongKeTaiChinh1.Name = "uC_ThongKeTaiChinh1";
-<<<<<<< HEAD
             this.uC_ThongKeTaiChinh1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_ThongKeTaiChinh1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_ThongKeTaiChinh1.TabIndex = 5;
             // 
             // uC_PhieuTichDiem1
             // 
             this.uC_PhieuTichDiem1.Location = new System.Drawing.Point(286, 8);
             this.uC_PhieuTichDiem1.Name = "uC_PhieuTichDiem1";
-<<<<<<< HEAD
             this.uC_PhieuTichDiem1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_PhieuTichDiem1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_PhieuTichDiem1.TabIndex = 4;
             // 
             // uC_PhieuNhapDonHang1
             // 
             this.uC_PhieuNhapDonHang1.Location = new System.Drawing.Point(286, 8);
             this.uC_PhieuNhapDonHang1.Name = "uC_PhieuNhapDonHang1";
-<<<<<<< HEAD
             this.uC_PhieuNhapDonHang1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_PhieuNhapDonHang1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_PhieuNhapDonHang1.TabIndex = 3;
             // 
             // uC_NhanVienTheoCa1
             // 
             this.uC_NhanVienTheoCa1.Location = new System.Drawing.Point(286, 8);
             this.uC_NhanVienTheoCa1.Name = "uC_NhanVienTheoCa1";
-<<<<<<< HEAD
             this.uC_NhanVienTheoCa1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_NhanVienTheoCa1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_NhanVienTheoCa1.TabIndex = 2;
             // 
             // uC_HoaDon1
             // 
             this.uC_HoaDon1.Location = new System.Drawing.Point(286, 8);
             this.uC_HoaDon1.Name = "uC_HoaDon1";
-<<<<<<< HEAD
             this.uC_HoaDon1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_HoaDon1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_HoaDon1.TabIndex = 1;
             // 
             // uC_DanhMucHang1
             // 
             this.uC_DanhMucHang1.Location = new System.Drawing.Point(286, 8);
             this.uC_DanhMucHang1.Name = "uC_DanhMucHang1";
-<<<<<<< HEAD
             this.uC_DanhMucHang1.Size = new System.Drawing.Size(1350, 505);
-=======
             this.uC_DanhMucHang1.Size = new System.Drawing.Size(1098, 528);
->>>>>>> 09e4df53142347c2ee8bd4ded6d58e6c273b9937
             this.uC_DanhMucHang1.TabIndex = 0;
             // 
             // Test
