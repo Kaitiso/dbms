@@ -21,16 +21,23 @@ namespace dbms
 
         private void UC_ThongKeTaiChinh_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = Connection_to_SQL.getConnection())
+            try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM ViewThongKeTaiChinh", connection);
-                connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "ThongKeTaiChinh");
-                connection.Close();
-                DataTable dataTable = dataSet.Tables["ThongKeTaiChinh"];
-                dgv_ThongKeTaiChinh.DataSource = dataTable;
+                using (SqlConnection connection = Connection_to_SQL.getConnection())
+                {
+                    SqlCommand command = new SqlCommand("SELECT * FROM ViewThongKeTaiChinh", connection);
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet, "ThongKeTaiChinh");
+                    connection.Close();
+                    DataTable dataTable = dataSet.Tables["ThongKeTaiChinh"];
+                    dgv_ThongKeTaiChinh.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
