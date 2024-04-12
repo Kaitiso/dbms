@@ -161,7 +161,6 @@ C:\Users\ADMIN\source\repos\dbms\dbms\bin\Debug\System.Threading.Tasks.Extension
 C:\Users\ADMIN\source\repos\dbms\dbms\bin\Debug\System.ValueTuple.xml
 C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.csproj.Up2Date
 C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.UC_TinhDoanhThuTheoNgay.resources
-C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.f.resources
 C:\Users\nguye\Source\Repos\dbms\dbms\bin\Debug\dbms.exe.config
 C:\Users\nguye\Source\Repos\dbms\dbms\bin\Debug\dbms.exe
 C:\Users\nguye\Source\Repos\dbms\dbms\bin\Debug\dbms.pdb
@@ -245,3 +244,4 @@ C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.CoreCompileInputs.ca
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.CopyComplete
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.exe
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.pdb
+C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.f.resources

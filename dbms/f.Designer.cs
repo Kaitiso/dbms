@@ -33,7 +33,7 @@
             // 
             // uC_TinhDoanhThuTheoNgay1
             // 
-            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(12, 21);
+            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(102, 64);
             this.uC_TinhDoanhThuTheoNgay1.Name = "uC_TinhDoanhThuTheoNgay1";
             this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1176, 682);
             this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
@@ -42,7 +42,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1672, 828);
             this.Controls.Add(this.uC_TinhDoanhThuTheoNgay1);
             this.Name = "f";
             this.Text = "f";
