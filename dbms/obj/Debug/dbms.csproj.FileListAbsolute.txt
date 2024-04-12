@@ -160,3 +160,5 @@ C:\Users\ADMIN\source\repos\dbms\dbms\bin\Debug\System.Text.Json.xml
 C:\Users\ADMIN\source\repos\dbms\dbms\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ADMIN\source\repos\dbms\dbms\bin\Debug\System.ValueTuple.xml
 C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.csproj.Up2Date
+C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.UC_TinhDoanhThuTheoNgay.resources
+C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.f.resources
