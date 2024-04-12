@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace dbms
 {
@@ -24,24 +25,53 @@ namespace dbms
         {
             try
             {
-                if (txt_Thang.Text.IsNullOrEmpty() && txt_Ngay.Text.IsNullOrEmpty() && txt_Nam.Text.IsNullOrEmpty())
-                {
-                    MessageBox.Show("Hãy nhập giá trị khác null ");
-                }
                 SqlConnection connection = Connection_to_SQL.getConnection();
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("TinhDoanhThuTheoNgay", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ngay", int.Parse(txt_Ngay.Text));
-                cmd.Parameters.AddWithValue("@thang", int.Parse(txt_Thang.Text));
-                cmd.Parameters.AddWithValue("@nam", int.Parse(txt_Nam.Text));
-                cmd.Parameters.AddWithValue("@tong", 0);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                hienThi(dataTable);
-                connection.Close();
+                if (txt_Thang.Text.IsNullOrEmpty() && txt_Ngay.Text.IsNullOrEmpty())
+                {
+                    MessageBox.Show("Nam");
+                    SqlCommand cmd = new SqlCommand("TinhDoanhThuTheoNam", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@nam", int.Parse(txt_Nam.Text));
+                    cmd.Parameters.AddWithValue("@tong", 0);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    hienThi(dataTable);
+                    connection.Close();
+                }
+                else if(txt_Ngay.Text.IsNullOrEmpty())
+                {
+                    MessageBox.Show("Thang");
+                    SqlCommand cmd = new SqlCommand("TinhDoanhThuTheoThang", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@thang", int.Parse(txt_Thang.Text));
+                    cmd.Parameters.AddWithValue("@nam", int.Parse(txt_Nam.Text));
+                    cmd.Parameters.AddWithValue("@tong", 0);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    hienThi(dataTable);
+                    connection.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ngay");
+                    SqlCommand cmd = new SqlCommand("TinhDoanhThuTheoNgay", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ngay", int.Parse(txt_Ngay.Text));
+                    cmd.Parameters.AddWithValue("@thang", int.Parse(txt_Thang.Text));
+                    cmd.Parameters.AddWithValue("@nam", int.Parse(txt_Nam.Text));
+                    cmd.Parameters.AddWithValue("@tong", 0);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    hienThi(dataTable);
+                    connection.Close();
+                }
             }
             catch (Exception ex)
             {
