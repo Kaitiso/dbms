@@ -32,17 +32,52 @@ namespace dbms
 
         }
 
+
         private void btnNew_Click(object sender, EventArgs e)
         {
 
         }
-
         private void TabHome_Click(object sender, EventArgs e)
         {
 
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }
