@@ -156,6 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection_to_SQL.cs" />
+    <Compile Include="f.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f.Designer.cs">
+      <DependentUpon>f.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     </Compile>
     <Compile Include="FMenu.Designer.cs">
       <DependentUpon>FMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhapHang.Designer.cs">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="phanCa.cs">
       <SubType>Form</SubType>
@@ -224,17 +236,29 @@
     <Compile Include="UC_ThongKeTaiChinh.Designer.cs">
       <DependentUpon>UC_ThongKeTaiChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TinhDoanhThuTheoNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TinhDoanhThuTheoNgay.Designer.cs">
+      <DependentUpon>UC_TinhDoanhThuTheoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ViTriHangHoa.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ViTriHangHoa.Designer.cs">
       <DependentUpon>UC_ViTriHangHoa.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="f.resx">
+      <DependentUpon>f.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNhapHang.resx">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="phanCa.resx">
       <DependentUpon>phanCa.cs</DependentUpon>
@@ -272,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ThongKeTaiChinh.resx">
       <DependentUpon>UC_ThongKeTaiChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TinhDoanhThuTheoNgay.resx">
+      <DependentUpon>UC_TinhDoanhThuTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ViTriHangHoa.resx">
       <DependentUpon>UC_ViTriHangHoa.cs</DependentUpon>

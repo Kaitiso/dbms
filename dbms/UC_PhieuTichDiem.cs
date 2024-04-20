@@ -33,5 +33,10 @@ namespace dbms
                 dgv_PhieuTichDiem.DataSource = dataTable;
             }
         }
+
+        private void dgv_PhieuTichDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

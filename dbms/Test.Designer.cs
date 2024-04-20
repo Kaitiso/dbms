@@ -162,19 +162,16 @@
             this.btn_PhieuTichDiem.TabIndex = 11;
             this.btn_PhieuTichDiem.Text = "Phiếu tích điểm";
             this.btn_PhieuTichDiem.Click += new System.EventHandler(this.btn_PhieuTichDiem_Click);
-            // 
-            // uC_ViTriHangHoa1
-            // 
             this.uC_ViTriHangHoa1.Location = new System.Drawing.Point(286, 8);
             this.uC_ViTriHangHoa1.Name = "uC_ViTriHangHoa1";
+            this.uC_ViTriHangHoa1.Size = new System.Drawing.Size(1350, 505);
+            this.uC_ViTriHangHoa1.TabIndex = 6;
             this.uC_ViTriHangHoa1.Size = new System.Drawing.Size(1098, 528);
             this.uC_ViTriHangHoa1.TabIndex = 6;
             this.uC_ViTriHangHoa1.Load += new System.EventHandler(this.uC_ViTriHangHoa1_Load);
-            // 
-            // uC_ThongKeTaiChinh1
-            // 
             this.uC_ThongKeTaiChinh1.Location = new System.Drawing.Point(286, 8);
             this.uC_ThongKeTaiChinh1.Name = "uC_ThongKeTaiChinh1";
+            this.uC_ThongKeTaiChinh1.Size = new System.Drawing.Size(1350, 505);
             this.uC_ThongKeTaiChinh1.Size = new System.Drawing.Size(1098, 528);
             this.uC_ThongKeTaiChinh1.TabIndex = 5;
             // 
@@ -182,6 +179,7 @@
             // 
             this.uC_PhieuTichDiem1.Location = new System.Drawing.Point(286, 8);
             this.uC_PhieuTichDiem1.Name = "uC_PhieuTichDiem1";
+            this.uC_PhieuTichDiem1.Size = new System.Drawing.Size(1350, 505);
             this.uC_PhieuTichDiem1.Size = new System.Drawing.Size(1098, 528);
             this.uC_PhieuTichDiem1.TabIndex = 4;
             // 
@@ -189,6 +187,7 @@
             // 
             this.uC_PhieuNhapDonHang1.Location = new System.Drawing.Point(286, 8);
             this.uC_PhieuNhapDonHang1.Name = "uC_PhieuNhapDonHang1";
+            this.uC_PhieuNhapDonHang1.Size = new System.Drawing.Size(1350, 505);
             this.uC_PhieuNhapDonHang1.Size = new System.Drawing.Size(1098, 528);
             this.uC_PhieuNhapDonHang1.TabIndex = 3;
             // 
@@ -196,6 +195,7 @@
             // 
             this.uC_NhanVienTheoCa1.Location = new System.Drawing.Point(286, 8);
             this.uC_NhanVienTheoCa1.Name = "uC_NhanVienTheoCa1";
+            this.uC_NhanVienTheoCa1.Size = new System.Drawing.Size(1350, 505);
             this.uC_NhanVienTheoCa1.Size = new System.Drawing.Size(1098, 528);
             this.uC_NhanVienTheoCa1.TabIndex = 2;
             // 
@@ -203,6 +203,7 @@
             // 
             this.uC_HoaDon1.Location = new System.Drawing.Point(286, 8);
             this.uC_HoaDon1.Name = "uC_HoaDon1";
+            this.uC_HoaDon1.Size = new System.Drawing.Size(1350, 505);
             this.uC_HoaDon1.Size = new System.Drawing.Size(1098, 528);
             this.uC_HoaDon1.TabIndex = 1;
             // 
@@ -210,6 +211,7 @@
             // 
             this.uC_DanhMucHang1.Location = new System.Drawing.Point(286, 8);
             this.uC_DanhMucHang1.Name = "uC_DanhMucHang1";
+            this.uC_DanhMucHang1.Size = new System.Drawing.Size(1350, 505);
             this.uC_DanhMucHang1.Size = new System.Drawing.Size(1098, 528);
             this.uC_DanhMucHang1.TabIndex = 0;
             // 
@@ -217,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1396, 548);
+            this.ClientSize = new System.Drawing.Size(1655, 548);
             this.Controls.Add(this.btn_ViTriHangHoa);
             this.Controls.Add(this.btn_ThongKeTaiChinh);
             this.Controls.Add(this.btn_PhieuTichDiem);
@@ -239,14 +241,6 @@
         }
 
         #endregion
-
-        private UC_DanhMucHang uC_DanhMucHang1;
-        private UC_HoaDon uC_HoaDon1;
-        private UC_NhanVienTheoCa uC_NhanVienTheoCa1;
-        private UC_PhieuNhapDonHang uC_PhieuNhapDonHang1;
-        private UC_PhieuTichDiem uC_PhieuTichDiem1;
-        private UC_ThongKeTaiChinh uC_ThongKeTaiChinh1;
-        private UC_ViTriHangHoa uC_ViTriHangHoa1;
         private Guna.UI2.WinForms.Guna2Button btn_DanhMucHang;
         private Guna.UI2.WinForms.Guna2Button btn_HoaDon;
         private Guna.UI2.WinForms.Guna2Button btn_PhieuNhapDonHang;
@@ -254,5 +248,12 @@
         private Guna.UI2.WinForms.Guna2Button btn_ViTriHangHoa;
         private Guna.UI2.WinForms.Guna2Button btn_ThongKeTaiChinh;
         private Guna.UI2.WinForms.Guna2Button btn_PhieuTichDiem;
+        private UC_DanhMucHang uC_DanhMucHang1;
+        private UC_HoaDon uC_HoaDon1;
+        private UC_NhanVienTheoCa uC_NhanVienTheoCa1;
+        private UC_PhieuNhapDonHang uC_PhieuNhapDonHang1;
+        private UC_PhieuTichDiem uC_PhieuTichDiem1;
+        private UC_ThongKeTaiChinh uC_ThongKeTaiChinh1;
+        private UC_ViTriHangHoa uC_ViTriHangHoa1;
     }
 }

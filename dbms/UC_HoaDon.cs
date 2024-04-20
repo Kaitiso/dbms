@@ -33,5 +33,10 @@ namespace dbms
                 dgv_HoaDon.DataSource = dataTable;
             }
         }
+
+        private void dgv_HoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
