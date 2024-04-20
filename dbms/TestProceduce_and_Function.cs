@@ -556,5 +556,10 @@ namespace dbms
         {
 
         }
+
+        private void tp_Quanlyhanghoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

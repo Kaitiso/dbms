@@ -174,6 +174,16 @@ namespace dbms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_all_kinds_of_ice_cream_png_image_3210372 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-all-kinds-of-ice-cream-png-image_3210372", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap queue_alt {
             get {
                 object obj = ResourceManager.GetObject("queue-alt", resourceCulture);

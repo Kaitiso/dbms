@@ -42,30 +42,30 @@ namespace dbms
             this.TbSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.TabHangTongHop = new System.Windows.Forms.TabPage();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.TabHangMyPham = new System.Windows.Forms.TabPage();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.TabThucPhamKho = new System.Windows.Forms.TabPage();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.TabKem = new System.Windows.Forms.TabPage();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.TabNuocGiaiKhat = new System.Windows.Forms.TabPage();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.TabUongCoCon = new System.Windows.Forms.TabPage();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabQuanLy = new System.Windows.Forms.TabPage();
             this.tc_QuanLy = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabQuanLyNhanVien = new System.Windows.Forms.TabPage();
+            this.btn_phaCa = new System.Windows.Forms.Button();
+            this.btn_TimKiem = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.dgv_dsNhanVien = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.txt_diaChi = new System.Windows.Forms.TextBox();
+            this.txt_gioiTinh = new System.Windows.Forms.TextBox();
+            this.txt_hoTen = new System.Windows.Forms.TextBox();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.txt_maNV = new System.Windows.Forms.TextBox();
+            this.lbl_ngayTD = new System.Windows.Forms.Label();
+            this.lbl_diaChi = new System.Windows.Forms.Label();
+            this.lbl_GioiTinh = new System.Windows.Forms.Label();
+            this.lbl_NgaySinh = new System.Windows.Forms.Label();
+            this.lbl_HoTen = new System.Windows.Forms.Label();
+            this.lbl_maNV = new System.Windows.Forms.Label();
+            this.lbl_QuanLyNhanVien = new System.Windows.Forms.Label();
             this.tabQuanLyNhaCungCap = new System.Windows.Forms.TabPage();
             this.btn_TKNhaCC = new System.Windows.Forms.Button();
             this.btn_xoaNhaCC = new System.Windows.Forms.Button();
@@ -164,24 +164,17 @@ namespace dbms
             this.guna2TabControl2 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
@@ -222,47 +215,22 @@ namespace dbms
             this.lbl_MaPN = new System.Windows.Forms.Label();
             this.btn_exit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.btn_phaCa = new System.Windows.Forms.Button();
-            this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.dgv_dsNhanVien = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.txt_diaChi = new System.Windows.Forms.TextBox();
-            this.txt_gioiTinh = new System.Windows.Forms.TextBox();
-            this.txt_hoTen = new System.Windows.Forms.TextBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.txt_maNV = new System.Windows.Forms.TextBox();
-            this.lbl_ngayTD = new System.Windows.Forms.Label();
-            this.lbl_diaChi = new System.Windows.Forms.Label();
-            this.lbl_GioiTinh = new System.Windows.Forms.Label();
-            this.lbl_NgaySinh = new System.Windows.Forms.Label();
-            this.lbl_HoTen = new System.Windows.Forms.Label();
-            this.lbl_maNV = new System.Windows.Forms.Label();
-            this.lbl_QuanLyNhanVien = new System.Windows.Forms.Label();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.TabHome.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.guna2TabControl1.SuspendLayout();
-            this.TabHangTongHop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.TabHangMyPham.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            this.TabThucPhamKho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.TabKem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            this.TabNuocGiaiKhat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            this.TabUongCoCon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             this.tabMenu.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
             this.tc_QuanLy.SuspendLayout();
             this.tabQuanLyNhanVien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsNhanVien)).BeginInit();
+            this.panel5.SuspendLayout();
             this.tabQuanLyNhaCungCap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhaCC)).BeginInit();
             this.panel7.SuspendLayout();
@@ -284,18 +252,11 @@ namespace dbms
             this.tabLapHoaDon.SuspendLayout();
             this.guna2TabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.TabLuong.SuspendLayout();
@@ -303,8 +264,13 @@ namespace dbms
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsNhanVien)).BeginInit();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // TabHome
@@ -470,12 +436,6 @@ namespace dbms
             // guna2TabControl1
             // 
             this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.guna2TabControl1.Controls.Add(this.TabHangTongHop);
-            this.guna2TabControl1.Controls.Add(this.TabHangMyPham);
-            this.guna2TabControl1.Controls.Add(this.TabThucPhamKho);
-            this.guna2TabControl1.Controls.Add(this.TabKem);
-            this.guna2TabControl1.Controls.Add(this.TabNuocGiaiKhat);
-            this.guna2TabControl1.Controls.Add(this.TabUongCoCon);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 1);
             this.guna2TabControl1.Name = "guna2TabControl1";
@@ -499,265 +459,7 @@ namespace dbms
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            // 
-            // TabHangTongHop
-            // 
-            this.TabHangTongHop.BackColor = System.Drawing.Color.Transparent;
-            this.TabHangTongHop.Controls.Add(this.guna2Button5);
-            this.TabHangTongHop.Controls.Add(this.guna2PictureBox2);
-            this.TabHangTongHop.Controls.Add(this.guna2Button4);
-            this.TabHangTongHop.Controls.Add(this.guna2PictureBox1);
-            this.TabHangTongHop.Location = new System.Drawing.Point(184, 4);
-            this.TabHangTongHop.Name = "TabHangTongHop";
-            this.TabHangTongHop.Padding = new System.Windows.Forms.Padding(3);
-            this.TabHangTongHop.Size = new System.Drawing.Size(882, 717);
-            this.TabHangTongHop.TabIndex = 0;
-            this.TabHangTongHop.Text = "Hang Tong Hop";
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.BorderRadius = 10;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.Location = new System.Drawing.Point(224, 172);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(139, 27);
-            this.guna2Button5.TabIndex = 7;
-            this.guna2Button5.Text = "Bot Giat Aba";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::dbms.Properties.Resources.download;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(201, 10);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(189, 156);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 6;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.Location = new System.Drawing.Point(29, 172);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(139, 81);
-            this.guna2Button4.TabIndex = 5;
-            this.guna2Button4.Text = "Bot Giat Aba + gia";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::dbms.Properties.Resources.download;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 10);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(189, 156);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // TabHangMyPham
-            // 
-            this.TabHangMyPham.Controls.Add(this.guna2Button6);
-            this.TabHangMyPham.Controls.Add(this.guna2PictureBox3);
-            this.TabHangMyPham.Location = new System.Drawing.Point(184, 4);
-            this.TabHangMyPham.Name = "TabHangMyPham";
-            this.TabHangMyPham.Padding = new System.Windows.Forms.Padding(3);
-            this.TabHangMyPham.Size = new System.Drawing.Size(882, 717);
-            this.TabHangMyPham.TabIndex = 1;
-            this.TabHangMyPham.Text = "Hang My Pham";
-            this.TabHangMyPham.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button6
-            // 
-            this.guna2Button6.BorderRadius = 10;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.Location = new System.Drawing.Point(21, 184);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(150, 27);
-            this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Text = "Clear";
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = global::dbms.Properties.Resources.download__1_;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(6, 6);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(165, 172);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 0;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // TabThucPhamKho
-            // 
-            this.TabThucPhamKho.Controls.Add(this.guna2Button7);
-            this.TabThucPhamKho.Controls.Add(this.guna2PictureBox4);
-            this.TabThucPhamKho.Location = new System.Drawing.Point(184, 4);
-            this.TabThucPhamKho.Name = "TabThucPhamKho";
-            this.TabThucPhamKho.Size = new System.Drawing.Size(882, 717);
-            this.TabThucPhamKho.TabIndex = 2;
-            this.TabThucPhamKho.Text = "Thuc Pham Kho";
-            this.TabThucPhamKho.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button7
-            // 
-            this.guna2Button7.BorderRadius = 10;
-            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button7.FillColor = System.Drawing.Color.White;
-            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button7.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button7.Location = new System.Drawing.Point(27, 172);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(150, 27);
-            this.guna2Button7.TabIndex = 5;
-            this.guna2Button7.Text = "Mi Hao Hao";
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Image = global::dbms.Properties.Resources.losupply_quan_tan_phu_quan_tan_phu_ho_chi_minh_1618467447167540212_mi_hao_hao_tom_chua_cay_75g_30_goi_1_1649067117;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(12, 10);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(165, 156);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 0;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // TabKem
-            // 
-            this.TabKem.Controls.Add(this.guna2Button8);
-            this.TabKem.Controls.Add(this.guna2PictureBox5);
-            this.TabKem.Location = new System.Drawing.Point(184, 4);
-            this.TabKem.Name = "TabKem";
-            this.TabKem.Size = new System.Drawing.Size(882, 717);
-            this.TabKem.TabIndex = 3;
-            this.TabKem.Text = "Kem";
-            this.TabKem.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button8
-            // 
-            this.guna2Button8.BorderRadius = 10;
-            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.FillColor = System.Drawing.Color.White;
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.guna2Button8.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button8.Location = new System.Drawing.Point(12, 156);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(150, 57);
-            this.guna2Button8.TabIndex = 5;
-            this.guna2Button8.Text = "Kem kit kat 10.000.000.000";
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.Image = global::dbms.Properties.Resources.kem_kitkat_so_co_la_hop_375g_201904231025324559;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(3, 10);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(174, 140);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox5.TabIndex = 0;
-            this.guna2PictureBox5.TabStop = false;
-            // 
-            // TabNuocGiaiKhat
-            // 
-            this.TabNuocGiaiKhat.Controls.Add(this.guna2Button9);
-            this.TabNuocGiaiKhat.Controls.Add(this.guna2PictureBox6);
-            this.TabNuocGiaiKhat.Location = new System.Drawing.Point(184, 4);
-            this.TabNuocGiaiKhat.Name = "TabNuocGiaiKhat";
-            this.TabNuocGiaiKhat.Size = new System.Drawing.Size(882, 717);
-            this.TabNuocGiaiKhat.TabIndex = 4;
-            this.TabNuocGiaiKhat.Text = "Nuoc Giai Khat";
-            this.TabNuocGiaiKhat.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button9
-            // 
-            this.guna2Button9.BorderRadius = 10;
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button9.FillColor = System.Drawing.Color.White;
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button9.Location = new System.Drawing.Point(23, 177);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(150, 27);
-            this.guna2Button9.TabIndex = 5;
-            this.guna2Button9.Text = "aquafina ";
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.Image = global::dbms.Properties.Resources.nuoc_tinh_khiet_aquafina_1500ml_600x600;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(23, 19);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(140, 152);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox6.TabIndex = 0;
-            this.guna2PictureBox6.TabStop = false;
-            // 
-            // TabUongCoCon
-            // 
-            this.TabUongCoCon.Controls.Add(this.guna2Button10);
-            this.TabUongCoCon.Controls.Add(this.guna2PictureBox7);
-            this.TabUongCoCon.Location = new System.Drawing.Point(184, 4);
-            this.TabUongCoCon.Name = "TabUongCoCon";
-            this.TabUongCoCon.Size = new System.Drawing.Size(882, 717);
-            this.TabUongCoCon.TabIndex = 5;
-            this.TabUongCoCon.Text = "Thuc Uong Co Con";
-            this.TabUongCoCon.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button10
-            // 
-            this.guna2Button10.BorderRadius = 10;
-            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button10.FillColor = System.Drawing.Color.White;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button10.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button10.Location = new System.Drawing.Point(18, 163);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.Size = new System.Drawing.Size(150, 27);
-            this.guna2Button10.TabIndex = 5;
-            this.guna2Button10.Text = "strongbow 100";
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.Image = global::dbms.Properties.Resources.strongbow_gold_apple;
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(3, 0);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(176, 157);
-            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox7.TabIndex = 0;
-            this.guna2PictureBox7.TabStop = false;
+            this.guna2TabControl1.SelectedIndexChanged += new System.EventHandler(this.guna2TabControl1_SelectedIndexChanged);
             // 
             // tabMenu
             // 
@@ -837,6 +539,196 @@ namespace dbms
             this.tabQuanLyNhanVien.Text = "Quản Lý Nhân Viên";
             this.tabQuanLyNhanVien.UseVisualStyleBackColor = true;
             this.tabQuanLyNhanVien.Click += new System.EventHandler(this.tabQuanLyNhanVien_Click);
+            // 
+            // btn_phaCa
+            // 
+            this.btn_phaCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_phaCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_phaCa.Location = new System.Drawing.Point(987, 634);
+            this.btn_phaCa.Name = "btn_phaCa";
+            this.btn_phaCa.Size = new System.Drawing.Size(130, 43);
+            this.btn_phaCa.TabIndex = 21;
+            this.btn_phaCa.Text = "Phân ca";
+            this.btn_phaCa.UseVisualStyleBackColor = true;
+            // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TimKiem.Location = new System.Drawing.Point(773, 634);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(130, 43);
+            this.btn_TimKiem.TabIndex = 20;
+            this.btn_TimKiem.Text = "Tìm kiếm";
+            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.Location = new System.Drawing.Point(562, 634);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(130, 43);
+            this.btn_Sua.TabIndex = 19;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Location = new System.Drawing.Point(335, 634);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(130, 43);
+            this.btn_Xoa.TabIndex = 18;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.Location = new System.Drawing.Point(127, 634);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(130, 43);
+            this.btn_Them.TabIndex = 17;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            // 
+            // dgv_dsNhanVien
+            // 
+            this.dgv_dsNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_dsNhanVien.Location = new System.Drawing.Point(66, 352);
+            this.dgv_dsNhanVien.Name = "dgv_dsNhanVien";
+            this.dgv_dsNhanVien.RowHeadersWidth = 51;
+            this.dgv_dsNhanVien.RowTemplate.Height = 24;
+            this.dgv_dsNhanVien.Size = new System.Drawing.Size(1134, 261);
+            this.dgv_dsNhanVien.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dateTimePicker3);
+            this.panel5.Controls.Add(this.txt_diaChi);
+            this.panel5.Controls.Add(this.txt_gioiTinh);
+            this.panel5.Controls.Add(this.txt_hoTen);
+            this.panel5.Controls.Add(this.dateTimePicker4);
+            this.panel5.Controls.Add(this.txt_maNV);
+            this.panel5.Controls.Add(this.lbl_ngayTD);
+            this.panel5.Controls.Add(this.lbl_diaChi);
+            this.panel5.Controls.Add(this.lbl_GioiTinh);
+            this.panel5.Controls.Add(this.lbl_NgaySinh);
+            this.panel5.Controls.Add(this.lbl_HoTen);
+            this.panel5.Controls.Add(this.lbl_maNV);
+            this.panel5.Location = new System.Drawing.Point(66, 95);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1134, 219);
+            this.panel5.TabIndex = 15;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(728, 156);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(309, 22);
+            this.dateTimePicker3.TabIndex = 15;
+            // 
+            // txt_diaChi
+            // 
+            this.txt_diaChi.Location = new System.Drawing.Point(728, 14);
+            this.txt_diaChi.Name = "txt_diaChi";
+            this.txt_diaChi.Size = new System.Drawing.Size(309, 22);
+            this.txt_diaChi.TabIndex = 12;
+            // 
+            // txt_gioiTinh
+            // 
+            this.txt_gioiTinh.Location = new System.Drawing.Point(156, 154);
+            this.txt_gioiTinh.Name = "txt_gioiTinh";
+            this.txt_gioiTinh.Size = new System.Drawing.Size(309, 22);
+            this.txt_gioiTinh.TabIndex = 11;
+            // 
+            // txt_hoTen
+            // 
+            this.txt_hoTen.Location = new System.Drawing.Point(156, 58);
+            this.txt_hoTen.Name = "txt_hoTen";
+            this.txt_hoTen.Size = new System.Drawing.Size(309, 22);
+            this.txt_hoTen.TabIndex = 10;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(156, 108);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(309, 22);
+            this.dateTimePicker4.TabIndex = 9;
+            // 
+            // txt_maNV
+            // 
+            this.txt_maNV.Location = new System.Drawing.Point(156, 14);
+            this.txt_maNV.Name = "txt_maNV";
+            this.txt_maNV.Size = new System.Drawing.Size(309, 22);
+            this.txt_maNV.TabIndex = 8;
+            // 
+            // lbl_ngayTD
+            // 
+            this.lbl_ngayTD.AutoSize = true;
+            this.lbl_ngayTD.Location = new System.Drawing.Point(565, 161);
+            this.lbl_ngayTD.Name = "lbl_ngayTD";
+            this.lbl_ngayTD.Size = new System.Drawing.Size(116, 17);
+            this.lbl_ngayTD.TabIndex = 7;
+            this.lbl_ngayTD.Text = "Ngày tuyển dụng";
+            // 
+            // lbl_diaChi
+            // 
+            this.lbl_diaChi.AutoSize = true;
+            this.lbl_diaChi.Location = new System.Drawing.Point(565, 21);
+            this.lbl_diaChi.Name = "lbl_diaChi";
+            this.lbl_diaChi.Size = new System.Drawing.Size(51, 17);
+            this.lbl_diaChi.TabIndex = 4;
+            this.lbl_diaChi.Text = "Địa chỉ";
+            // 
+            // lbl_GioiTinh
+            // 
+            this.lbl_GioiTinh.AutoSize = true;
+            this.lbl_GioiTinh.Location = new System.Drawing.Point(25, 161);
+            this.lbl_GioiTinh.Name = "lbl_GioiTinh";
+            this.lbl_GioiTinh.Size = new System.Drawing.Size(60, 17);
+            this.lbl_GioiTinh.TabIndex = 3;
+            this.lbl_GioiTinh.Text = "Giới tính";
+            // 
+            // lbl_NgaySinh
+            // 
+            this.lbl_NgaySinh.AutoSize = true;
+            this.lbl_NgaySinh.Location = new System.Drawing.Point(23, 113);
+            this.lbl_NgaySinh.Name = "lbl_NgaySinh";
+            this.lbl_NgaySinh.Size = new System.Drawing.Size(71, 17);
+            this.lbl_NgaySinh.TabIndex = 2;
+            this.lbl_NgaySinh.Text = "Ngày sinh";
+            // 
+            // lbl_HoTen
+            // 
+            this.lbl_HoTen.AutoSize = true;
+            this.lbl_HoTen.Location = new System.Drawing.Point(25, 65);
+            this.lbl_HoTen.Name = "lbl_HoTen";
+            this.lbl_HoTen.Size = new System.Drawing.Size(69, 17);
+            this.lbl_HoTen.TabIndex = 1;
+            this.lbl_HoTen.Text = "Họ và tên";
+            // 
+            // lbl_maNV
+            // 
+            this.lbl_maNV.AutoSize = true;
+            this.lbl_maNV.Location = new System.Drawing.Point(25, 21);
+            this.lbl_maNV.Name = "lbl_maNV";
+            this.lbl_maNV.Size = new System.Drawing.Size(93, 17);
+            this.lbl_maNV.TabIndex = 0;
+            this.lbl_maNV.Text = "Mã nhân viên";
+            // 
+            // lbl_QuanLyNhanVien
+            // 
+            this.lbl_QuanLyNhanVien.AutoSize = true;
+            this.lbl_QuanLyNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QuanLyNhanVien.Location = new System.Drawing.Point(479, 39);
+            this.lbl_QuanLyNhanVien.Name = "lbl_QuanLyNhanVien";
+            this.lbl_QuanLyNhanVien.Size = new System.Drawing.Size(272, 36);
+            this.lbl_QuanLyNhanVien.TabIndex = 14;
+            this.lbl_QuanLyNhanVien.Text = "Quản lý nhân viên";
             // 
             // tabQuanLyNhaCungCap
             // 
@@ -1183,6 +1075,7 @@ namespace dbms
             this.tabQuanLyHangHoa.TabIndex = 3;
             this.tabQuanLyHangHoa.Text = "Quản Lý Hàng Hoá";
             this.tabQuanLyHangHoa.UseVisualStyleBackColor = true;
+            this.tabQuanLyHangHoa.Click += new System.EventHandler(this.tabQuanLyHangHoa_Click);
             // 
             // lbl_maHH
             // 
@@ -1868,17 +1761,6 @@ namespace dbms
             this.guna2Button14.TabIndex = 7;
             this.guna2Button14.Text = "Bot Giat Aba";
             // 
-            // guna2PictureBox8
-            // 
-            this.guna2PictureBox8.Image = global::dbms.Properties.Resources.download;
-            this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(201, 10);
-            this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.Size = new System.Drawing.Size(189, 156);
-            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox8.TabIndex = 6;
-            this.guna2PictureBox8.TabStop = false;
-            // 
             // guna2Button15
             // 
             this.guna2Button15.BorderRadius = 10;
@@ -1894,17 +1776,6 @@ namespace dbms
             this.guna2Button15.Size = new System.Drawing.Size(139, 81);
             this.guna2Button15.TabIndex = 5;
             this.guna2Button15.Text = "Bot Giat Aba + gia";
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.Image = global::dbms.Properties.Resources.download;
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(6, 10);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(189, 156);
-            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox9.TabIndex = 0;
-            this.guna2PictureBox9.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1934,17 +1805,6 @@ namespace dbms
             this.guna2Button16.TabIndex = 5;
             this.guna2Button16.Text = "Clear";
             // 
-            // guna2PictureBox10
-            // 
-            this.guna2PictureBox10.Image = global::dbms.Properties.Resources.download__1_;
-            this.guna2PictureBox10.ImageRotate = 0F;
-            this.guna2PictureBox10.Location = new System.Drawing.Point(6, 6);
-            this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.Size = new System.Drawing.Size(165, 172);
-            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox10.TabIndex = 0;
-            this.guna2PictureBox10.TabStop = false;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.guna2Button17);
@@ -1971,17 +1831,6 @@ namespace dbms
             this.guna2Button17.Size = new System.Drawing.Size(150, 27);
             this.guna2Button17.TabIndex = 5;
             this.guna2Button17.Text = "Mi Hao Hao";
-            // 
-            // guna2PictureBox11
-            // 
-            this.guna2PictureBox11.Image = global::dbms.Properties.Resources.losupply_quan_tan_phu_quan_tan_phu_ho_chi_minh_1618467447167540212_mi_hao_hao_tom_chua_cay_75g_30_goi_1_1649067117;
-            this.guna2PictureBox11.ImageRotate = 0F;
-            this.guna2PictureBox11.Location = new System.Drawing.Point(12, 10);
-            this.guna2PictureBox11.Name = "guna2PictureBox11";
-            this.guna2PictureBox11.Size = new System.Drawing.Size(165, 156);
-            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox11.TabIndex = 0;
-            this.guna2PictureBox11.TabStop = false;
             // 
             // tabPage4
             // 
@@ -2010,17 +1859,6 @@ namespace dbms
             this.guna2Button18.TabIndex = 5;
             this.guna2Button18.Text = "Kem kit kat 10.000.000.000";
             // 
-            // guna2PictureBox12
-            // 
-            this.guna2PictureBox12.Image = global::dbms.Properties.Resources.kem_kitkat_so_co_la_hop_375g_201904231025324559;
-            this.guna2PictureBox12.ImageRotate = 0F;
-            this.guna2PictureBox12.Location = new System.Drawing.Point(3, 10);
-            this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.Size = new System.Drawing.Size(174, 140);
-            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox12.TabIndex = 0;
-            this.guna2PictureBox12.TabStop = false;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.guna2Button19);
@@ -2048,17 +1886,6 @@ namespace dbms
             this.guna2Button19.TabIndex = 5;
             this.guna2Button19.Text = "aquafina ";
             // 
-            // guna2PictureBox13
-            // 
-            this.guna2PictureBox13.Image = global::dbms.Properties.Resources.nuoc_tinh_khiet_aquafina_1500ml_600x600;
-            this.guna2PictureBox13.ImageRotate = 0F;
-            this.guna2PictureBox13.Location = new System.Drawing.Point(23, 19);
-            this.guna2PictureBox13.Name = "guna2PictureBox13";
-            this.guna2PictureBox13.Size = new System.Drawing.Size(140, 152);
-            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox13.TabIndex = 0;
-            this.guna2PictureBox13.TabStop = false;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.guna2Button20);
@@ -2085,17 +1912,6 @@ namespace dbms
             this.guna2Button20.Size = new System.Drawing.Size(150, 27);
             this.guna2Button20.TabIndex = 5;
             this.guna2Button20.Text = "strongbow 100";
-            // 
-            // guna2PictureBox14
-            // 
-            this.guna2PictureBox14.Image = global::dbms.Properties.Resources.strongbow_gold_apple;
-            this.guna2PictureBox14.ImageRotate = 0F;
-            this.guna2PictureBox14.Location = new System.Drawing.Point(3, 0);
-            this.guna2PictureBox14.Name = "guna2PictureBox14";
-            this.guna2PictureBox14.Size = new System.Drawing.Size(176, 157);
-            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox14.TabIndex = 0;
-            this.guna2PictureBox14.TabStop = false;
             // 
             // panel4
             // 
@@ -2369,6 +2185,7 @@ namespace dbms
             this.btn_NhapHang.TabIndex = 20;
             this.btn_NhapHang.Text = "Nhập hàng hóa";
             this.btn_NhapHang.UseVisualStyleBackColor = true;
+            this.btn_NhapHang.Click += new System.EventHandler(this.btn_NhapHang_Click_2);
             // 
             // txt_SoLuong
             // 
@@ -2575,196 +2392,84 @@ namespace dbms
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.guna2ContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.guna2ContextMenuStrip1_Opening);
             // 
-            // btn_phaCa
+            // guna2PictureBox8
             // 
-            this.btn_phaCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_phaCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_phaCa.Location = new System.Drawing.Point(987, 634);
-            this.btn_phaCa.Name = "btn_phaCa";
-            this.btn_phaCa.Size = new System.Drawing.Size(130, 43);
-            this.btn_phaCa.TabIndex = 21;
-            this.btn_phaCa.Text = "Phân ca";
-            this.btn_phaCa.UseVisualStyleBackColor = true;
+            this.guna2PictureBox8.Image = global::dbms.Properties.Resources.download;
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(201, 10);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(189, 156);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox8.TabIndex = 6;
+            this.guna2PictureBox8.TabStop = false;
             // 
-            // btn_TimKiem
+            // guna2PictureBox9
             // 
-            this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimKiem.Location = new System.Drawing.Point(773, 634);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(130, 43);
-            this.btn_TimKiem.TabIndex = 20;
-            this.btn_TimKiem.Text = "Tìm kiếm";
-            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.guna2PictureBox9.Image = global::dbms.Properties.Resources.download;
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(6, 10);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(189, 156);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox9.TabIndex = 0;
+            this.guna2PictureBox9.TabStop = false;
             // 
-            // btn_Sua
+            // guna2PictureBox10
             // 
-            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(562, 634);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(130, 43);
-            this.btn_Sua.TabIndex = 19;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.guna2PictureBox10.Image = global::dbms.Properties.Resources.download__1_;
+            this.guna2PictureBox10.ImageRotate = 0F;
+            this.guna2PictureBox10.Location = new System.Drawing.Point(6, 6);
+            this.guna2PictureBox10.Name = "guna2PictureBox10";
+            this.guna2PictureBox10.Size = new System.Drawing.Size(165, 172);
+            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox10.TabIndex = 0;
+            this.guna2PictureBox10.TabStop = false;
             // 
-            // btn_Xoa
+            // guna2PictureBox11
             // 
-            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(335, 634);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(130, 43);
-            this.btn_Xoa.TabIndex = 18;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.guna2PictureBox11.Image = global::dbms.Properties.Resources.losupply_quan_tan_phu_quan_tan_phu_ho_chi_minh_1618467447167540212_mi_hao_hao_tom_chua_cay_75g_30_goi_1_1649067117;
+            this.guna2PictureBox11.ImageRotate = 0F;
+            this.guna2PictureBox11.Location = new System.Drawing.Point(12, 10);
+            this.guna2PictureBox11.Name = "guna2PictureBox11";
+            this.guna2PictureBox11.Size = new System.Drawing.Size(165, 156);
+            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox11.TabIndex = 0;
+            this.guna2PictureBox11.TabStop = false;
             // 
-            // btn_Them
+            // guna2PictureBox12
             // 
-            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(127, 634);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(130, 43);
-            this.btn_Them.TabIndex = 17;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
+            this.guna2PictureBox12.Image = global::dbms.Properties.Resources.kem_kitkat_so_co_la_hop_375g_201904231025324559;
+            this.guna2PictureBox12.ImageRotate = 0F;
+            this.guna2PictureBox12.Location = new System.Drawing.Point(3, 10);
+            this.guna2PictureBox12.Name = "guna2PictureBox12";
+            this.guna2PictureBox12.Size = new System.Drawing.Size(174, 140);
+            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox12.TabIndex = 0;
+            this.guna2PictureBox12.TabStop = false;
             // 
-            // dgv_dsNhanVien
+            // guna2PictureBox13
             // 
-            this.dgv_dsNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dsNhanVien.Location = new System.Drawing.Point(66, 352);
-            this.dgv_dsNhanVien.Name = "dgv_dsNhanVien";
-            this.dgv_dsNhanVien.RowHeadersWidth = 51;
-            this.dgv_dsNhanVien.RowTemplate.Height = 24;
-            this.dgv_dsNhanVien.Size = new System.Drawing.Size(1134, 261);
-            this.dgv_dsNhanVien.TabIndex = 16;
+            this.guna2PictureBox13.Image = global::dbms.Properties.Resources.nuoc_tinh_khiet_aquafina_1500ml_600x600;
+            this.guna2PictureBox13.ImageRotate = 0F;
+            this.guna2PictureBox13.Location = new System.Drawing.Point(23, 19);
+            this.guna2PictureBox13.Name = "guna2PictureBox13";
+            this.guna2PictureBox13.Size = new System.Drawing.Size(140, 152);
+            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox13.TabIndex = 0;
+            this.guna2PictureBox13.TabStop = false;
             // 
-            // panel5
+            // guna2PictureBox14
             // 
-            this.panel5.Controls.Add(this.dateTimePicker3);
-            this.panel5.Controls.Add(this.txt_diaChi);
-            this.panel5.Controls.Add(this.txt_gioiTinh);
-            this.panel5.Controls.Add(this.txt_hoTen);
-            this.panel5.Controls.Add(this.dateTimePicker4);
-            this.panel5.Controls.Add(this.txt_maNV);
-            this.panel5.Controls.Add(this.lbl_ngayTD);
-            this.panel5.Controls.Add(this.lbl_diaChi);
-            this.panel5.Controls.Add(this.lbl_GioiTinh);
-            this.panel5.Controls.Add(this.lbl_NgaySinh);
-            this.panel5.Controls.Add(this.lbl_HoTen);
-            this.panel5.Controls.Add(this.lbl_maNV);
-            this.panel5.Location = new System.Drawing.Point(66, 95);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1134, 219);
-            this.panel5.TabIndex = 15;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(728, 156);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(309, 22);
-            this.dateTimePicker3.TabIndex = 15;
-            // 
-            // txt_diaChi
-            // 
-            this.txt_diaChi.Location = new System.Drawing.Point(728, 14);
-            this.txt_diaChi.Name = "txt_diaChi";
-            this.txt_diaChi.Size = new System.Drawing.Size(309, 22);
-            this.txt_diaChi.TabIndex = 12;
-            // 
-            // txt_gioiTinh
-            // 
-            this.txt_gioiTinh.Location = new System.Drawing.Point(156, 154);
-            this.txt_gioiTinh.Name = "txt_gioiTinh";
-            this.txt_gioiTinh.Size = new System.Drawing.Size(309, 22);
-            this.txt_gioiTinh.TabIndex = 11;
-            // 
-            // txt_hoTen
-            // 
-            this.txt_hoTen.Location = new System.Drawing.Point(156, 58);
-            this.txt_hoTen.Name = "txt_hoTen";
-            this.txt_hoTen.Size = new System.Drawing.Size(309, 22);
-            this.txt_hoTen.TabIndex = 10;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(156, 108);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(309, 22);
-            this.dateTimePicker4.TabIndex = 9;
-            // 
-            // txt_maNV
-            // 
-            this.txt_maNV.Location = new System.Drawing.Point(156, 14);
-            this.txt_maNV.Name = "txt_maNV";
-            this.txt_maNV.Size = new System.Drawing.Size(309, 22);
-            this.txt_maNV.TabIndex = 8;
-            // 
-            // lbl_ngayTD
-            // 
-            this.lbl_ngayTD.AutoSize = true;
-            this.lbl_ngayTD.Location = new System.Drawing.Point(565, 161);
-            this.lbl_ngayTD.Name = "lbl_ngayTD";
-            this.lbl_ngayTD.Size = new System.Drawing.Size(116, 17);
-            this.lbl_ngayTD.TabIndex = 7;
-            this.lbl_ngayTD.Text = "Ngày tuyển dụng";
-            // 
-            // lbl_diaChi
-            // 
-            this.lbl_diaChi.AutoSize = true;
-            this.lbl_diaChi.Location = new System.Drawing.Point(565, 21);
-            this.lbl_diaChi.Name = "lbl_diaChi";
-            this.lbl_diaChi.Size = new System.Drawing.Size(51, 17);
-            this.lbl_diaChi.TabIndex = 4;
-            this.lbl_diaChi.Text = "Địa chỉ";
-            // 
-            // lbl_GioiTinh
-            // 
-            this.lbl_GioiTinh.AutoSize = true;
-            this.lbl_GioiTinh.Location = new System.Drawing.Point(25, 161);
-            this.lbl_GioiTinh.Name = "lbl_GioiTinh";
-            this.lbl_GioiTinh.Size = new System.Drawing.Size(60, 17);
-            this.lbl_GioiTinh.TabIndex = 3;
-            this.lbl_GioiTinh.Text = "Giới tính";
-            // 
-            // lbl_NgaySinh
-            // 
-            this.lbl_NgaySinh.AutoSize = true;
-            this.lbl_NgaySinh.Location = new System.Drawing.Point(23, 113);
-            this.lbl_NgaySinh.Name = "lbl_NgaySinh";
-            this.lbl_NgaySinh.Size = new System.Drawing.Size(71, 17);
-            this.lbl_NgaySinh.TabIndex = 2;
-            this.lbl_NgaySinh.Text = "Ngày sinh";
-            // 
-            // lbl_HoTen
-            // 
-            this.lbl_HoTen.AutoSize = true;
-            this.lbl_HoTen.Location = new System.Drawing.Point(25, 65);
-            this.lbl_HoTen.Name = "lbl_HoTen";
-            this.lbl_HoTen.Size = new System.Drawing.Size(69, 17);
-            this.lbl_HoTen.TabIndex = 1;
-            this.lbl_HoTen.Text = "Họ và tên";
-            // 
-            // lbl_maNV
-            // 
-            this.lbl_maNV.AutoSize = true;
-            this.lbl_maNV.Location = new System.Drawing.Point(25, 21);
-            this.lbl_maNV.Name = "lbl_maNV";
-            this.lbl_maNV.Size = new System.Drawing.Size(93, 17);
-            this.lbl_maNV.TabIndex = 0;
-            this.lbl_maNV.Text = "Mã nhân viên";
-            // 
-            // lbl_QuanLyNhanVien
-            // 
-            this.lbl_QuanLyNhanVien.AutoSize = true;
-            this.lbl_QuanLyNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QuanLyNhanVien.Location = new System.Drawing.Point(479, 39);
-            this.lbl_QuanLyNhanVien.Name = "lbl_QuanLyNhanVien";
-            this.lbl_QuanLyNhanVien.Size = new System.Drawing.Size(272, 36);
-            this.lbl_QuanLyNhanVien.TabIndex = 14;
-            this.lbl_QuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.guna2PictureBox14.Image = global::dbms.Properties.Resources.strongbow_gold_apple;
+            this.guna2PictureBox14.ImageRotate = 0F;
+            this.guna2PictureBox14.Location = new System.Drawing.Point(3, 0);
+            this.guna2PictureBox14.Name = "guna2PictureBox14";
+            this.guna2PictureBox14.Size = new System.Drawing.Size(176, 157);
+            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox14.TabIndex = 0;
+            this.guna2PictureBox14.TabStop = false;
             // 
             // FMenu
             // 
@@ -2780,25 +2485,14 @@ namespace dbms
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.guna2TabControl1.ResumeLayout(false);
-            this.TabHangTongHop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.TabHangMyPham.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            this.TabThucPhamKho.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.TabKem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            this.TabNuocGiaiKhat.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
-            this.TabUongCoCon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
             this.tabMenu.ResumeLayout(false);
             this.tabQuanLy.ResumeLayout(false);
             this.tc_QuanLy.ResumeLayout(false);
             this.tabQuanLyNhanVien.ResumeLayout(false);
             this.tabQuanLyNhanVien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsNhanVien)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.tabQuanLyNhaCungCap.ResumeLayout(false);
             this.tabQuanLyNhaCungCap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhaCC)).EndInit();
@@ -2832,18 +2526,11 @@ namespace dbms
             this.tabLapHoaDon.ResumeLayout(false);
             this.guna2TabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -2853,9 +2540,13 @@ namespace dbms
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsNhanVien)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2866,12 +2557,6 @@ namespace dbms
         public System.Windows.Forms.TabControl tabMenu;
         private Guna.UI2.WinForms.Guna2Button btn_exit;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private System.Windows.Forms.TabPage TabHangTongHop;
-        private System.Windows.Forms.TabPage TabHangMyPham;
-        private System.Windows.Forms.TabPage TabThucPhamKho;
-        private System.Windows.Forms.TabPage TabKem;
-        private System.Windows.Forms.TabPage TabNuocGiaiKhat;
-        private System.Windows.Forms.TabPage TabUongCoCon;
         private System.Windows.Forms.TabPage tabLapHoaDon;
         private System.Windows.Forms.TabPage TabTraCuu;
         private System.Windows.Forms.TabPage tabQuanLy;
@@ -2885,21 +2570,7 @@ namespace dbms
         private Guna.UI2.WinForms.Guna2TextBox TbTenKhachHan;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox TbSDT;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2TabControl tc_QuanLy;
         private System.Windows.Forms.TabPage tabQuanLyNhanVien;
         private System.Windows.Forms.TabPage tabQuanLyNhaCungCap;

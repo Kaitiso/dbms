@@ -29,8 +29,64 @@ namespace dbms
 
         private void FMenu_Load(object sender, EventArgs e)
         {
+            int count = 0;
+            var lastIndex = this.guna2TabControl1.TabCount;
+            //MaPhong++;
 
-        }
+            string query = string.Format("SELECT * FROM LoaiHangHoa");
+            // , HangHoa, ChiTietPhieuNH WHERE LoaiHangHoa.MaLoaiHang = HangHoa.MaLoaiHang AND HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND LoaiHangHoa.MaLoaiHang = HangHoa.MaLoaiHang
+            SqlConnection conn = Connection_to_SQL.getConnection();
+            conn.Open();
+            SqlCommand command = new SqlCommand(query, conn);
+            SqlDataReader reader = command.ExecuteReader();
+            UC_LoaiHH uLoaiHH = new UC_LoaiHH();
+            while (reader.Read())
+            {
+                string tenLoaiHangHoa = reader.GetString(reader.GetOrdinal("TenLoaiHang"));
+                string maLoaiHH = reader.GetString(reader.GetOrdinal("MaLoaiHang"));
+                this.guna2TabControl1.TabPages.Insert(lastIndex, tenLoaiHangHoa);
+                using (SqlConnection connection = Connection_to_SQL.getConnection())
+                {
+                    connection.Open();
+                    string query2 = "SELECT COUNT(*) FROM HangHoa WHERE HangHoa.MaLoaiHang = @maLoaiHang";
+
+                    using (SqlCommand command2= new SqlCommand(query2, connection))
+                    {
+                        command2.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
+                        count = (int)command2.ExecuteScalar();
+                    }
+                }
+                if (count > 0)
+                {
+                    string query1 = string.Format("SELECT * FROM HangHoa, ChiTietPhieuNH WHERE HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND HangHoa.MaLoaiHang = @maLoaiHang");
+                    SqlConnection conn1 = Connection_to_SQL.getConnection();
+                    conn1.Open();
+                    SqlCommand command1 = new SqlCommand(query1, conn1);
+                    command1.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
+                    command1.ExecuteNonQuery();                   
+                    SqlDataReader reader1 = command1.ExecuteReader();
+                    while (reader1.Read())
+                    {
+                        string tenHangHoa = reader1.GetString(reader1.GetOrdinal("TenHang"));
+                        decimal giaBan = reader1.GetDecimal(reader1.GetOrdinal("GiaBan"));
+                        double giaBanDouble = (double)giaBan;
+                        int soLuong = reader1.GetInt32(reader1.GetOrdinal("SoLuong"));             
+                        TabPage tabPage1 = guna2TabControl1.TabPages[lastIndex];
+                        uLoaiHH.Size = tabPage1.Size;
+                        uLoaiHH.tenHH = tenHangHoa;
+                        uLoaiHH.giaHH = giaBanDouble;
+                        uLoaiHH.soLuong = soLuong;
+
+                        tabPage1.Controls.Add(uLoaiHH);
+                        uLoaiHH.BringToFront();
+                    }
+                    count = 0;
+                }
+                
+            }              
+            conn.Close();
+            this.guna2TabControl1.SelectedIndex = lastIndex;
+        } 
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -524,6 +580,8 @@ namespace dbms
             dgv_LoaiHang.DataSource = dataTable;
             hienThi("LoaiHangHoa", dgv_LoaiHang);
             connection.Close();
+            Application.Restart();
+            //FMenu_Load(sender, e);
         }
 
         private void btn_xoaLoaiHang_Click_1(object sender, EventArgs e)
@@ -636,6 +694,69 @@ namespace dbms
         private void txt_MaNhanVien_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void tabQuanLyHangHoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_NhapHang_Click_2(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_themNhapHang", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@maphieunhap", txt_MaPN.Text);
+            cmd.Parameters.AddWithValue("@ngaynhaphang", date_NgayNH.Value);
+            cmd.Parameters.AddWithValue("@manv", txt_MaNhanVien.Text);
+            cmd.Parameters.AddWithValue("@manhacc", txt_MaNhaCungCap.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            connection.Close();
+            double giaNhap = int.Parse(txt_GiaNhap.Text);
+            connection.Open();
+            SqlCommand cmd1 = new SqlCommand("proc_themHangHoa", connection);
+            cmd1.CommandType = CommandType.StoredProcedure;
+            cmd1.Parameters.AddWithValue("@mahh", txt_MaHangHoa.Text);
+            cmd1.Parameters.AddWithValue("@tenhh", txt_TenHangHoa.Text);
+            cmd1.Parameters.AddWithValue("@maloaihh", txt_MaLoaiHH.Text);
+            cmd1.Parameters.AddWithValue("@hsd", date_HanSD.Value);
+            cmd1.Parameters.AddWithValue("@giaban", giaNhap);
+            cmd1.Parameters.AddWithValue("@donvitinh", "VND");
+            cmd1.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
+            DataTable dataTable1 = new DataTable();
+            adapter1.Fill(dataTable1);
+            connection.Close();
+            int soLuong = int.Parse(txt_SoLuong.Text);
+            double tongTien = giaNhap * soLuong;
+            connection.Open();
+            SqlCommand cmd2 = new SqlCommand("proc_themChiTietHH", connection);
+            cmd2.CommandType = CommandType.StoredProcedure;
+            cmd2.Parameters.AddWithValue("@maphieunhap", txt_MaPN.Text);
+            cmd2.Parameters.AddWithValue("@mahh", txt_MaHangHoa.Text);
+            cmd2.Parameters.AddWithValue("@gianhap", giaNhap);
+            cmd2.Parameters.AddWithValue("@soluong", soLuong);
+            cmd2.Parameters.AddWithValue("@tongtien", tongTien);
+            cmd2.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter2 = new SqlDataAdapter(cmd2);
+            DataTable dataTable2 = new DataTable();
+            adapter2.Fill(dataTable2);
+            connection.Close();
+            hienThi("ViewNhapHang", dgv_NhapHang);
         }
     }
 }

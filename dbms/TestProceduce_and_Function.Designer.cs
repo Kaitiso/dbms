@@ -642,6 +642,7 @@
             this.tp_Quanlyhanghoa.TabIndex = 3;
             this.tp_Quanlyhanghoa.Text = "Quản lý hàng hóa";
             this.tp_Quanlyhanghoa.UseVisualStyleBackColor = true;
+            this.tp_Quanlyhanghoa.Click += new System.EventHandler(this.tp_Quanlyhanghoa_Click);
             // 
             // panel6
             // 
@@ -747,9 +748,9 @@
             this.lbl_tenHH.AutoSize = true;
             this.lbl_tenHH.Location = new System.Drawing.Point(25, 118);
             this.lbl_tenHH.Name = "lbl_tenHH";
-            this.lbl_tenHH.Size = new System.Drawing.Size(127, 20);
+            this.lbl_tenHH.Size = new System.Drawing.Size(110, 20);
             this.lbl_tenHH.TabIndex = 1;
-            this.lbl_tenHH.Text = "Tên khách hàng";
+            this.lbl_tenHH.Text = "Tên hàng hoá";
             // 
             // lbl_maHH
             // 
