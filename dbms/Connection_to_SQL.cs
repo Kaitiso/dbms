@@ -11,6 +11,7 @@ namespace DuLich
     {
 
         static string cnnString = @"Data Source=MSI;Initial Catalog=QuanLyCuaHangTienLoi;Integrated Security=True";
+
         public static SqlConnection getConnection()
         {
             return new SqlConnection(cnnString);

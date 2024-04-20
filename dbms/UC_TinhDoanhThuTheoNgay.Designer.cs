@@ -52,6 +52,9 @@
             this.lbl_NhapThang = new System.Windows.Forms.Label();
             this.lbl_NhapNam = new System.Windows.Forms.Label();
             this.btn_HienThi = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,9 +190,9 @@
             this.panel3.Controls.Add(this.lbl_VND3);
             this.panel3.Controls.Add(this.lbl_Gia2);
             this.panel3.Controls.Add(this.lbl_LuongNhanVien);
-            this.panel3.Location = new System.Drawing.Point(615, 274);
+            this.panel3.Location = new System.Drawing.Point(598, 274);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(255, 155);
+            this.panel3.Size = new System.Drawing.Size(272, 155);
             this.panel3.TabIndex = 19;
             // 
             // lbl_VND3
@@ -228,9 +231,9 @@
             this.panel4.Controls.Add(this.lbl_VND4);
             this.panel4.Controls.Add(this.lbl_Gia3);
             this.panel4.Controls.Add(this.lbl_TongDoanhThu);
-            this.panel4.Location = new System.Drawing.Point(910, 274);
+            this.panel4.Location = new System.Drawing.Point(901, 274);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(255, 155);
+            this.panel4.Size = new System.Drawing.Size(272, 155);
             this.panel4.TabIndex = 20;
             // 
             // lbl_VND4
@@ -300,10 +303,43 @@
             this.btn_HienThi.Text = "Hiển thị";
             this.btn_HienThi.Click += new System.EventHandler(this.btn_HienThi_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 29);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "+";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(571, 337);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 29);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(876, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 29);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "-";
+            // 
             // UC_TinhDoanhThuTheoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_HienThi);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -357,5 +393,8 @@
         private System.Windows.Forms.Label lbl_NhapThang;
         private System.Windows.Forms.Label lbl_NhapNam;
         private Guna.UI2.WinForms.Guna2Button btn_HienThi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
