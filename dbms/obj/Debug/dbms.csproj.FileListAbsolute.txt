@@ -245,3 +245,7 @@ C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.csproj.CopyComplete
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.exe
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.pdb
 C:\Users\ADMIN\source\repos\dbms\dbms\obj\Debug\dbms.f.resources
+C:\Users\phihi_6b0xaz1\source\repos\dbms\dbms\obj\Debug\dbms.f.resources
+C:\Users\phihi_6b0xaz1\source\repos\dbms\dbms\obj\Debug\dbms.UC_TinhDoanhThuTheoNgay.resources
+C:\Users\phihi_6b0xaz1\source\repos\dbms\dbms\obj\Debug\dbms.FNhapHang.resources
+C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.FNhapHang.resources

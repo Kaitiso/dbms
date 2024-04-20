@@ -40,5 +40,10 @@ namespace dbms
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgv_ThongKeTaiChinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

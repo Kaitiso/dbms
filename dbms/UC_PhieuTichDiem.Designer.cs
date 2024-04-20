@@ -41,6 +41,7 @@
             this.dgv_PhieuTichDiem.RowTemplate.Height = 24;
             this.dgv_PhieuTichDiem.Size = new System.Drawing.Size(1092, 522);
             this.dgv_PhieuTichDiem.TabIndex = 0;
+            this.dgv_PhieuTichDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PhieuTichDiem_CellContentClick);
             // 
             // UC_PhieuTichDiem
             // 

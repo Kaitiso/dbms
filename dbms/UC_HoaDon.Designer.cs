@@ -41,6 +41,7 @@
             this.dgv_HoaDon.RowTemplate.Height = 24;
             this.dgv_HoaDon.Size = new System.Drawing.Size(1092, 522);
             this.dgv_HoaDon.TabIndex = 0;
+            this.dgv_HoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HoaDon_CellContentClick);
             // 
             // UC_HoaDon
             // 

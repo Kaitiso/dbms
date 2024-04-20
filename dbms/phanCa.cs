@@ -77,7 +77,8 @@ namespace dbms
             SqlCommand cmd = new SqlCommand("proc_themCaLamViec", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@maca ", txt_maCa1.Text);
-            cmd.Parameters.AddWithValue("ngayLV", date_ngayLV.Value);
+            cmd.Parameters.AddWithValue("@gioBatDau", date_gioBD.Value);
+            cmd.Parameters.AddWithValue("@gioKetThuc ", date_GioKT.Value);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -100,14 +101,16 @@ namespace dbms
 
         private void btn_Them_Click_1(object sender, EventArgs e)
         {
+            int luong = int.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_ThemCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@maca ", txt_maCa.Text);
+            cmd.Parameters.AddWithValue("@maca", txt_maCa.Text);
             cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
-            cmd.Parameters.AddWithValue("@gioBatDau", date_gioBD.Value);
-            cmd.Parameters.AddWithValue("@gioKetThuc ", date_GioKT.Value);
+            cmd.Parameters.AddWithValue("@maloainv", txt_loaiNhanVien.Text);
+            cmd.Parameters.AddWithValue("@ngayLamViec", date_ngayLV.Value);
+            cmd.Parameters.AddWithValue("@luong", luong);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -141,6 +144,8 @@ namespace dbms
             SqlCommand cmd = new SqlCommand("proc_suaCaLamViec", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@maca ", txt_maCa1.Text);
+            cmd.Parameters.AddWithValue("@gioBatDau", date_gioBD.Value);
+            cmd.Parameters.AddWithValue("@gioKetThuc ", date_GioKT.Value);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -155,7 +160,12 @@ namespace dbms
         {
             DataGridViewRow row = pdg_CaLamViec.Rows[e.RowIndex];
             txt_maCa1.Text = Convert.ToString(row.Cells["MaCa"].Value);
-            date_ngayLV.Value = Convert.ToDateTime(row.Cells["NgayLamViec"].Value);
+            TimeSpan gioBatDau = (TimeSpan)row.Cells["GioBatDau"].Value;
+            DateTime ngayGioBatDau = DateTime.Today.Add(gioBatDau);
+            date_gioBD.Value = ngayGioBatDau;
+            TimeSpan gioKetThuc = (TimeSpan)row.Cells["GioKetThuc"].Value;
+            DateTime ngayGioKetThuc = DateTime.Today.Add(gioKetThuc);
+            date_GioKT.Value = ngayGioKetThuc;
         }
 
         private void dgv_dsPhanCa_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -173,14 +183,16 @@ namespace dbms
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            int luong = int.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@maca ", txt_maCa.Text);
+            cmd.Parameters.AddWithValue("@maca", txt_maCa.Text);
             cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
-            cmd.Parameters.AddWithValue("@gioBatDau", date_gioBD.Value);
-            cmd.Parameters.AddWithValue("@gioKetThuc ", date_GioKT.Value);
+            cmd.Parameters.AddWithValue("@maloainv", txt_loaiNhanVien.Text);
+            cmd.Parameters.AddWithValue("@ngayLamViec", date_ngayLV.Value);
+            cmd.Parameters.AddWithValue("@luong", luong);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -192,14 +204,16 @@ namespace dbms
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            int luong = int.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@maca ", txt_maCa.Text);
+            cmd.Parameters.AddWithValue("@maca", txt_maCa.Text);
             cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
-            cmd.Parameters.AddWithValue("@gioBatDau", date_gioBD.Value);
-            cmd.Parameters.AddWithValue("@gioKetThuc ", date_GioKT.Value);
+            cmd.Parameters.AddWithValue("@maloainv", txt_loaiNhanVien.Text);
+            cmd.Parameters.AddWithValue("@ngayLamViec", date_ngayLV.Value);
+            cmd.Parameters.AddWithValue("@luong", luong);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();

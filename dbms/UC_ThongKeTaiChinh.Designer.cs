@@ -41,6 +41,7 @@
             this.dgv_ThongKeTaiChinh.RowTemplate.Height = 24;
             this.dgv_ThongKeTaiChinh.Size = new System.Drawing.Size(1095, 522);
             this.dgv_ThongKeTaiChinh.TabIndex = 0;
+            this.dgv_ThongKeTaiChinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ThongKeTaiChinh_CellContentClick);
             // 
             // UC_ThongKeTaiChinh
             // 
