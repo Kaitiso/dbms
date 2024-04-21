@@ -841,5 +841,42 @@ namespace dbms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void txt_tenLoaiHang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_themLoaiHang_Click_2(object sender, EventArgs e)
+        {
+           
+                SqlConnection connection = Connection_to_SQL.getConnection();
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maLoaiHH", txt_maLoaiHang.Text);
+                cmd.Parameters.AddWithValue("@tenLoaiHH", txt_tenLoaiHang.Text);
+                cmd.Parameters.AddWithValue("@maKeHang", txt_maKeHangHH.Text);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dgv_LoaiHang.DataSource = dataTable;
+                hienThi("LoaiHangHoa", dgv_LoaiHang);
+                connection.Close();
+                Application.Restart();
+                //FMenu_Load(sender, e);
+           
+        }
+
+        private void lbl_tenNhaCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_GioiTinh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
