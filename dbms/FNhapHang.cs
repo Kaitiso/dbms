@@ -92,5 +92,9 @@ namespace dbms
         {
 
         }
+        private void lbl_maPhieuNhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

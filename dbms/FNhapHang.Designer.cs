@@ -45,7 +45,7 @@
             this.date_NgayNhapHang = new System.Windows.Forms.DateTimePicker();
             this.lbl_ngay = new System.Windows.Forms.Label();
             this.txt_maNV = new System.Windows.Forms.TextBox();
-            this.lbl_maNV = new System.Windows.Forms.Label();
+           // this.lbl_maNV = new System.Windows.Forms.Label();
             this.txt_maNhaCC = new System.Windows.Forms.TextBox();
             this.lbl_maNhaCC = new System.Windows.Forms.Label();
             this.txt_maPhieuNhap = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.date_NgayNhapHang);
             this.panel1.Controls.Add(this.lbl_ngay);
             this.panel1.Controls.Add(this.txt_maNV);
-            this.panel1.Controls.Add(this.lbl_maNV);
+            this.panel1.Controls.Add(this.lbl_MaNV);
             this.panel1.Controls.Add(this.txt_maNhaCC);
             this.panel1.Controls.Add(this.lbl_maNhaCC);
             this.panel1.Controls.Add(this.txt_maPhieuNhap);
@@ -108,7 +108,7 @@
             this.lbl_soLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_soLuong.Location = new System.Drawing.Point(863, 75);
             this.lbl_soLuong.Name = "lbl_soLuong";
-            this.lbl_soLuong.Size = new System.Drawing.Size(68, 16);
+            this.lbl_soLuong.Size = new System.Drawing.Size(72, 17);
             this.lbl_soLuong.TabIndex = 18;
             this.lbl_soLuong.Text = "Số lượng";
             // 
@@ -210,6 +210,7 @@
             this.lbl_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ngay.Location = new System.Drawing.Point(15, 167);
             this.lbl_ngay.Name = "lbl_ngay";
+
             this.lbl_ngay.Size = new System.Drawing.Size(120, 16);
             this.lbl_ngay.TabIndex = 6;
             this.lbl_ngay.Text = "Ngày nhập hàng";
@@ -221,15 +222,15 @@
             this.txt_maNV.Size = new System.Drawing.Size(225, 22);
             this.txt_maNV.TabIndex = 5;
             // 
-            // lbl_maNV
+            // lbl_MaNV
             // 
-            this.lbl_maNV.AutoSize = true;
-            this.lbl_maNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_maNV.Location = new System.Drawing.Point(15, 119);
-            this.lbl_maNV.Name = "lbl_maNV";
-            this.lbl_maNV.Size = new System.Drawing.Size(98, 16);
-            this.lbl_maNV.TabIndex = 4;
-            this.lbl_maNV.Text = "Mã nhân viên";
+            this.lbl_MaNV.AutoSize = true;
+            this.lbl_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MaNV.Location = new System.Drawing.Point(15, 119);
+            this.lbl_MaNV.Name = "lbl_MaNV";
+            this.lbl_MaNV.Size = new System.Drawing.Size(105, 17);
+            this.lbl_MaNV.TabIndex = 4;
+            this.lbl_MaNV.Text = "Mã nhân viên";
             // 
             // txt_maNhaCC
             // 
@@ -296,7 +297,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_maNV;
-        private System.Windows.Forms.Label lbl_maNV;
+        private System.Windows.Forms.Label lbl_MaNV;
         private System.Windows.Forms.TextBox txt_maNhaCC;
         private System.Windows.Forms.Label lbl_maNhaCC;
         private System.Windows.Forms.TextBox txt_maPhieuNhap;

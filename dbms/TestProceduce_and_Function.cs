@@ -456,5 +456,110 @@ namespace dbms
             txt_maNhaCCNhapHang.Text = Convert.ToString(row.Cells["MaNhaCC"].Value);
             date_ngayNhapHang.Value = Convert.ToDateTime(row.Cells["NgayNhapHang"].Value);
         }
+
+        private void txt_taiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_QLKeHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_maNhaCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_QuanlynhaCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TKNhaCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_tenNhaCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_maSoThue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_diaChiNhaCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_maKH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_SĐT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_tenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_Quanlykhachhang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_maHH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date_HSD_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_maNV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_QuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_Quanlyhanghoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

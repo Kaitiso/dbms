@@ -173,12 +173,9 @@ namespace dbms
             DataGridViewRow row = dgv_dsPhanCa.Rows[e.RowIndex];
             txt_maCa.Text = Convert.ToString(row.Cells["MaCa"].Value);
             txt_maNV.Text = Convert.ToString(row.Cells["MaNV"].Value);
-            TimeSpan gioBatDau = (TimeSpan)row.Cells["GioBatDau"].Value;
-            DateTime ngayGioBatDau = DateTime.Today.Add(gioBatDau);
-            date_gioBD.Value = ngayGioBatDau;
-            TimeSpan gioKetThuc = (TimeSpan)row.Cells["GioKetThuc"].Value;
-            DateTime ngayGioKetThuc = DateTime.Today.Add(gioKetThuc);
-            date_GioKT.Value = ngayGioKetThuc;
+            txt_loaiNhanVien.Text = Convert.ToString(row.Cells["MaLoaiNhanVien"].Value);
+            date_ngayLV.Value = Convert.ToDateTime(row.Cells["NgayLamViec"].Value);
+            txt_luong.Text = Convert.ToString(row.Cells["Luong"].Value);
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
