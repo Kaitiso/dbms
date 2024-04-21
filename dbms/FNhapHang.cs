@@ -87,5 +87,10 @@ namespace dbms
             connection.Close();
             hienThi("ViewNhapHang", dgv_nhapHang);
         }
+
+        private void FNhapHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
