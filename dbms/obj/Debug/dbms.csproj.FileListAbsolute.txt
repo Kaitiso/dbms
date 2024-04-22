@@ -251,3 +251,5 @@ C:\Users\phihi_6b0xaz1\source\repos\dbms\dbms\obj\Debug\dbms.FNhapHang.resources
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.FNhapHang.resources
 C:\Users\nguye\Source\Repos\dbms\dbms\obj\Debug\dbms.UC_LoaiHH.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms\dbms\obj\Debug\dbms.UC_LoaiHH.resources
+C:\Users\ADMIN\Source\Repos\dbms\dbms\obj\Debug\dbms.FNhapHang.resources
+C:\Users\ADMIN\Source\Repos\dbms\dbms\obj\Debug\dbms.UC_LoaiHH.resources
