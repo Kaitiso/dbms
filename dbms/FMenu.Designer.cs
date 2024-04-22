@@ -240,6 +240,12 @@ namespace dbms
             this.lbl_MaPN = new System.Windows.Forms.Label();
             this.btn_exit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+
+            this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
+            this.txt_maTheTichDiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_maTheTichDiem = new System.Windows.Forms.Label();
+            this.txt_soDiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_soDiem = new System.Windows.Forms.Label();
             this.TabHome.SuspendLayout();
             this.flp_bangThanhToan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -1175,6 +1181,10 @@ namespace dbms
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.txt_soDiem);
+            this.panel8.Controls.Add(this.lbl_soDiem);
+            this.panel8.Controls.Add(this.txt_maTheTichDiem);
+            this.panel8.Controls.Add(this.lbl_maTheTichDiem);
             this.panel8.Controls.Add(this.txt_SĐT);
             this.panel8.Controls.Add(this.txt_tenKhachHang);
             this.panel8.Controls.Add(this.txt_maKH);
@@ -1183,7 +1193,7 @@ namespace dbms
             this.panel8.Controls.Add(this.lbl_maKhachHang);
             this.panel8.Location = new System.Drawing.Point(82, 95);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1112, 132);
+            this.panel8.Size = new System.Drawing.Size(1112, 193);
             this.panel8.TabIndex = 35;
             // 
             // txt_SĐT
@@ -1197,7 +1207,7 @@ namespace dbms
             this.txt_SĐT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_SĐT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_SĐT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_SĐT.Location = new System.Drawing.Point(708, 12);
+            this.txt_SĐT.Location = new System.Drawing.Point(159, 104);
             this.txt_SĐT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_SĐT.Name = "txt_SĐT";
             this.txt_SĐT.PasswordChar = '\0';
@@ -1250,7 +1260,7 @@ namespace dbms
             // 
             this.lbl_soDienThoai.AutoSize = true;
             this.lbl_soDienThoai.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_soDienThoai.Location = new System.Drawing.Point(556, 21);
+            this.lbl_soDienThoai.Location = new System.Drawing.Point(25, 113);
             this.lbl_soDienThoai.Name = "lbl_soDienThoai";
             this.lbl_soDienThoai.Size = new System.Drawing.Size(111, 23);
             this.lbl_soDienThoai.TabIndex = 5;
@@ -1327,11 +1337,11 @@ namespace dbms
             // dgv_KhachHang
             // 
             this.dgv_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_KhachHang.Location = new System.Drawing.Point(82, 266);
+            this.dgv_KhachHang.Location = new System.Drawing.Point(82, 319);
             this.dgv_KhachHang.Name = "dgv_KhachHang";
             this.dgv_KhachHang.RowHeadersWidth = 51;
             this.dgv_KhachHang.RowTemplate.Height = 24;
-            this.dgv_KhachHang.Size = new System.Drawing.Size(1112, 315);
+            this.dgv_KhachHang.Size = new System.Drawing.Size(1112, 262);
             this.dgv_KhachHang.TabIndex = 30;
             this.dgv_KhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_KhachHang_CellContentClick_1);
             // 
@@ -3228,6 +3238,73 @@ namespace dbms
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             this.guna2ContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.guna2ContextMenuStrip1_Opening);
             // 
+            // flp_bangThanhToan
+            // 
+            this.flp_bangThanhToan.Location = new System.Drawing.Point(1077, 157);
+            this.flp_bangThanhToan.Name = "flp_bangThanhToan";
+            this.flp_bangThanhToan.Size = new System.Drawing.Size(383, 456);
+            this.flp_bangThanhToan.TabIndex = 5;
+            // 
+            // txt_maTheTichDiem
+            // 
+            this.txt_maTheTichDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_maTheTichDiem.DefaultText = "";
+            this.txt_maTheTichDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_maTheTichDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_maTheTichDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maTheTichDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maTheTichDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maTheTichDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_maTheTichDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maTheTichDiem.Location = new System.Drawing.Point(736, 12);
+            this.txt_maTheTichDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_maTheTichDiem.Name = "txt_maTheTichDiem";
+            this.txt_maTheTichDiem.PasswordChar = '\0';
+            this.txt_maTheTichDiem.PlaceholderText = "Nhap ma the";
+            this.txt_maTheTichDiem.SelectedText = "";
+            this.txt_maTheTichDiem.Size = new System.Drawing.Size(309, 32);
+            this.txt_maTheTichDiem.TabIndex = 29;
+            // 
+            // lbl_maTheTichDiem
+            // 
+            this.lbl_maTheTichDiem.AutoSize = true;
+            this.lbl_maTheTichDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_maTheTichDiem.Location = new System.Drawing.Point(579, 21);
+            this.lbl_maTheTichDiem.Name = "lbl_maTheTichDiem";
+            this.lbl_maTheTichDiem.Size = new System.Drawing.Size(140, 23);
+            this.lbl_maTheTichDiem.TabIndex = 28;
+            this.lbl_maTheTichDiem.Text = "Mã thẻ tích điểm";
+            // 
+            // txt_soDiem
+            // 
+            this.txt_soDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_soDiem.DefaultText = "";
+            this.txt_soDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_soDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_soDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_soDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_soDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_soDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_soDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_soDiem.Location = new System.Drawing.Point(736, 56);
+            this.txt_soDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_soDiem.Name = "txt_soDiem";
+            this.txt_soDiem.PasswordChar = '\0';
+            this.txt_soDiem.PlaceholderText = "so diem";
+            this.txt_soDiem.SelectedText = "";
+            this.txt_soDiem.Size = new System.Drawing.Size(309, 32);
+            this.txt_soDiem.TabIndex = 31;
+            // 
+            // lbl_soDiem
+            // 
+            this.lbl_soDiem.AutoSize = true;
+            this.lbl_soDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_soDiem.Location = new System.Drawing.Point(579, 65);
+            this.lbl_soDiem.Name = "lbl_soDiem";
+            this.lbl_soDiem.Size = new System.Drawing.Size(72, 23);
+            this.lbl_soDiem.TabIndex = 30;
+            this.lbl_soDiem.Text = "Số điểm";
+            // 
             // FMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3531,5 +3608,11 @@ namespace dbms
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txt_SoLuong1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+
+        private Guna.UI2.WinForms.Guna2TextBox txt_maTheTichDiem;
+        private System.Windows.Forms.Label lbl_maTheTichDiem;
+        private Guna.UI2.WinForms.Guna2TextBox txt_soDiem;
+        private System.Windows.Forms.Label lbl_soDiem;
+
     }
 }

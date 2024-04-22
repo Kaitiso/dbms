@@ -28,7 +28,7 @@ namespace dbms
             hienThi("NhanVien", dgv_dsNhanVien);
             hienThi("NhaCungCap", dgv_nhaCC);
             hienThi("KeHang", dvg_KeHang);
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             hienThi("LoaiHangHoa", dgv_LoaiHang);
             hienThi("HangHoa", dgv_HangHoa);
             hienThi("PhieuNhapHang", dgv_phieuNhapHang);
@@ -38,11 +38,11 @@ namespace dbms
         {
             if (giaBan != 0 && soLuong != 0)
             {
-                
+
                 Label label = new Label();
                 string str = tenHangHoa + "                  " + giaBan.ToString() + "                     " + soLuong.ToString() + "                         " + (giaBan * soLuong).ToString();
                 //18 - 21 -25
-                label.Size = new Size(1000,30);
+                label.Size = new Size(1000, 30);
                 label.Text = str;
                 label.Click += Label_Click;
                 flp_bangThanhToan.Controls.Add(label);
@@ -51,7 +51,7 @@ namespace dbms
             else
             {
                 Label label = new Label();
-                string str = "Tên hàng hóa" + "                  " + "Giá bán" + "                " +"Số lượng" + "               " + "Tổng".ToString();
+                string str = "Tên hàng hóa" + "                  " + "Giá bán" + "                " + "Số lượng" + "               " + "Tổng".ToString();
                 label.Size = new Size(1000, 30);
                 label.Text = str;
                 flp_bangThanhToan.Controls.Add(label);
@@ -467,6 +467,7 @@ namespace dbms
         private void btn_themKH_Click_1(object sender, EventArgs e)
         {
             int sodienthoai = int.Parse(txt_SĐT.Text);
+            int soDiem = int.Parse(txt_soDiem.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themKhachHang", connection);
@@ -474,12 +475,14 @@ namespace dbms
             cmd.Parameters.AddWithValue("@sdt", sodienthoai);
             cmd.Parameters.AddWithValue("@maKH", txt_maKH.Text);
             cmd.Parameters.AddWithValue("@tennKH", txt_tenKhachHang.Text);
+            cmd.Parameters.AddWithValue("@mathe", txt_maTheTichDiem.Text);
+            cmd.Parameters.AddWithValue("@sodiem", soDiem);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dgv_KhachHang.DataSource = dataTable;
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             connection.Close();
         }
 
@@ -884,24 +887,24 @@ namespace dbms
 
         private void btn_themLoaiHang_Click_2(object sender, EventArgs e)
         {
-           
-                SqlConnection connection = Connection_to_SQL.getConnection();
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@maLoaiHH", txt_maLoaiHang.Text);
-                cmd.Parameters.AddWithValue("@tenLoaiHH", txt_tenLoaiHang.Text);
-                cmd.Parameters.AddWithValue("@maKeHang", txt_maKeHangHH.Text);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dgv_LoaiHang.DataSource = dataTable;
-                hienThi("LoaiHangHoa", dgv_LoaiHang);
-                connection.Close();
-                Application.Restart();
-                //FMenu_Load(sender, e);
-           
+
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@maLoaiHH", txt_maLoaiHang.Text);
+            cmd.Parameters.AddWithValue("@tenLoaiHH", txt_tenLoaiHang.Text);
+            cmd.Parameters.AddWithValue("@maKeHang", txt_maKeHangHH.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_LoaiHang.DataSource = dataTable;
+            hienThi("LoaiHangHoa", dgv_LoaiHang);
+            connection.Close();
+            Application.Restart();
+            //FMenu_Load(sender, e);
+
         }
 
         private void lbl_tenNhaCC_Click(object sender, EventArgs e)
@@ -914,13 +917,14 @@ namespace dbms
 
         }
 
+
         private void guna2Button3_Click_1(object sender, EventArgs e)
         {
             panel9.Visible = false;
             soLuong = int.Parse(txt_SoLuong1.Text);
             string input;
             string output;
-            foreach(Control control in flp_bangThanhToan.Controls)
+            foreach (Control control in flp_bangThanhToan.Controls)
             {
                 if (control is Label && control == LABEL)
                 {
