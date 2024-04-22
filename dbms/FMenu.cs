@@ -14,6 +14,9 @@ namespace dbms
 {
     public partial class FMenu : Form
     {
+        public string tenHangHoa;
+        public int soLuong;
+        public double giaBan;
         public FMenu()
         {
             InitializeComponent();
@@ -29,6 +32,15 @@ namespace dbms
 
         private void FMenu_Load(object sender, EventArgs e)
         {
+            Label label = new Label();
+            label.Text = tenHangHoa;
+            Label label1 = new Label();
+            label1.Text = giaBan.ToString();
+            Label label2 = new Label();
+            label2.Text = soLuong.ToString();
+            flp_bangThanhToan.Controls.Add(label);
+            flp_bangThanhToan.Controls.Add(label1);
+            flp_bangThanhToan.Controls.Add(label2);
             int count = 0;
             var lastIndex = this.guna2TabControl1.TabCount;
             //MaPhong++;

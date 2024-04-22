@@ -25,8 +25,15 @@ namespace dbms
         private void label1_Click(object sender, EventArgs e)
         {
 
+            FMenu menu = new FMenu();
+            menu.tenHangHoa = tenHH;
+            menu.soLuong = soLuong;
+            menu.giaBan = giaHH;
+            //this.Hide();
+            menu.ShowDialog();
+            // this.Show();
         }
-       
+
         private void UC_LoaiHH_Load(object sender, EventArgs e)
         {
             this.Size = new Size(229, 257);
