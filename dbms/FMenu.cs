@@ -24,7 +24,7 @@ namespace dbms
             hienThi("NhanVien", dgv_dsNhanVien);
             hienThi("NhaCungCap", dgv_nhaCC);
             hienThi("KeHang", dvg_KeHang);
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             hienThi("LoaiHangHoa", dgv_LoaiHang);
             hienThi("HangHoa", dgv_HangHoa);
             hienThi("PhieuNhapHang", dgv_phieuNhapHang);
@@ -444,6 +444,7 @@ namespace dbms
         private void btn_themKH_Click_1(object sender, EventArgs e)
         {
             int sodienthoai = int.Parse(txt_SĐT.Text);
+            int soDiem = int.Parse(txt_soDiem.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themKhachHang", connection);
@@ -451,12 +452,14 @@ namespace dbms
             cmd.Parameters.AddWithValue("@sdt", sodienthoai);
             cmd.Parameters.AddWithValue("@maKH", txt_maKH.Text);
             cmd.Parameters.AddWithValue("@tennKH", txt_tenKhachHang.Text);
+            cmd.Parameters.AddWithValue("@mathe", txt_maTheTichDiem.Text);
+            cmd.Parameters.AddWithValue("@sodiem", soDiem);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dgv_KhachHang.DataSource = dataTable;
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             connection.Close();
         }
 
@@ -887,6 +890,21 @@ namespace dbms
         }
 
         private void lbl_GioiTinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
         }
