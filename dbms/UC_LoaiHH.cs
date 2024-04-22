@@ -17,16 +17,25 @@ namespace dbms
         public int soLuong;
         public int viTri;
         public int viTriXuong;
-        public UC_LoaiHH()
+        public FMenu menu;
+        public UC_LoaiHH(FMenu f)
         {
             InitializeComponent();
+            menu = f;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            menu.tenHangHoa = tenHH;
+            menu.soLuong = soLuong;
+            menu.giaBan = giaHH;
+            menu.check = true;
+            menu.FMenu_Load(menu, EventArgs.Empty);
+            //this.Hide();
+            //menu.ShowDialog();
+            // this.Show();
         }
-       
+
         private void UC_LoaiHH_Load(object sender, EventArgs e)
         {
             this.Size = new Size(229, 257);

@@ -7,13 +7,20 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dbms
 {
+
     public partial class FMenu : Form
     {
+        public string tenHangHoa;
+        public int soLuong;
+        public double giaBan;
+        public bool check = false;
+        public Label LABEL = new Label();
         public FMenu()
         {
             InitializeComponent();
@@ -27,79 +34,107 @@ namespace dbms
             hienThi("PhieuNhapHang", dgv_phieuNhapHang);
         }
 
-        private void FMenu_Load(object sender, EventArgs e)
+        public void FMenu_Load(object sender, EventArgs e)
         {
-            int count = 0;
-            var lastIndex = this.guna2TabControl1.TabCount;
-            //MaPhong++;
-            //MessageBox.Show(lastIndex.ToString());
-            string query = string.Format("SELECT * FROM LoaiHangHoa");
-            SqlConnection conn = Connection_to_SQL.getConnection();
-            conn.Open();
-            SqlCommand command = new SqlCommand(query, conn);
-            SqlDataReader reader = command.ExecuteReader();
-            
-            while (reader.Read())
+            if (giaBan != 0 && soLuong != 0)
             {
-                string tenLoaiHangHoa = reader.GetString(reader.GetOrdinal("TenLoaiHang"));
-                string maLoaiHH = reader.GetString(reader.GetOrdinal("MaLoaiHang"));
-                this.guna2TabControl1.TabPages.Insert(lastIndex, tenLoaiHangHoa);
-                using (SqlConnection connection = Connection_to_SQL.getConnection())
-                {
-                    connection.Open();
-                    string query2 = "SELECT COUNT(*) FROM HangHoa WHERE HangHoa.MaLoaiHang = @maLoaiHang";
+                
+                Label label = new Label();
+                string str = tenHangHoa + "                  " + giaBan.ToString() + "                     " + soLuong.ToString() + "                         " + (giaBan * soLuong).ToString();
+                //18 - 21 -25
+                label.Size = new Size(1000,30);
+                label.Text = str;
+                label.Click += Label_Click;
+                flp_bangThanhToan.Controls.Add(label);
+                Control control = label;
+            }
+            else
+            {
+                Label label = new Label();
+                string str = "Tên hàng hóa" + "                  " + "Giá bán" + "                " +"Số lượng" + "               " + "Tổng".ToString();
+                label.Size = new Size(1000, 30);
+                label.Text = str;
+                flp_bangThanhToan.Controls.Add(label);
+            }
+            if (check == false)
+            {
+                int count = 0;
+                var lastIndex = this.guna2TabControl1.TabCount;
+                //MaPhong++;
+                //MessageBox.Show(lastIndex.ToString());
+                string query = string.Format("SELECT * FROM LoaiHangHoa");
+                SqlConnection conn = Connection_to_SQL.getConnection();
+                conn.Open();
+                SqlCommand command = new SqlCommand(query, conn);
+                SqlDataReader reader = command.ExecuteReader();
 
-                    using (SqlCommand command2= new SqlCommand(query2, connection))
-                    {
-                        command2.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
-                        count = (int)command2.ExecuteScalar();
-                    }
-                }
-                //MessageBox.Show(count.ToString());
-                if (count > 0)
+                while (reader.Read())
                 {
-                    int i = 0;
-                    int j = 0;
-                    TabPage tabPage1 = guna2TabControl1.TabPages[lastIndex];
-                    tabPage1.AutoScroll = true;
-                    string query1 = string.Format("SELECT * FROM HangHoa, ChiTietPhieuNH WHERE HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND HangHoa.MaLoaiHang = @maLoaiHang");
-                    SqlConnection conn1 = Connection_to_SQL.getConnection();
-                    conn1.Open();
-                    SqlCommand command1 = new SqlCommand(query1, conn1);
-                    command1.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
-                    command1.ExecuteNonQuery();                   
-                    SqlDataReader reader1 = command1.ExecuteReader();
-                    while (reader1.Read())
+                    string tenLoaiHangHoa = reader.GetString(reader.GetOrdinal("TenLoaiHang"));
+                    string maLoaiHH = reader.GetString(reader.GetOrdinal("MaLoaiHang"));
+                    this.guna2TabControl1.TabPages.Insert(lastIndex, tenLoaiHangHoa);
+                    using (SqlConnection connection = Connection_to_SQL.getConnection())
                     {
-                        string tenHangHoa = reader1.GetString(reader1.GetOrdinal("TenHang"));
-                        decimal giaBan = reader1.GetDecimal(reader1.GetOrdinal("GiaBan"));
-                        double giaBanDouble = (double)giaBan;
-                        int soLuong = reader1.GetInt32(reader1.GetOrdinal("SoLuong"));                      
-                        UC_LoaiHH uLoaiHH = new UC_LoaiHH();
-                        uLoaiHH.viTri = 170 * i;
-                        uLoaiHH.viTriXuong = 220 * j;
-                        uLoaiHH.Size = tabPage1.Size;
-                        uLoaiHH.tenHH = tenHangHoa;
-                        uLoaiHH.giaHH = giaBanDouble;
-                        uLoaiHH.soLuong = soLuong;
-                        tabPage1.Controls.Add(uLoaiHH);
-                        uLoaiHH.BringToFront();
-                        i++;
-                        if (i == 5)
+                        connection.Open();
+                        string query2 = "SELECT COUNT(*) FROM HangHoa WHERE HangHoa.MaLoaiHang = @maLoaiHang";
+
+                        using (SqlCommand command2 = new SqlCommand(query2, connection))
                         {
-                            i = 0;
-                            j++;
+                            command2.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
+                            count = (int)command2.ExecuteScalar();
                         }
                     }
-                    count = 0;
-                    lastIndex++;
-                }
-                
-            }              
-            conn.Close();
-            this.guna2TabControl1.SelectedIndex = lastIndex;
-        } 
+                    //MessageBox.Show(count.ToString());
+                    if (count > 0)
+                    {
+                        int i = 0;
+                        int j = 0;
+                        TabPage tabPage1 = guna2TabControl1.TabPages[lastIndex];
+                        tabPage1.AutoScroll = true;
+                        string query1 = string.Format("SELECT * FROM HangHoa, ChiTietPhieuNH WHERE HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND HangHoa.MaLoaiHang = @maLoaiHang");
+                        SqlConnection conn1 = Connection_to_SQL.getConnection();
+                        conn1.Open();
+                        SqlCommand command1 = new SqlCommand(query1, conn1);
+                        command1.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
+                        command1.ExecuteNonQuery();
+                        SqlDataReader reader1 = command1.ExecuteReader();
+                        while (reader1.Read())
+                        {
+                            string tenHangHoa = reader1.GetString(reader1.GetOrdinal("TenHang"));
+                            decimal giaBan = reader1.GetDecimal(reader1.GetOrdinal("GiaBan"));
+                            double giaBanDouble = (double)giaBan;
+                            int soLuong = reader1.GetInt32(reader1.GetOrdinal("SoLuong"));
+                            UC_LoaiHH uLoaiHH = new UC_LoaiHH(this);
+                            uLoaiHH.viTri = 170 * i;
+                            uLoaiHH.viTriXuong = 220 * j;
+                            uLoaiHH.Size = tabPage1.Size;
+                            uLoaiHH.tenHH = tenHangHoa;
+                            uLoaiHH.giaHH = giaBanDouble;
+                            uLoaiHH.soLuong = soLuong;
+                            tabPage1.Controls.Add(uLoaiHH);
+                            uLoaiHH.BringToFront();
+                            i++;
+                            if (i == 5)
+                            {
+                                i = 0;
+                                j++;
+                            }
+                        }
+                        count = 0;
+                        lastIndex++;
+                    }
 
+                }
+                conn.Close();
+                this.guna2TabControl1.SelectedIndex = lastIndex;
+            }
+        }
+        private void Label_Click(object sender, EventArgs e)
+        {
+            LABEL = (Label)sender;
+            MessageBox.Show("Nhập số lượng hàng cần mua");
+            panel9.Visible = true;
+        }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -877,6 +912,36 @@ namespace dbms
         private void lbl_GioiTinh_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button3_Click_1(object sender, EventArgs e)
+        {
+            panel9.Visible = false;
+            soLuong = int.Parse(txt_SoLuong1.Text);
+            string input;
+            string output;
+            foreach(Control control in flp_bangThanhToan.Controls)
+            {
+                if (control is Label && control == LABEL)
+                {
+                    string before = "                     ";
+                    string after = "                         ";
+                    input = control.Text;
+                    // Tìm vị trí của giá trị trước và sau
+                    int startIndex = input.IndexOf(before);
+                    int endIndex = input.IndexOf(after, startIndex + before.Length);
+
+                    if (startIndex != -1 && endIndex != -1)
+                    {
+                        // Thay thế chuỗi
+                        string replacement = soLuong.ToString();
+                        string replacedString = input.Substring(0, startIndex + before.Length) +
+                                                replacement +
+                                                input.Substring(endIndex);
+                        control.Text = replacedString;
+                    }
+                }
+            }
         }
     }
 }
