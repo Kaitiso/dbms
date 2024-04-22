@@ -28,6 +28,7 @@ namespace dbms
             hienThi("LoaiHangHoa", dgv_LoaiHang);
             hienThi("HangHoa", dgv_HangHoa);
             hienThi("PhieuNhapHang", dgv_phieuNhapHang);
+            hienThi("ViewHoaDon", dgv_hoaDon);
         }
 
         private void FMenu_Load(object sender, EventArgs e)
@@ -907,6 +908,36 @@ namespace dbms
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_xoaHoaDon_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_xoaHoaDon", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahoadon", txt_maHoaDon.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_hoaDon.DataSource = dataTable;
+            hienThi("ViewHoaDon", dgv_hoaDon);
+            connection.Close();
+        }
+
+        private void dgv_hoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgv_hoaDon.Rows[e.RowIndex];
+            txt_maHoaDon.Text = Convert.ToString(row.Cells["MaHoaDon"].Value);
+            txt_maHoaDon.ReadOnly = true;
+            date_ngayLap.Value = Convert.ToDateTime(row.Cells["NgayLap"].Value);
+            txt_maKhachHang.Text = Convert.ToString(row.Cells["MaKhachHang"].Value);
+            txt_maNhanVienHD.Text = Convert.ToString(row.Cells["MaNhanVien"].Value);
+            txt_maPhieuTra.Text = Convert.ToString(row.Cells["MaPhieuTra"].Value);
+            txt_soDiemTra.Text = Convert.ToString(row.Cells["soDiemTra"].Value);
+            txt_maPhieuTich.Text = Convert.ToString(row.Cells["MaPhieu"].Value);
+            txt_soDiemTich.Text = Convert.ToString(row.Cells["soDiemTich"].Value);
         }
     }
 }
