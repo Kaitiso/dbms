@@ -83,3 +83,4 @@ C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.csproj.CoreCompile
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.csproj.CopyComplete
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.exe
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.pdb
+C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.FChiTietHoaDon.resources

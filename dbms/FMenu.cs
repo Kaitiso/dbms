@@ -16,6 +16,7 @@ namespace dbms
 
     public partial class FMenu : Form
     {
+        public string maHH;
         public string tenHangHoa;
         public int soLuong;
         public double giaBan;
@@ -39,9 +40,8 @@ namespace dbms
         {
             if (giaBan != 0 && soLuong != 0)
             {
-
                 Label label = new Label();
-                string str = tenHangHoa + "                  " + giaBan.ToString() + "                     " + soLuong.ToString() + "                         " + (giaBan * soLuong).ToString();
+                string str = maHH + "       " + tenHangHoa + "              " + giaBan.ToString() + "                " + soLuong.ToString() + "                  " + (giaBan * soLuong).ToString();
                 //18 - 21 -25
                 label.Size = new Size(1000, 30);
                 label.Text = str;
@@ -52,7 +52,7 @@ namespace dbms
             else
             {
                 Label label = new Label();
-                string str = "Tên hàng hóa" + "                  " + "Giá bán" + "                " + "Số lượng" + "               " + "Tổng".ToString();
+                string str = "Mã hàng hóa "+"       " + "Tên hàng hóa" + "          " + "Giá bán" + "           " + "Số lượng" + "          " + "Tổng".ToString();
                 label.Size = new Size(1000, 30);
                 label.Text = str;
                 flp_bangThanhToan.Controls.Add(label);
@@ -101,6 +101,7 @@ namespace dbms
                         SqlDataReader reader1 = command1.ExecuteReader();
                         while (reader1.Read())
                         {
+                            string maHangHoa = reader1.GetString(reader1.GetOrdinal("MaHangHoa"));
                             string tenHangHoa = reader1.GetString(reader1.GetOrdinal("TenHang"));
                             decimal giaBan = reader1.GetDecimal(reader1.GetOrdinal("GiaBan"));
                             double giaBanDouble = (double)giaBan;
@@ -109,6 +110,7 @@ namespace dbms
                             uLoaiHH.viTri = 170 * i;
                             uLoaiHH.viTriXuong = 220 * j;
                             uLoaiHH.Size = tabPage1.Size;
+                            uLoaiHH.maHH = maHangHoa;
                             uLoaiHH.tenHH = tenHangHoa;
                             uLoaiHH.giaHH = giaBanDouble;
                             uLoaiHH.soLuong = soLuong;
@@ -144,7 +146,9 @@ namespace dbms
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            flp_bangThanhToan.Controls.Clear();
+            tongTienThanhToan = 0;
+            flp_bangThanhToan.Controls.Add(panel9);
         }
         private void TabHome_Click(object sender, EventArgs e)
         {
@@ -953,35 +957,141 @@ namespace dbms
             txt_maPhieuTich.Text = Convert.ToString(row.Cells["MaPhieu"].Value);
             txt_soDiemTich.Text = Convert.ToString(row.Cells["soDiemTich"].Value);
         }
-
+        int tongTienThanhToan = 0;
         private void guna2Button3_Click_2(object sender, EventArgs e)
         {
             panel9.Visible = false;
-            soLuong = int.Parse(txt_SoLuong1.Text);
+            soLuong = int.Parse(txt_SoLuong1.Text);// soLuong
             string input;
             string output;
             foreach (Control control in flp_bangThanhToan.Controls)
             {
                 if (control is Label && control == LABEL)
                 {
-                    string before = "                     ";
-                    string after = "                         ";
+                    string before2 = "       "; //mahh... tenhh
+                    string before1 = "              ";// hang hoa .... gia ban
+                    string before  = "                ";// gia ban ... soluong
+                    string after   = "                  ";// soluong ... tong
                     input = control.Text;
+
                     // Tìm vị trí của giá trị trước và sau
                     int startIndex = input.IndexOf(before);
+                    int startIndex1 = input.IndexOf(before1);
+                    int startIndex2 = input.IndexOf(before2);
                     int endIndex = input.IndexOf(after, startIndex + before.Length);
-
+                    string giaBan = input.Substring(startIndex1, startIndex1);
+                    giaBan = giaBan.Replace(" ", "");
+                    int tongTien = int.Parse(giaBan) * soLuong; // tien hang hoa
+                    string maHH = input.Substring(0, startIndex2);//maHangHoa
+                    tongTienThanhToan = tongTienThanhToan + tongTien;
                     if (startIndex != -1 && endIndex != -1)
                     {
                         // Thay thế chuỗi
                         string replacement = soLuong.ToString();
-                        string replacedString = input.Substring(0, startIndex + before.Length) +
-                                                replacement +
-                                                input.Substring(endIndex);
+                        string replacedString = input.Substring(0, startIndex + before.Length) +"    " + replacement + "              " + tongTien;
+                        MessageBox.Show(input.Substring(0, startIndex2));
                         control.Text = replacedString;
                     }
+                    SqlConnection connection = Connection_to_SQL.getConnection();
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("proc_themHoaDon", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@mahoadon", txt_maHoaDonTT.Text);
+                    cmd.Parameters.AddWithValue("@mahh", maHH);
+                    cmd.Parameters.AddWithValue("@soLuong", soLuong);
+                    cmd.Parameters.AddWithValue("@ngayLap", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@manv", txt_maNhanVienTT.Text);
+                    cmd.Parameters.AddWithValue("@makh", txt_maKhachHangTT.Text);
+                    cmd.Parameters.AddWithValue("@thanhtoan", tongTienThanhToan);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dgv_hoaDon.DataSource = dataTable;
+                    hienThi("ViewHoaDon", dgv_hoaDon);
+                    connection.Close();
                 }
+                
             }
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_SuaKeHang_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_suaHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_traCuuCaLV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = Connection_to_SQL.getConnection();
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.func_phanCaLamViecTungNgay (@ngay,@thang,@nam)", connection);
+                cmd.Parameters.AddWithValue("@ngay", int.Parse(date_phanCaTheoNgay.Value.ToString("dd")));
+                cmd.Parameters.AddWithValue("@thang", int.Parse(date_phanCaTheoNgay.Value.ToString("MM")));
+                cmd.Parameters.AddWithValue("@nam", int.Parse(date_phanCaTheoNgay.Value.ToString("yyyy")));
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dgv_phanCaTheoNgay.DataSource = dataTable;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Label label = new Label();
+            string str = "----------------------------------------------------------------------------------------------------------------------".ToString();
+            label.Size = new Size(1000, 30);
+            label.Text = str;
+            flp_bangThanhToan.Controls.Add(label);
+            Label label1 = new Label();
+            string str1 = "Tổng thanh toán: " + tongTienThanhToan.ToString() + " VNĐ";
+            label1.Size = new Size(1000, 30);
+            label1.Text = str1;
+            flp_bangThanhToan.Controls.Add(label1);
+
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_capNhatGiaThanhToan", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", txt_maHoaDonTT.Text);
+            cmd.Parameters.AddWithValue("@thanhtoan", tongTienThanhToan);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_hoaDon.DataSource = dataTable;
+            hienThi("ViewHoaDon", dgv_hoaDon);
+            connection.Close();
+        }
+
+        private void btn_chiTietHoaDon_Click(object sender, EventArgs e)
+        {
+            FChiTietHoaDon pc = new FChiTietHoaDon();
+            this.Hide();
+            pc.ShowDialog();
+            this.Show();
         }
     }
 }

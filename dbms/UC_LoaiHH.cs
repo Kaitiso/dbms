@@ -12,6 +12,7 @@ namespace dbms
 {
     public partial class UC_LoaiHH : UserControl
     {
+        public string maHH;
         public string tenHH;
         public double giaHH;
         public int soLuong;
@@ -26,14 +27,12 @@ namespace dbms
 
         private void label1_Click(object sender, EventArgs e)
         {
+            menu.maHH = maHH;
             menu.tenHangHoa = tenHH;
             menu.soLuong = soLuong;
             menu.giaBan = giaHH;
             menu.check = true;
             menu.FMenu_Load(menu, EventArgs.Empty);
-            //this.Hide();
-            //menu.ShowDialog();
-            // this.Show();
         }
 
         private void UC_LoaiHH_Load(object sender, EventArgs e)
