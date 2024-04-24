@@ -455,7 +455,18 @@ namespace dbms
 
         private void btn_TKNhaCC_Click(object sender, EventArgs e)
         {
-
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKiemNhaCCbyTenNCC", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TenNCC", txt_tenNhaCC.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_nhaCC.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
         }
 
         private void dgv_nhaCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -528,7 +539,18 @@ namespace dbms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKiemKHbyTenKH", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TenKH", txt_tenKhachHang.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_KhachHang.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
         }
 
         private void dgv_KhachHang_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -581,7 +603,18 @@ namespace dbms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKiemHangHoabyTenHH", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TenHH", txt_tenHH.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_HangHoa.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
         }
 
         private void dgv_HangHoa_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
