@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DuLich;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -56,6 +58,23 @@ namespace dbms
         private void FLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_DangNhap_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT dbo.func_kiemTraDangNhap(@username, @password)", connection);
+            cmd.Parameters.AddWithValue("@username", txt_TaiKhoan.Text);
+            cmd.Parameters.AddWithValue("@password", txt_matKhau.Text);
+            bool count = (bool)cmd.ExecuteScalar();
+            if (count)
+            {
+                FMenu menu = new FMenu();
+                this.Hide();
+                menu.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
