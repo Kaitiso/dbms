@@ -2888,6 +2888,7 @@ namespace dbms
             this.btn_Them.TabIndex = 17;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Xoa
             // 
@@ -2899,6 +2900,7 @@ namespace dbms
             this.btn_Xoa.TabIndex = 18;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -2910,6 +2912,7 @@ namespace dbms
             this.btn_Sua.TabIndex = 19;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_TimKiem
             // 
@@ -2921,6 +2924,7 @@ namespace dbms
             this.btn_TimKiem.TabIndex = 20;
             this.btn_TimKiem.Text = "Tìm kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // btn_phaCa
             // 

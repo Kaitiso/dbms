@@ -535,7 +535,6 @@ namespace dbms
         {
             DataGridViewRow row = dgv_KhachHang.Rows[e.RowIndex];
             txt_maKH.Text = Convert.ToString(row.Cells["MaKH"].Value);
-            txt_maKH.ReadOnly = true;
             txt_tenKhachHang.Text = Convert.ToString(row.Cells["TenKH"].Value);
             txt_SĐT.Text = Convert.ToString(row.Cells["SDT"].Value);
             txt_maTheTichDiem.Text = Convert.ToString(row.Cells["MaThe"].Value);
@@ -654,7 +653,6 @@ namespace dbms
 
         private void btn_xoaLoaiHang_Click_1(object sender, EventArgs e)
         {
-            int sodienthoai = int.Parse(txt_SĐT.Text);
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaLoaiHH", connection);
@@ -904,7 +902,6 @@ namespace dbms
 
         private void btn_themLoaiHang_Click_2(object sender, EventArgs e)
         {
-
             SqlConnection connection = Connection_to_SQL.getConnection();
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
@@ -1170,6 +1167,80 @@ namespace dbms
             txt_maKeHang.ReadOnly = true;
             txt_tenKeHang.Text = Convert.ToString(row.Cells["TenKeHang"].Value);
             txt_viTriKeHang.Text = Convert.ToString(row.Cells["ViTriKe"].Value);
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_suaNhanVien", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
+            cmd.Parameters.AddWithValue("@hovaten", txt_hoTen.Text);
+            cmd.Parameters.AddWithValue("@ns", dateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@gt", txt_gioiTinh.Text);
+            cmd.Parameters.AddWithValue("@dc", txt_diaChi.Text);
+            cmd.Parameters.AddWithValue("@ntd", dateTimePicker2.Value);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_dsNhanVien.DataSource = dataTable;
+            hienThi("NhanVien", dgv_dsNhanVien);
+            connection.Close();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_xoaNhanVien", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MaNV", txt_maNV.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_dsNhanVien.DataSource = dataTable;
+            hienThi("NhanVien", dgv_dsNhanVien);
+            connection.Close();
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_themNhanVien", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
+            cmd.Parameters.AddWithValue("@hovaten", txt_hoTen.Text);
+            cmd.Parameters.AddWithValue("@ns", dateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@gt", txt_gioiTinh.Text);
+            cmd.Parameters.AddWithValue("@dc", txt_diaChi.Text);
+            cmd.Parameters.AddWithValue("@ntd", dateTimePicker2.Value);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_dsNhanVien.DataSource = dataTable;
+            hienThi("NhanVien", dgv_dsNhanVien);
+            connection.Close();
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnection();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKiemNVbytenNV", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TenNV", txt_hoTen.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_dsNhanVien.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
         }
     }
 }
