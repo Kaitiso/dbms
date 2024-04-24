@@ -22,6 +22,7 @@ namespace dbms
         public double giaBan;
         public bool check = false;
         public Label LABEL = new Label();
+        public string tenTaiKhoan;
         public FMenu()
         {
             InitializeComponent();
@@ -1241,6 +1242,11 @@ namespace dbms
             dgv_dsNhanVien.DataSource = dataTable;
             //hienThi();
             connection.Close();
+        }
+
+        private void btn_TKKeHang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

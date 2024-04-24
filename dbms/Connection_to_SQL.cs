@@ -12,7 +12,7 @@ namespace DuLich
     public class Connection_to_SQL
     {
         static string cnnString = @"Data Source=MSI;Initial Catalog=QuanLyCuaHangTienLoi;Integrated Security=True";
-        static string cnnString1 = @"Data Source=msi;Initial Catalog=Quanlycuahangtienloi;User ID=binh456789;Password=***********";
+        static string cnnString1 = @"Data Source=msi;Initial Catalog=Quanlycuahangtienloi;User ID=binh456789;Password=666666";
         public static SqlConnection getConnection()
         {
                 return new SqlConnection(cnnString);     

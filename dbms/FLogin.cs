@@ -71,6 +71,7 @@ namespace dbms
             if (count)
             {
                 FMenu menu = new FMenu();
+                menu.tenTaiKhoan = txt_TaiKhoan.Text;
                 this.Hide();
                 menu.ShowDialog();
                 this.Show();
