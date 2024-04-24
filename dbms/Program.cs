@@ -18,7 +18,7 @@ namespace dbms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FLogin());
+            Application.Run(new FMenu());
             if (Environment.OSVersion.Version.Major >= 6)
             {
                 SetProcessDPIAware();

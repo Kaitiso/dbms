@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tb_QLDoanhThu = new System.Windows.Forms.TabPage();
+            this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
             this.tb_QLKeHang = new System.Windows.Forms.TabPage();
             this.btn_TKKeHang = new System.Windows.Forms.Button();
             this.btn_SuaKeHang = new System.Windows.Forms.Button();
@@ -145,7 +146,6 @@
             this.lbl_maNV = new System.Windows.Forms.Label();
             this.lbl_QuanLyNhanVien = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
             this.tb_QLDoanhThu.SuspendLayout();
             this.tb_QLKeHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_KeHang)).BeginInit();
@@ -181,6 +181,13 @@
             this.tb_QLDoanhThu.TabIndex = 7;
             this.tb_QLDoanhThu.Text = "Quản lý doanh thu";
             this.tb_QLDoanhThu.UseVisualStyleBackColor = true;
+            // 
+            // uC_TinhDoanhThuTheoNgay1
+            // 
+            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(6, 6);
+            this.uC_TinhDoanhThuTheoNgay1.Name = "uC_TinhDoanhThuTheoNgay1";
+            this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1211, 558);
+            this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
             // 
             // tb_QLKeHang
             // 
@@ -1390,13 +1397,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1184, 715);
             this.tabControl1.TabIndex = 0;
-            // 
-            // uC_TinhDoanhThuTheoNgay1
-            // 
-            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(7, 6);
-            this.uC_TinhDoanhThuTheoNgay1.Name = "uC_TinhDoanhThuTheoNgay1";
-            this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1153, 670);
-            this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
             // 
             // TestProceduce_and_Function
             // 

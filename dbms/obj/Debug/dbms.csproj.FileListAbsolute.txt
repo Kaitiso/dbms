@@ -69,6 +69,7 @@ C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.phanCa.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.Properties.Resources.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.Test.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.TestProceduce_and_Function.resources
+C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.FChiTietHoaDon.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.UC_DanhMucHang.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.UC_HoaDon.resources
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.UC_LoaiHH.resources
@@ -83,4 +84,3 @@ C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.csproj.CoreCompile
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.csproj.CopyComplete
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.exe
 C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.pdb
-C:\Users\phihi_6b0xaz1\source\repos\dbms1\dbms\obj\Debug\dbms.FChiTietHoaDon.resources
