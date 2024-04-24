@@ -108,7 +108,7 @@
             this.panel1.Controls.Add(this.lbl_VND1);
             this.panel1.Controls.Add(this.lbl_Gia);
             this.panel1.Controls.Add(this.lbl_GiaNhapHang);
-            this.panel1.Location = new System.Drawing.Point(12, 274);
+            this.panel1.Location = new System.Drawing.Point(28, 275);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 155);
             this.panel1.TabIndex = 18;
@@ -149,7 +149,7 @@
             this.panel2.Controls.Add(this.lbl_VND2);
             this.panel2.Controls.Add(this.lbl_Gia1);
             this.panel2.Controls.Add(this.lbl_GiaBanHang);
-            this.panel2.Location = new System.Drawing.Point(310, 274);
+            this.panel2.Location = new System.Drawing.Point(326, 275);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 155);
             this.panel2.TabIndex = 19;
@@ -190,7 +190,7 @@
             this.panel3.Controls.Add(this.lbl_VND3);
             this.panel3.Controls.Add(this.lbl_Gia2);
             this.panel3.Controls.Add(this.lbl_LuongNhanVien);
-            this.panel3.Location = new System.Drawing.Point(598, 274);
+            this.panel3.Location = new System.Drawing.Point(614, 275);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(272, 155);
             this.panel3.TabIndex = 19;
@@ -231,7 +231,7 @@
             this.panel4.Controls.Add(this.lbl_VND4);
             this.panel4.Controls.Add(this.lbl_Gia3);
             this.panel4.Controls.Add(this.lbl_TongDoanhThu);
-            this.panel4.Location = new System.Drawing.Point(901, 274);
+            this.panel4.Location = new System.Drawing.Point(917, 275);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(272, 155);
             this.panel4.TabIndex = 20;
@@ -307,7 +307,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 337);
+            this.label1.Location = new System.Drawing.Point(293, 338);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 29);
             this.label1.TabIndex = 21;
@@ -317,7 +317,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(571, 337);
+            this.label2.Location = new System.Drawing.Point(587, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 29);
             this.label2.TabIndex = 22;
@@ -327,7 +327,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(876, 337);
+            this.label3.Location = new System.Drawing.Point(892, 338);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 29);
             this.label3.TabIndex = 23;
@@ -353,7 +353,7 @@
             this.Controls.Add(this.lbl_NhapNgay);
             this.Controls.Add(this.lbl_QuanLyDoanhThuNgay);
             this.Name = "UC_TinhDoanhThuTheoNgay";
-            this.Size = new System.Drawing.Size(1176, 682);
+            this.Size = new System.Drawing.Size(1221, 682);
             this.Load += new System.EventHandler(this.UC_TinhDoanhThuTheoNgay_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
