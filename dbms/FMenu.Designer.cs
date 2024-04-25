@@ -131,7 +131,7 @@ namespace dbms
             this.lbl_soDienThoai = new System.Windows.Forms.Label();
             this.lbl_tenKhachHang = new System.Windows.Forms.Label();
             this.lbl_maKhachHang = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_TKKH = new System.Windows.Forms.Button();
             this.btn_suaKH = new System.Windows.Forms.Button();
             this.btn_xoaKhachHang = new System.Windows.Forms.Button();
             this.btn_themKH = new System.Windows.Forms.Button();
@@ -151,7 +151,7 @@ namespace dbms
             this.lbl_maLoaiHangHH = new System.Windows.Forms.Label();
             this.lbl_tenHH = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_TKHH = new System.Windows.Forms.Button();
             this.btn_suaHangHoa = new System.Windows.Forms.Button();
             this.btn_xoaHangHoa = new System.Windows.Forms.Button();
             this.dgv_HangHoa = new System.Windows.Forms.DataGridView();
@@ -243,6 +243,8 @@ namespace dbms
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabThongKe = new System.Windows.Forms.TabPage();
             this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
+            this.txt_soLuongConLai = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_soLuongConLai = new System.Windows.Forms.Label();
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).BeginInit();
             this.panel6.SuspendLayout();
@@ -1509,7 +1511,7 @@ namespace dbms
             // tabQuanLyKhachHang
             // 
             this.tabQuanLyKhachHang.Controls.Add(this.panel8);
-            this.tabQuanLyKhachHang.Controls.Add(this.button1);
+            this.tabQuanLyKhachHang.Controls.Add(this.btn_TKKH);
             this.tabQuanLyKhachHang.Controls.Add(this.btn_suaKH);
             this.tabQuanLyKhachHang.Controls.Add(this.btn_xoaKhachHang);
             this.tabQuanLyKhachHang.Controls.Add(this.btn_themKH);
@@ -1689,17 +1691,17 @@ namespace dbms
             this.lbl_maKhachHang.TabIndex = 0;
             this.lbl_maKhachHang.Text = "Mã khách hàng";
             // 
-            // button1
+            // btn_TKKH
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(888, 623);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 43);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_TKKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TKKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TKKH.Location = new System.Drawing.Point(888, 623);
+            this.btn_TKKH.Name = "btn_TKKH";
+            this.btn_TKKH.Size = new System.Drawing.Size(108, 43);
+            this.btn_TKKH.TabIndex = 34;
+            this.btn_TKKH.Text = "Tìm kiếm";
+            this.btn_TKKH.UseVisualStyleBackColor = true;
+            this.btn_TKKH.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_suaKH
             // 
@@ -1761,7 +1763,7 @@ namespace dbms
             // tabQuanLyHangHoa
             // 
             this.tabQuanLyHangHoa.Controls.Add(this.lbl_maHH);
-            this.tabQuanLyHangHoa.Controls.Add(this.button3);
+            this.tabQuanLyHangHoa.Controls.Add(this.btn_TKHH);
             this.tabQuanLyHangHoa.Controls.Add(this.btn_suaHangHoa);
             this.tabQuanLyHangHoa.Controls.Add(this.btn_xoaHangHoa);
             this.tabQuanLyHangHoa.Controls.Add(this.dgv_HangHoa);
@@ -1776,6 +1778,8 @@ namespace dbms
             // 
             // lbl_maHH
             // 
+            this.lbl_maHH.Controls.Add(this.txt_soLuongConLai);
+            this.lbl_maHH.Controls.Add(this.lbl_soLuongConLai);
             this.lbl_maHH.Controls.Add(this.date_HSD);
             this.lbl_maHH.Controls.Add(this.txt_donVi);
             this.lbl_maHH.Controls.Add(this.txt_giaBan);
@@ -1799,7 +1803,7 @@ namespace dbms
             this.date_HSD.FillColor = System.Drawing.Color.LightGray;
             this.date_HSD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_HSD.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.date_HSD.Location = new System.Drawing.Point(791, 57);
+            this.date_HSD.Location = new System.Drawing.Point(791, 105);
             this.date_HSD.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_HSD.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_HSD.Name = "date_HSD";
@@ -1911,7 +1915,7 @@ namespace dbms
             // 
             this.lbl_HSD.AutoSize = true;
             this.lbl_HSD.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_HSD.Location = new System.Drawing.Point(656, 70);
+            this.lbl_HSD.Location = new System.Drawing.Point(636, 118);
             this.lbl_HSD.Name = "lbl_HSD";
             this.lbl_HSD.Size = new System.Drawing.Size(108, 23);
             this.lbl_HSD.TabIndex = 17;
@@ -1930,7 +1934,7 @@ namespace dbms
             // 
             this.lbl_giaBan.AutoSize = true;
             this.lbl_giaBan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_giaBan.Location = new System.Drawing.Point(656, 25);
+            this.lbl_giaBan.Location = new System.Drawing.Point(636, 25);
             this.lbl_giaBan.Name = "lbl_giaBan";
             this.lbl_giaBan.Size = new System.Drawing.Size(69, 23);
             this.lbl_giaBan.TabIndex = 13;
@@ -1966,17 +1970,17 @@ namespace dbms
             this.label18.TabIndex = 0;
             this.label18.Text = "Mã hàng hóa";
             // 
-            // button3
+            // btn_TKHH
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(768, 633);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 43);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Tìm kiếm";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_TKHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TKHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TKHH.Location = new System.Drawing.Point(768, 633);
+            this.btn_TKHH.Name = "btn_TKHH";
+            this.btn_TKHH.Size = new System.Drawing.Size(130, 43);
+            this.btn_TKHH.TabIndex = 40;
+            this.btn_TKHH.Text = "Tìm kiếm";
+            this.btn_TKHH.UseVisualStyleBackColor = true;
+            this.btn_TKHH.Click += new System.EventHandler(this.button3_Click);
             // 
             // btn_suaHangHoa
             // 
@@ -2973,7 +2977,7 @@ namespace dbms
             this.panel9.Controls.Add(this.label7);
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(380, 460);
+            this.panel9.Size = new System.Drawing.Size(383, 460);
             this.panel9.TabIndex = 36;
             this.panel9.Visible = false;
             // 
@@ -3256,6 +3260,36 @@ namespace dbms
             this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1221, 682);
             this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
             // 
+            // txt_soLuongConLai
+            // 
+            this.txt_soLuongConLai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_soLuongConLai.DefaultText = "";
+            this.txt_soLuongConLai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_soLuongConLai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_soLuongConLai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_soLuongConLai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_soLuongConLai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_soLuongConLai.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_soLuongConLai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_soLuongConLai.Location = new System.Drawing.Point(791, 61);
+            this.txt_soLuongConLai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_soLuongConLai.Name = "txt_soLuongConLai";
+            this.txt_soLuongConLai.PasswordChar = '\0';
+            this.txt_soLuongConLai.PlaceholderText = "nhap so luong";
+            this.txt_soLuongConLai.SelectedText = "";
+            this.txt_soLuongConLai.Size = new System.Drawing.Size(309, 32);
+            this.txt_soLuongConLai.TabIndex = 34;
+            // 
+            // lbl_soLuongConLai
+            // 
+            this.lbl_soLuongConLai.AutoSize = true;
+            this.lbl_soLuongConLai.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_soLuongConLai.Location = new System.Drawing.Point(636, 70);
+            this.lbl_soLuongConLai.Name = "lbl_soLuongConLai";
+            this.lbl_soLuongConLai.Size = new System.Drawing.Size(133, 23);
+            this.lbl_soLuongConLai.TabIndex = 33;
+            this.lbl_soLuongConLai.Text = "Số lượng còn lại";
+            // 
             // FMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3441,7 +3475,7 @@ namespace dbms
         private System.Windows.Forms.Label lbl_soDienThoai;
         private System.Windows.Forms.Label lbl_tenKhachHang;
         private System.Windows.Forms.Label lbl_maKhachHang;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_TKKH;
         private System.Windows.Forms.Button btn_suaKH;
         private System.Windows.Forms.Button btn_xoaKhachHang;
         private System.Windows.Forms.Button btn_themKH;
@@ -3461,7 +3495,7 @@ namespace dbms
         private System.Windows.Forms.Label lbl_maLoaiHangHH;
         private System.Windows.Forms.Label lbl_tenHH;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_TKHH;
         private System.Windows.Forms.Button btn_suaHangHoa;
         private System.Windows.Forms.Button btn_xoaHangHoa;
         private System.Windows.Forms.DataGridView dgv_HangHoa;
@@ -3553,5 +3587,7 @@ namespace dbms
         public System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.TabPage tabThongKe;
         private UC_TinhDoanhThuTheoNgay uC_TinhDoanhThuTheoNgay1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_soLuongConLai;
+        private System.Windows.Forms.Label lbl_soLuongConLai;
     }
 }
