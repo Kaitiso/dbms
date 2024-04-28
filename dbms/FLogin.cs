@@ -67,11 +67,13 @@ namespace dbms
             SqlCommand cmd = new SqlCommand("SELECT dbo.func_kiemTraDangNhap(@username, @password)", connection);
             cmd.Parameters.AddWithValue("@username", txt_TaiKhoan.Text);
             cmd.Parameters.AddWithValue("@password", txt_matKhau.Text);
-            bool count = (bool)cmd.ExecuteScalar();
-            if (count)
+            int count = (int)cmd.ExecuteScalar();
+            MessageBox.Show(count.ToString());
+            if (count == 1)
             {
                 FMenu menu = new FMenu();
                 menu.tenTaiKhoan = txt_TaiKhoan.Text;
+                menu.matkhau = txt_matKhau.Text;
                 this.Hide();
                 menu.ShowDialog();
                 this.Show();

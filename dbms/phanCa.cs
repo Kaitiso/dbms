@@ -14,6 +14,8 @@ namespace dbms
 {
     public partial class phanCa : Form
     {
+        public string taiKhoan;
+        public string matKhau;
         public phanCa()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace dbms
         }
         public void hienThi()
         {
-            SqlConnection conn = Connection_to_SQL.getConnection();
+            SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             try
             {
                 conn.Open();
@@ -46,7 +48,7 @@ namespace dbms
         }
         public void hienThi1()
         {
-            SqlConnection conn = Connection_to_SQL.getConnection();
+            SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             try
             {
                 conn.Open();
@@ -72,7 +74,7 @@ namespace dbms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themCaLamViec", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -102,7 +104,7 @@ namespace dbms
         private void btn_Them_Click_1(object sender, EventArgs e)
         {
             int luong = int.Parse(txt_luong.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_ThemCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -122,7 +124,7 @@ namespace dbms
 
         private void btn_xoaCa_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaCaLamViec", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -139,7 +141,7 @@ namespace dbms
 
         private void btn_SuaCa_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaCaLamViec", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -181,7 +183,7 @@ namespace dbms
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             int luong = int.Parse(txt_luong.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -202,7 +204,7 @@ namespace dbms
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             int luong = int.Parse(txt_luong.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaCaChoNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;

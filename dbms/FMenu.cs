@@ -23,9 +23,15 @@ namespace dbms
         public bool check = false;
         public Label LABEL = new Label();
         public string tenTaiKhoan;
+        public string matkhau;
         public FMenu()
         {
             InitializeComponent();
+            
+        }
+
+        public void FMenu_Load(object sender, EventArgs e)
+        {
             hienThi("ViewNhapHang", dgv_NhapHang);
             hienThi("NhanVien", dgv_dsNhanVien);
             hienThi("NhaCungCap", dgv_nhaCC);
@@ -35,10 +41,7 @@ namespace dbms
             hienThi("HangHoa", dgv_HangHoa);
             hienThi("PhieuNhapHang", dgv_phieuNhapHang);
             hienThi("ViewHoaDon", dgv_hoaDon);
-        }
-
-        public void FMenu_Load(object sender, EventArgs e)
-        {
+            hienThi("DangNhap", dgv_TaiKhoan);
             if (giaBan != 0 && soLuong != 0)
             {
                 Label label = new Label();
@@ -65,7 +68,7 @@ namespace dbms
                 //MaPhong++;
                 //MessageBox.Show(lastIndex.ToString());
                 string query = string.Format("SELECT * FROM LoaiHangHoa");
-                SqlConnection conn = Connection_to_SQL.getConnection();
+                SqlConnection conn =  Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan,matkhau);
                 conn.Open();
                 SqlCommand command = new SqlCommand(query, conn);
                 SqlDataReader reader = command.ExecuteReader();
@@ -94,7 +97,8 @@ namespace dbms
                         TabPage tabPage1 = guna2TabControl1.TabPages[lastIndex];
                         tabPage1.AutoScroll = true;
                         string query1 = string.Format("SELECT * FROM HangHoa, ChiTietPhieuNH WHERE HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND HangHoa.MaLoaiHang = @maLoaiHang");
-                        SqlConnection conn1 = Connection_to_SQL.getConnection();
+                        SqlConnection conn1 = null;
+                        conn1 = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                         conn1.Open();
                         SqlCommand command1 = new SqlCommand(query1, conn1);
                         command1.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
@@ -203,7 +207,8 @@ namespace dbms
         }
         public void hienThi(string tenBang, DataGridView dvg)
         {
-            SqlConnection conn = Connection_to_SQL.getConnection();
+            
+            SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             try
             {
                 conn.Open();
@@ -224,7 +229,7 @@ namespace dbms
         }
         private void btn_NhapHang_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themNhapHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -360,7 +365,7 @@ namespace dbms
 
         private void btn_themNhaCC_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -420,7 +425,7 @@ namespace dbms
 
         private void btn_xoaNhaCC_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -436,7 +441,7 @@ namespace dbms
 
         private void btn_suaNhaCC_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -456,7 +461,7 @@ namespace dbms
 
         private void btn_TKNhaCC_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("pro_timKiemNhaCCbyTenNCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -485,7 +490,7 @@ namespace dbms
         {
             int sodienthoai = int.Parse(txt_SĐT.Text);
             int soDiem = int.Parse(txt_soDiem.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themKhachHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -505,7 +510,7 @@ namespace dbms
 
         private void btn_xoaKhachHang_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaKhachHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -522,7 +527,7 @@ namespace dbms
         private void btn_suaKH_Click(object sender, EventArgs e)
         {
             int sodienthoai = int.Parse(txt_SĐT.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaKhachHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -540,7 +545,7 @@ namespace dbms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("pro_timKiemKHbyTenKH", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -566,7 +571,7 @@ namespace dbms
 
         private void btn_xoaHangHoa_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaHangHoa", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -583,7 +588,7 @@ namespace dbms
         private void btn_suaHangHoa_Click_1(object sender, EventArgs e)
         {
             double giaBan = double.Parse(txt_giaBan.Text);
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaHangHoa", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -604,7 +609,7 @@ namespace dbms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("pro_timKiemHangHoabyTenHH", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -632,7 +637,7 @@ namespace dbms
 
         private void btn_xoaPhieuNhapHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaPhieuNhap", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -648,7 +653,7 @@ namespace dbms
 
         private void btn_suaPhieuNhapHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaPhieuNhapHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -667,7 +672,7 @@ namespace dbms
 
         private void btn_themLoaiHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -687,7 +692,7 @@ namespace dbms
 
         private void btn_xoaLoaiHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaLoaiHH", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -705,7 +710,7 @@ namespace dbms
 
         private void btn_suaLoaiHangHoa_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaLoaiHH", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -723,7 +728,7 @@ namespace dbms
 
         private void btn_themKeHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themKeHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -741,7 +746,7 @@ namespace dbms
 
         private void btn_xoaKeHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaKeHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -815,7 +820,7 @@ namespace dbms
             double giaNhap = int.Parse(txt_GiaNhap.Text);
             int soLuong = int.Parse(txt_SoLuong.Text);
             double tongTien = giaNhap * soLuong;
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themNhapHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -862,6 +867,8 @@ namespace dbms
         private void btn_phaCa_Click(object sender, EventArgs e)
         {
             phanCa pc = new phanCa();
+            pc.taiKhoan = tenTaiKhoan;
+            pc.matKhau = matkhau;
             this.Hide();
             pc.ShowDialog();
             this.Show();
@@ -871,7 +878,7 @@ namespace dbms
         {
             try
             {
-                SqlConnection connection = Connection_to_SQL.getConnection();
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.func_tinhLuongNVPartTime (@thang,@nam)", connection);
                 cmd.Parameters.AddWithValue("@thang", int.Parse(date_phatLuong.Value.ToString("MM")));
@@ -892,7 +899,7 @@ namespace dbms
         {
             try
             {
-                SqlConnection connection = Connection_to_SQL.getConnection();
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.func_tinhLuongNVFullTime (@thang,@nam)", connection);
                 cmd.Parameters.AddWithValue("@thang", int.Parse(date_phatLuongFull.Value.ToString("MM")));
@@ -913,7 +920,7 @@ namespace dbms
         {
             try
             {
-                SqlConnection connection = Connection_to_SQL.getConnection();
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.func_tinhLuongQL (@thang,@nam)", connection);
                 cmd.Parameters.AddWithValue("@thang", int.Parse(date_phatLuongQL.Value.ToString("MM")));
@@ -937,7 +944,7 @@ namespace dbms
 
         private void btn_themLoaiHang_Click_2(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themLoaiHangHoa", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -974,7 +981,7 @@ namespace dbms
 
         private void btn_xoaHoaDon_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaHoaDon", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1036,7 +1043,7 @@ namespace dbms
                         MessageBox.Show(input.Substring(0, startIndex2));
                         control.Text = replacedString;
                     }
-                    SqlConnection connection = Connection_to_SQL.getConnection();
+                    SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("proc_themHoaDon", connection);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -1084,7 +1091,7 @@ namespace dbms
 
         private void btn_SuaKeHang_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaKeHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1102,7 +1109,7 @@ namespace dbms
 
         private void btn_suaHoaDon_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaKeHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1122,7 +1129,7 @@ namespace dbms
         {
             try
             {
-                SqlConnection connection = Connection_to_SQL.getConnection();
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.func_phanCaLamViecTungNgay (@ngay,@thang,@nam)", connection);
                 cmd.Parameters.AddWithValue("@ngay", int.Parse(date_phanCaTheoNgay.Value.ToString("dd")));
@@ -1153,7 +1160,7 @@ namespace dbms
             label1.Text = str1;
             flp_bangThanhToan.Controls.Add(label1);
 
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_capNhatGiaThanhToan", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1218,7 +1225,7 @@ namespace dbms
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1239,7 +1246,7 @@ namespace dbms
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1255,7 +1262,7 @@ namespace dbms
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themNhanVien", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1276,7 +1283,7 @@ namespace dbms
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = Connection_to_SQL.getConnection();
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("pro_timKiemNVbytenNV", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1293,6 +1300,66 @@ namespace dbms
         private void btn_TKKeHang_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThemTK_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_themTaiKhoan", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@taikhoan", txt_tenTaiKhoan.Text);
+            cmd.Parameters.AddWithValue("@matkhau", txt_matKhau.Text);
+            cmd.Parameters.AddWithValue("@manv", txt_maNhanVienTK.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_TaiKhoan.DataSource = dataTable;
+            hienThi("DangNhap", dgv_TaiKhoan);
+            connection.Close();
+        }
+
+        private void btn_suaTK_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_suaTaiKhoan", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@taikhoan", txt_tenTaiKhoan.Text);
+            cmd.Parameters.AddWithValue("@matkhau", txt_matKhau.Text);
+            cmd.Parameters.AddWithValue("@manv", txt_maNhanVienTK.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_TaiKhoan.DataSource = dataTable;
+            hienThi("DangNhap", dgv_TaiKhoan);
+            connection.Close();
+        }
+
+        private void dgv_TaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgv_TaiKhoan.Rows[e.RowIndex];
+            txt_tenTaiKhoan.Text = Convert.ToString(row.Cells["TaiKhoan"].Value);
+            txt_matKhau.Text = Convert.ToString(row.Cells["MatKhau"].Value);
+            txt_maNhanVienTK.Text = Convert.ToString(row.Cells["Manv"].Value);
+        }
+
+        private void btn_xoaTK_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("proc_xoaTaiKhoan", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@taikhoan", txt_tenTaiKhoan.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_TaiKhoan.DataSource = dataTable;
+            hienThi("DangNhap", dgv_TaiKhoan);
+            connection.Close();
         }
     }
 }
