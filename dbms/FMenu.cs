@@ -429,7 +429,7 @@ namespace dbms
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@manhaCC", txt_MaNhaCungCap.Text);
+            cmd.Parameters.AddWithValue("@manhaCC", txt_maNhaCC.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -488,13 +488,12 @@ namespace dbms
 
         private void btn_themKH_Click_1(object sender, EventArgs e)
         {
-            int sodienthoai = int.Parse(txt_SĐT.Text);
             int soDiem = int.Parse(txt_soDiem.Text);
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themKhachHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@sdt", sodienthoai);
+            cmd.Parameters.AddWithValue("@sdt", txt_SĐT.Text);
             cmd.Parameters.AddWithValue("@maKH", txt_maKH.Text);
             cmd.Parameters.AddWithValue("@tennKH", txt_tenKhachHang.Text);
             cmd.Parameters.AddWithValue("@mathe", txt_maTheTichDiem.Text);
@@ -520,18 +519,17 @@ namespace dbms
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dgv_KhachHang.DataSource = dataTable;
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             connection.Close();
         }
 
         private void btn_suaKH_Click(object sender, EventArgs e)
         {
-            int sodienthoai = int.Parse(txt_SĐT.Text);
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaKhachHang", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@sdt", sodienthoai);
+            cmd.Parameters.AddWithValue("@sdt", txt_SĐT.Text);
             cmd.Parameters.AddWithValue("@maKH", txt_maKH.Text);
             cmd.Parameters.AddWithValue("@tennKH", txt_tenKhachHang.Text);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1360,6 +1358,11 @@ namespace dbms
             dgv_TaiKhoan.DataSource = dataTable;
             hienThi("DangNhap", dgv_TaiKhoan);
             connection.Close();
+        }
+
+        private void uC_TinhDoanhThuTheoNgay1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

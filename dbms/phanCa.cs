@@ -103,7 +103,7 @@ namespace dbms
 
         private void btn_Them_Click_1(object sender, EventArgs e)
         {
-            int luong = int.Parse(txt_luong.Text);
+            double luong = double.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_ThemCaChoNhanVien", connection);
@@ -182,7 +182,6 @@ namespace dbms
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            int luong = int.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_xoaCaChoNhanVien", connection);
@@ -190,8 +189,6 @@ namespace dbms
             cmd.Parameters.AddWithValue("@maca", txt_maCa.Text);
             cmd.Parameters.AddWithValue("@manv", txt_maNV.Text);
             cmd.Parameters.AddWithValue("@maloainv", txt_loaiNhanVien.Text);
-            cmd.Parameters.AddWithValue("@ngayLamViec", date_ngayLV.Value);
-            cmd.Parameters.AddWithValue("@luong", luong);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -203,7 +200,7 @@ namespace dbms
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            int luong = int.Parse(txt_luong.Text);
+            double luong = double.Parse(txt_luong.Text);
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(taiKhoan, matKhau);
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaCaChoNhanVien", connection);
