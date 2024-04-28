@@ -1,4 +1,5 @@
 ﻿using DuLich;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +25,11 @@ namespace dbms
         public Label LABEL = new Label();
         public string tenTaiKhoan;
         public string matkhau;
+        public string sdt;
         public FMenu()
         {
             InitializeComponent();
-            
+
         }
 
         public void FMenu_Load(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace dbms
             else
             {
                 Label label = new Label();
-                string str = "Mã hàng hóa "+"       " + "Tên hàng hóa" + "          " + "Giá bán" + "           " + "Số lượng" + "          " + "Tổng".ToString();
+                string str = "Mã hàng hóa " + "       " + "Tên hàng hóa" + "          " + "Giá bán" + "           " + "Số lượng" + "          " + "Tổng".ToString();
                 label.Size = new Size(1000, 30);
                 label.Text = str;
                 flp_bangThanhToan.Controls.Add(label);
@@ -68,7 +70,7 @@ namespace dbms
                 //MaPhong++;
                 //MessageBox.Show(lastIndex.ToString());
                 string query = string.Format("SELECT * FROM LoaiHangHoa");
-                SqlConnection conn =  Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan,matkhau);
+                SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 conn.Open();
                 SqlCommand command = new SqlCommand(query, conn);
                 SqlDataReader reader = command.ExecuteReader();
@@ -207,7 +209,7 @@ namespace dbms
         }
         public void hienThi(string tenBang, DataGridView dvg)
         {
-            
+
             SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             try
             {
@@ -832,7 +834,7 @@ namespace dbms
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
-            connection.Close();        
+            connection.Close();
             connection.Open();
             SqlCommand cmd1 = new SqlCommand("proc_themHangHoa", connection);
             cmd1.CommandType = CommandType.StoredProcedure;
@@ -847,7 +849,7 @@ namespace dbms
             SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
             DataTable dataTable1 = new DataTable();
             adapter1.Fill(dataTable1);
-            connection.Close();      
+            connection.Close();
             connection.Open();
             SqlCommand cmd2 = new SqlCommand("proc_themChiTietHH", connection);
             cmd2.CommandType = CommandType.StoredProcedure;
@@ -976,7 +978,7 @@ namespace dbms
 
         private void guna2Button3_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_xoaHoaDon_Click(object sender, EventArgs e)
@@ -1021,8 +1023,8 @@ namespace dbms
                 {
                     string before2 = "       "; //mahh... tenhh
                     string before1 = "              ";// hang hoa .... gia ban
-                    string before  = "                ";// gia ban ... soluong
-                    string after   = "                  ";// soluong ... tong
+                    string before = "                ";// gia ban ... soluong
+                    string after = "                  ";// soluong ... tong
                     input = control.Text;
 
                     // Tìm vị trí của giá trị trước và sau
@@ -1039,7 +1041,7 @@ namespace dbms
                     {
                         // Thay thế chuỗi
                         string replacement = soLuong.ToString();
-                        string replacedString = input.Substring(0, startIndex + before.Length) +"    " + replacement + "              " + tongTien;
+                        string replacedString = input.Substring(0, startIndex + before.Length) + "    " + replacement + "              " + tongTien;
                         MessageBox.Show(input.Substring(0, startIndex2));
                         control.Text = replacedString;
                     }
@@ -1057,7 +1059,7 @@ namespace dbms
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
-                     adapter.Fill(dataTable);
+                    adapter.Fill(dataTable);
                     dgv_hoaDon.DataSource = dataTable;
                     hienThi("ViewHoaDon", dgv_hoaDon);
                     connection.Close();
@@ -1074,9 +1076,9 @@ namespace dbms
                     hienThi("HangHoa", dgv_HangHoa);
                     connection.Close();
                 }
-                
+
             }
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1173,6 +1175,11 @@ namespace dbms
             dgv_hoaDon.DataSource = dataTable;
             hienThi("ViewHoaDon", dgv_hoaDon);
             connection.Close();
+            if(cb_TichDiem.Checked || cb_SuDungTheTichDiem.Checked)
+            {
+                panel_SuDungDiem.Visible = true;
+            }
+
         }
 
         private void btn_chiTietHoaDon_Click(object sender, EventArgs e)
@@ -1360,6 +1367,46 @@ namespace dbms
             dgv_TaiKhoan.DataSource = dataTable;
             hienThi("DangNhap", dgv_TaiKhoan);
             connection.Close();
+        }
+
+        private void panel_SuDungDiem_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (txt_SDT.Text != "")
+            {
+                sdt = txt_SDT.Text;
+                panel_SuDungDiem.Visible = false;
+            }
+            if (cb_TichDiem.Checked)
+            {
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("proc_TichDiem", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+                cmd.Parameters.AddWithValue("@MAHOADON", "HD001");
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Thanh Cong tich diem");
+            }
+            if (cb_SuDungTheTichDiem.Checked)
+            {
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("proc_TraDiem", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+                cmd.Parameters.AddWithValue("@MAHOADON", "HD001");
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Thanh Cong tra diem");
+            }
         }
     }
 }

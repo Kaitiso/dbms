@@ -225,25 +225,6 @@ namespace dbms
             this.lbl_ngayLap = new System.Windows.Forms.Label();
             this.lbl_maHoaDon = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.TabHome = new System.Windows.Forms.TabPage();
-            this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_SoLuong1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNew = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_maNhanVienTT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbl_maNhanVienTT = new System.Windows.Forms.Label();
-            this.txt_maKhachHangTT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbl_maKhachHangTT = new System.Windows.Forms.Label();
-            this.txt_maHoaDonTT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbl_maHoaDonThanhToan = new System.Windows.Forms.Label();
-            this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabMenu = new System.Windows.Forms.TabControl();
-            this.tabThongKe = new System.Windows.Forms.TabPage();
             this.tabQuanLyTaiKhoan = new System.Windows.Forms.TabPage();
             this.btn_TimKiemTK = new System.Windows.Forms.Button();
             this.btn_suaTK = new System.Windows.Forms.Button();
@@ -258,7 +239,32 @@ namespace dbms
             this.lbl_MatKhau = new System.Windows.Forms.Label();
             this.lbl_tenTaiKhoan = new System.Windows.Forms.Label();
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
+            this.TabHome = new System.Windows.Forms.TabPage();
+            this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_SoLuong1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cb_SuDungTheTichDiem = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNew = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_maNhanVienTT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_maNhanVienTT = new System.Windows.Forms.Label();
+            this.txt_maKhachHangTT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_maKhachHangTT = new System.Windows.Forms.Label();
+            this.txt_maHoaDonTT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_maHoaDonThanhToan = new System.Windows.Forms.Label();
+            this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabMenu = new System.Windows.Forms.TabControl();
+            this.tabThongKe = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_SDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_SuDungDiem = new System.Windows.Forms.Panel();
             this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
+            this.cb_TichDiem = new Guna.UI2.WinForms.Guna2CheckBox();
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).BeginInit();
             this.panel6.SuspendLayout();
@@ -298,6 +304,9 @@ namespace dbms
             this.tabQuanLyHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).BeginInit();
             this.panel_QLHoaDon.SuspendLayout();
+            this.tabQuanLyTaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
+            this.panel3.SuspendLayout();
             this.TabHome.SuspendLayout();
             this.flp_bangThanhToan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -305,9 +314,7 @@ namespace dbms
             this.panel1.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabThongKe.SuspendLayout();
-            this.tabQuanLyTaiKhoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel_SuDungDiem.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -2994,6 +3001,194 @@ namespace dbms
             this.label12.TabIndex = 28;
             this.label12.Text = "Quản lý hóa đơn";
             // 
+            // tabQuanLyTaiKhoan
+            // 
+            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_TimKiemTK);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_suaTK);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_xoaTK);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_ThemTK);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.dgv_TaiKhoan);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.panel3);
+            this.tabQuanLyTaiKhoan.Controls.Add(this.lbl_QLTaiKhoan);
+            this.tabQuanLyTaiKhoan.Location = new System.Drawing.Point(204, 4);
+            this.tabQuanLyTaiKhoan.Name = "tabQuanLyTaiKhoan";
+            this.tabQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQuanLyTaiKhoan.Size = new System.Drawing.Size(1266, 717);
+            this.tabQuanLyTaiKhoan.TabIndex = 8;
+            this.tabQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.tabQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            // 
+            // btn_TimKiemTK
+            // 
+            this.btn_TimKiemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TimKiemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TimKiemTK.Location = new System.Drawing.Point(872, 634);
+            this.btn_TimKiemTK.Name = "btn_TimKiemTK";
+            this.btn_TimKiemTK.Size = new System.Drawing.Size(130, 43);
+            this.btn_TimKiemTK.TabIndex = 41;
+            this.btn_TimKiemTK.Text = "Tìm kiếm";
+            this.btn_TimKiemTK.UseVisualStyleBackColor = true;
+            // 
+            // btn_suaTK
+            // 
+            this.btn_suaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_suaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suaTK.Location = new System.Drawing.Point(661, 634);
+            this.btn_suaTK.Name = "btn_suaTK";
+            this.btn_suaTK.Size = new System.Drawing.Size(130, 43);
+            this.btn_suaTK.TabIndex = 40;
+            this.btn_suaTK.Text = "Sửa";
+            this.btn_suaTK.UseVisualStyleBackColor = true;
+            this.btn_suaTK.Click += new System.EventHandler(this.btn_suaTK_Click);
+            // 
+            // btn_xoaTK
+            // 
+            this.btn_xoaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xoaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoaTK.Location = new System.Drawing.Point(442, 634);
+            this.btn_xoaTK.Name = "btn_xoaTK";
+            this.btn_xoaTK.Size = new System.Drawing.Size(130, 43);
+            this.btn_xoaTK.TabIndex = 39;
+            this.btn_xoaTK.Text = "Xóa";
+            this.btn_xoaTK.UseVisualStyleBackColor = true;
+            this.btn_xoaTK.Click += new System.EventHandler(this.btn_xoaTK_Click);
+            // 
+            // btn_ThemTK
+            // 
+            this.btn_ThemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemTK.Location = new System.Drawing.Point(226, 634);
+            this.btn_ThemTK.Name = "btn_ThemTK";
+            this.btn_ThemTK.Size = new System.Drawing.Size(130, 43);
+            this.btn_ThemTK.TabIndex = 38;
+            this.btn_ThemTK.Text = "Thêm";
+            this.btn_ThemTK.UseVisualStyleBackColor = true;
+            this.btn_ThemTK.Click += new System.EventHandler(this.btn_ThemTK_Click);
+            // 
+            // dgv_TaiKhoan
+            // 
+            this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TaiKhoan.Location = new System.Drawing.Point(66, 269);
+            this.dgv_TaiKhoan.Name = "dgv_TaiKhoan";
+            this.dgv_TaiKhoan.RowHeadersWidth = 51;
+            this.dgv_TaiKhoan.RowTemplate.Height = 24;
+            this.dgv_TaiKhoan.Size = new System.Drawing.Size(1134, 346);
+            this.dgv_TaiKhoan.TabIndex = 37;
+            this.dgv_TaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TaiKhoan_CellContentClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txt_maNhanVienTK);
+            this.panel3.Controls.Add(this.txt_matKhau);
+            this.panel3.Controls.Add(this.txt_tenTaiKhoan);
+            this.panel3.Controls.Add(this.lbl_maNVTaiKhoan);
+            this.panel3.Controls.Add(this.lbl_MatKhau);
+            this.panel3.Controls.Add(this.lbl_tenTaiKhoan);
+            this.panel3.Location = new System.Drawing.Point(66, 97);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1134, 132);
+            this.panel3.TabIndex = 36;
+            // 
+            // txt_maNhanVienTK
+            // 
+            this.txt_maNhanVienTK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_maNhanVienTK.DefaultText = "";
+            this.txt_maNhanVienTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_maNhanVienTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_maNhanVienTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maNhanVienTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maNhanVienTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maNhanVienTK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_maNhanVienTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maNhanVienTK.Location = new System.Drawing.Point(715, 12);
+            this.txt_maNhanVienTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_maNhanVienTK.Name = "txt_maNhanVienTK";
+            this.txt_maNhanVienTK.PasswordChar = '\0';
+            this.txt_maNhanVienTK.PlaceholderText = "";
+            this.txt_maNhanVienTK.SelectedText = "";
+            this.txt_maNhanVienTK.Size = new System.Drawing.Size(309, 32);
+            this.txt_maNhanVienTK.TabIndex = 34;
+            // 
+            // txt_matKhau
+            // 
+            this.txt_matKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_matKhau.DefaultText = "";
+            this.txt_matKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_matKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_matKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_matKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_matKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_matKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_matKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_matKhau.Location = new System.Drawing.Point(160, 56);
+            this.txt_matKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_matKhau.Name = "txt_matKhau";
+            this.txt_matKhau.PasswordChar = '\0';
+            this.txt_matKhau.PlaceholderText = "";
+            this.txt_matKhau.SelectedText = "";
+            this.txt_matKhau.Size = new System.Drawing.Size(309, 32);
+            this.txt_matKhau.TabIndex = 33;
+            // 
+            // txt_tenTaiKhoan
+            // 
+            this.txt_tenTaiKhoan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_tenTaiKhoan.DefaultText = "";
+            this.txt_tenTaiKhoan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_tenTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_tenTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_tenTaiKhoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_tenTaiKhoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_tenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_tenTaiKhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_tenTaiKhoan.Location = new System.Drawing.Point(160, 12);
+            this.txt_tenTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_tenTaiKhoan.Name = "txt_tenTaiKhoan";
+            this.txt_tenTaiKhoan.PasswordChar = '\0';
+            this.txt_tenTaiKhoan.PlaceholderText = "";
+            this.txt_tenTaiKhoan.SelectedText = "";
+            this.txt_tenTaiKhoan.Size = new System.Drawing.Size(309, 32);
+            this.txt_tenTaiKhoan.TabIndex = 32;
+            // 
+            // lbl_maNVTaiKhoan
+            // 
+            this.lbl_maNVTaiKhoan.AutoSize = true;
+            this.lbl_maNVTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_maNVTaiKhoan.Location = new System.Drawing.Point(556, 21);
+            this.lbl_maNVTaiKhoan.Name = "lbl_maNVTaiKhoan";
+            this.lbl_maNVTaiKhoan.Size = new System.Drawing.Size(114, 23);
+            this.lbl_maNVTaiKhoan.TabIndex = 5;
+            this.lbl_maNVTaiKhoan.Text = "Mã nhân viên";
+            // 
+            // lbl_MatKhau
+            // 
+            this.lbl_MatKhau.AutoSize = true;
+            this.lbl_MatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_MatKhau.Location = new System.Drawing.Point(25, 65);
+            this.lbl_MatKhau.Name = "lbl_MatKhau";
+            this.lbl_MatKhau.Size = new System.Drawing.Size(82, 23);
+            this.lbl_MatKhau.TabIndex = 1;
+            this.lbl_MatKhau.Text = "Mật khẩu";
+            // 
+            // lbl_tenTaiKhoan
+            // 
+            this.lbl_tenTaiKhoan.AutoSize = true;
+            this.lbl_tenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_tenTaiKhoan.Location = new System.Drawing.Point(25, 21);
+            this.lbl_tenTaiKhoan.Name = "lbl_tenTaiKhoan";
+            this.lbl_tenTaiKhoan.Size = new System.Drawing.Size(112, 23);
+            this.lbl_tenTaiKhoan.TabIndex = 0;
+            this.lbl_tenTaiKhoan.Text = "Tên tài khoản";
+            // 
+            // lbl_QLTaiKhoan
+            // 
+            this.lbl_QLTaiKhoan.AutoSize = true;
+            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(520, 40);
+            this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
+            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(263, 36);
+            this.lbl_QLTaiKhoan.TabIndex = 35;
+            this.lbl_QLTaiKhoan.Text = "Quản lý tài khoản";
+            // 
             // TabHome
             // 
             this.TabHome.Controls.Add(this.flp_bangThanhToan);
@@ -3012,6 +3207,7 @@ namespace dbms
             // 
             // flp_bangThanhToan
             // 
+            this.flp_bangThanhToan.Controls.Add(this.panel_SuDungDiem);
             this.flp_bangThanhToan.Controls.Add(this.panel9);
             this.flp_bangThanhToan.Location = new System.Drawing.Point(1077, 150);
             this.flp_bangThanhToan.Name = "flp_bangThanhToan";
@@ -3023,7 +3219,7 @@ namespace dbms
             this.panel9.Controls.Add(this.guna2Button3);
             this.panel9.Controls.Add(this.txt_SoLuong1);
             this.panel9.Controls.Add(this.label7);
-            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Location = new System.Drawing.Point(3, 455);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(383, 460);
             this.panel9.TabIndex = 36;
@@ -3085,12 +3281,32 @@ namespace dbms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cb_TichDiem);
+            this.panel2.Controls.Add(this.cb_SuDungTheTichDiem);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Location = new System.Drawing.Point(1076, 619);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(388, 100);
             this.panel2.TabIndex = 4;
+            // 
+            // cb_SuDungTheTichDiem
+            // 
+            this.cb_SuDungTheTichDiem.AutoSize = true;
+            this.cb_SuDungTheTichDiem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungTheTichDiem.CheckedState.BorderRadius = 0;
+            this.cb_SuDungTheTichDiem.CheckedState.BorderThickness = 0;
+            this.cb_SuDungTheTichDiem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungTheTichDiem.ForeColor = System.Drawing.Color.Black;
+            this.cb_SuDungTheTichDiem.Location = new System.Drawing.Point(19, 19);
+            this.cb_SuDungTheTichDiem.Name = "cb_SuDungTheTichDiem";
+            this.cb_SuDungTheTichDiem.Size = new System.Drawing.Size(155, 20);
+            this.cb_SuDungTheTichDiem.TabIndex = 2;
+            this.cb_SuDungTheTichDiem.Text = "Sử dụng thẻ tích điểm";
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderRadius = 0;
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderThickness = 0;
+            this.cb_SuDungTheTichDiem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // guna2Button1
             // 
@@ -3301,193 +3517,70 @@ namespace dbms
             this.tabThongKe.Text = "Thống kê";
             this.tabThongKe.UseVisualStyleBackColor = true;
             // 
-            // tabQuanLyTaiKhoan
+            // label1
             // 
-            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_TimKiemTK);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_suaTK);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_xoaTK);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_ThemTK);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.dgv_TaiKhoan);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.panel3);
-            this.tabQuanLyTaiKhoan.Controls.Add(this.lbl_QLTaiKhoan);
-            this.tabQuanLyTaiKhoan.Location = new System.Drawing.Point(204, 4);
-            this.tabQuanLyTaiKhoan.Name = "tabQuanLyTaiKhoan";
-            this.tabQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQuanLyTaiKhoan.Size = new System.Drawing.Size(1266, 717);
-            this.tabQuanLyTaiKhoan.TabIndex = 8;
-            this.tabQuanLyTaiKhoan.Text = "Quản lý tài khoản";
-            this.tabQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(26, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Hãy nhập số điện thoại để sử dụng điểm";
             // 
-            // btn_TimKiemTK
+            // txt_SDT
             // 
-            this.btn_TimKiemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TimKiemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimKiemTK.Location = new System.Drawing.Point(872, 634);
-            this.btn_TimKiemTK.Name = "btn_TimKiemTK";
-            this.btn_TimKiemTK.Size = new System.Drawing.Size(130, 43);
-            this.btn_TimKiemTK.TabIndex = 41;
-            this.btn_TimKiemTK.Text = "Tìm kiếm";
-            this.btn_TimKiemTK.UseVisualStyleBackColor = true;
+            this.txt_SDT.BorderColor = System.Drawing.Color.Black;
+            this.txt_SDT.BorderRadius = 10;
+            this.txt_SDT.BorderThickness = 2;
+            this.txt_SDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_SDT.DefaultText = "";
+            this.txt_SDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_SDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_SDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_SDT.ForeColor = System.Drawing.Color.Silver;
+            this.txt_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Location = new System.Drawing.Point(30, 55);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.PasswordChar = '\0';
+            this.txt_SDT.PlaceholderText = "Hãy nhập số điện thoại";
+            this.txt_SDT.SelectedText = "";
+            this.txt_SDT.Size = new System.Drawing.Size(232, 26);
+            this.txt_SDT.TabIndex = 7;
             // 
-            // btn_suaTK
+            // guna2Button2
             // 
-            this.btn_suaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_suaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suaTK.Location = new System.Drawing.Point(661, 634);
-            this.btn_suaTK.Name = "btn_suaTK";
-            this.btn_suaTK.Size = new System.Drawing.Size(130, 43);
-            this.btn_suaTK.TabIndex = 40;
-            this.btn_suaTK.Text = "Sửa";
-            this.btn_suaTK.UseVisualStyleBackColor = true;
-            this.btn_suaTK.Click += new System.EventHandler(this.btn_suaTK_Click);
+            this.guna2Button2.BorderRadius = 13;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(267, 115);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(94, 28);
+            this.guna2Button2.TabIndex = 8;
+            this.guna2Button2.Text = "Xác nhận";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // btn_xoaTK
+            // panel_SuDungDiem
             // 
-            this.btn_xoaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_xoaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoaTK.Location = new System.Drawing.Point(442, 634);
-            this.btn_xoaTK.Name = "btn_xoaTK";
-            this.btn_xoaTK.Size = new System.Drawing.Size(130, 43);
-            this.btn_xoaTK.TabIndex = 39;
-            this.btn_xoaTK.Text = "Xóa";
-            this.btn_xoaTK.UseVisualStyleBackColor = true;
-            this.btn_xoaTK.Click += new System.EventHandler(this.btn_xoaTK_Click);
-            // 
-            // btn_ThemTK
-            // 
-            this.btn_ThemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemTK.Location = new System.Drawing.Point(226, 634);
-            this.btn_ThemTK.Name = "btn_ThemTK";
-            this.btn_ThemTK.Size = new System.Drawing.Size(130, 43);
-            this.btn_ThemTK.TabIndex = 38;
-            this.btn_ThemTK.Text = "Thêm";
-            this.btn_ThemTK.UseVisualStyleBackColor = true;
-            this.btn_ThemTK.Click += new System.EventHandler(this.btn_ThemTK_Click);
-            // 
-            // dgv_TaiKhoan
-            // 
-            this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_TaiKhoan.Location = new System.Drawing.Point(66, 269);
-            this.dgv_TaiKhoan.Name = "dgv_TaiKhoan";
-            this.dgv_TaiKhoan.RowHeadersWidth = 51;
-            this.dgv_TaiKhoan.RowTemplate.Height = 24;
-            this.dgv_TaiKhoan.Size = new System.Drawing.Size(1134, 346);
-            this.dgv_TaiKhoan.TabIndex = 37;
-            this.dgv_TaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TaiKhoan_CellContentClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txt_maNhanVienTK);
-            this.panel3.Controls.Add(this.txt_matKhau);
-            this.panel3.Controls.Add(this.txt_tenTaiKhoan);
-            this.panel3.Controls.Add(this.lbl_maNVTaiKhoan);
-            this.panel3.Controls.Add(this.lbl_MatKhau);
-            this.panel3.Controls.Add(this.lbl_tenTaiKhoan);
-            this.panel3.Location = new System.Drawing.Point(66, 97);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1134, 132);
-            this.panel3.TabIndex = 36;
-            // 
-            // txt_maNhanVienTK
-            // 
-            this.txt_maNhanVienTK.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_maNhanVienTK.DefaultText = "";
-            this.txt_maNhanVienTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_maNhanVienTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_maNhanVienTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maNhanVienTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maNhanVienTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maNhanVienTK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_maNhanVienTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maNhanVienTK.Location = new System.Drawing.Point(715, 12);
-            this.txt_maNhanVienTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_maNhanVienTK.Name = "txt_maNhanVienTK";
-            this.txt_maNhanVienTK.PasswordChar = '\0';
-            this.txt_maNhanVienTK.PlaceholderText = "";
-            this.txt_maNhanVienTK.SelectedText = "";
-            this.txt_maNhanVienTK.Size = new System.Drawing.Size(309, 32);
-            this.txt_maNhanVienTK.TabIndex = 34;
-            // 
-            // txt_matKhau
-            // 
-            this.txt_matKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_matKhau.DefaultText = "";
-            this.txt_matKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_matKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_matKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_matKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_matKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_matKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_matKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_matKhau.Location = new System.Drawing.Point(160, 56);
-            this.txt_matKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_matKhau.Name = "txt_matKhau";
-            this.txt_matKhau.PasswordChar = '\0';
-            this.txt_matKhau.PlaceholderText = "";
-            this.txt_matKhau.SelectedText = "";
-            this.txt_matKhau.Size = new System.Drawing.Size(309, 32);
-            this.txt_matKhau.TabIndex = 33;
-            // 
-            // txt_tenTaiKhoan
-            // 
-            this.txt_tenTaiKhoan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_tenTaiKhoan.DefaultText = "";
-            this.txt_tenTaiKhoan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_tenTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_tenTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_tenTaiKhoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_tenTaiKhoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_tenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_tenTaiKhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_tenTaiKhoan.Location = new System.Drawing.Point(160, 12);
-            this.txt_tenTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_tenTaiKhoan.Name = "txt_tenTaiKhoan";
-            this.txt_tenTaiKhoan.PasswordChar = '\0';
-            this.txt_tenTaiKhoan.PlaceholderText = "";
-            this.txt_tenTaiKhoan.SelectedText = "";
-            this.txt_tenTaiKhoan.Size = new System.Drawing.Size(309, 32);
-            this.txt_tenTaiKhoan.TabIndex = 32;
-            // 
-            // lbl_maNVTaiKhoan
-            // 
-            this.lbl_maNVTaiKhoan.AutoSize = true;
-            this.lbl_maNVTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_maNVTaiKhoan.Location = new System.Drawing.Point(556, 21);
-            this.lbl_maNVTaiKhoan.Name = "lbl_maNVTaiKhoan";
-            this.lbl_maNVTaiKhoan.Size = new System.Drawing.Size(114, 23);
-            this.lbl_maNVTaiKhoan.TabIndex = 5;
-            this.lbl_maNVTaiKhoan.Text = "Mã nhân viên";
-            // 
-            // lbl_MatKhau
-            // 
-            this.lbl_MatKhau.AutoSize = true;
-            this.lbl_MatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_MatKhau.Location = new System.Drawing.Point(25, 65);
-            this.lbl_MatKhau.Name = "lbl_MatKhau";
-            this.lbl_MatKhau.Size = new System.Drawing.Size(82, 23);
-            this.lbl_MatKhau.TabIndex = 1;
-            this.lbl_MatKhau.Text = "Mật khẩu";
-            // 
-            // lbl_tenTaiKhoan
-            // 
-            this.lbl_tenTaiKhoan.AutoSize = true;
-            this.lbl_tenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbl_tenTaiKhoan.Location = new System.Drawing.Point(25, 21);
-            this.lbl_tenTaiKhoan.Name = "lbl_tenTaiKhoan";
-            this.lbl_tenTaiKhoan.Size = new System.Drawing.Size(112, 23);
-            this.lbl_tenTaiKhoan.TabIndex = 0;
-            this.lbl_tenTaiKhoan.Text = "Tên tài khoản";
-            // 
-            // lbl_QLTaiKhoan
-            // 
-            this.lbl_QLTaiKhoan.AutoSize = true;
-            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(520, 40);
-            this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
-            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(263, 36);
-            this.lbl_QLTaiKhoan.TabIndex = 35;
-            this.lbl_QLTaiKhoan.Text = "Quản lý tài khoản";
+            this.panel_SuDungDiem.Controls.Add(this.guna2Button2);
+            this.panel_SuDungDiem.Controls.Add(this.txt_SDT);
+            this.panel_SuDungDiem.Controls.Add(this.label1);
+            this.panel_SuDungDiem.Location = new System.Drawing.Point(3, 3);
+            this.panel_SuDungDiem.Name = "panel_SuDungDiem";
+            this.panel_SuDungDiem.Size = new System.Drawing.Size(373, 446);
+            this.panel_SuDungDiem.TabIndex = 37;
+            this.panel_SuDungDiem.Visible = false;
+            this.panel_SuDungDiem.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_SuDungDiem_Paint);
             // 
             // uC_TinhDoanhThuTheoNgay1
             // 
@@ -3495,6 +3588,24 @@ namespace dbms
             this.uC_TinhDoanhThuTheoNgay1.Name = "uC_TinhDoanhThuTheoNgay1";
             this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1221, 682);
             this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
+            // 
+            // cb_TichDiem
+            // 
+            this.cb_TichDiem.AutoSize = true;
+            this.cb_TichDiem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TichDiem.CheckedState.BorderRadius = 0;
+            this.cb_TichDiem.CheckedState.BorderThickness = 0;
+            this.cb_TichDiem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TichDiem.ForeColor = System.Drawing.Color.Black;
+            this.cb_TichDiem.Location = new System.Drawing.Point(206, 19);
+            this.cb_TichDiem.Name = "cb_TichDiem";
+            this.cb_TichDiem.Size = new System.Drawing.Size(88, 20);
+            this.cb_TichDiem.TabIndex = 3;
+            this.cb_TichDiem.Text = "Tích điểm";
+            this.cb_TichDiem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_TichDiem.UncheckedState.BorderRadius = 0;
+            this.cb_TichDiem.UncheckedState.BorderThickness = 0;
+            this.cb_TichDiem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // FMenu
             // 
@@ -3565,20 +3676,23 @@ namespace dbms
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).EndInit();
             this.panel_QLHoaDon.ResumeLayout(false);
             this.panel_QLHoaDon.PerformLayout();
-            this.TabHome.ResumeLayout(false);
-            this.flp_bangThanhToan.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabMenu.ResumeLayout(false);
-            this.tabThongKe.ResumeLayout(false);
             this.tabQuanLyTaiKhoan.ResumeLayout(false);
             this.tabQuanLyTaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.TabHome.ResumeLayout(false);
+            this.flp_bangThanhToan.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabMenu.ResumeLayout(false);
+            this.tabThongKe.ResumeLayout(false);
+            this.panel_SuDungDiem.ResumeLayout(false);
+            this.panel_SuDungDiem.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3814,5 +3928,11 @@ namespace dbms
         private System.Windows.Forms.Label lbl_MatKhau;
         private System.Windows.Forms.Label lbl_tenTaiKhoan;
         private System.Windows.Forms.Label lbl_QLTaiKhoan;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_SuDungTheTichDiem;
+        private System.Windows.Forms.Panel panel_SuDungDiem;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox txt_SDT;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_TichDiem;
     }
 }

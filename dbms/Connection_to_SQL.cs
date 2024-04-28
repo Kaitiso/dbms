@@ -13,7 +13,7 @@ namespace DuLich
 {
     public class Connection_to_SQL
     {
-        static string cnnString = @"Data Source=MSI;Initial Catalog=QuanLyCuaHangTienLoi;Integrated Security=True";
+        static string cnnString = @"Data Source=LAPTOP-NJM7CAI2;Initial Catalog=Quanlycuahangtienloi;Integrated Security=True;Encrypt=False";
         
         public static SqlConnection getConnection()
         {
@@ -21,8 +21,8 @@ namespace DuLich
         }
         public static SqlConnection getConnectionNhanVien(string username, string password)
         {
-            string cnnString1 = @"Data Source=msi;Initial Catalog=Quanlycuahangtienloi;User ID=" + username + ";Password=" + password + ";";
-            return new SqlConnection(cnnString1);
+            //string cnnString1 = @"Data Source=LAPTOP-NJM7CAI2;Initial Catalog=Quanlycuahangtienloi;User ID=" + username + ";Password=" + password + ";";
+            return new SqlConnection(cnnString);
         }
     }
 }
