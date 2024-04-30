@@ -21,7 +21,7 @@ namespace DuLich
         }
         public static SqlConnection getConnectionNhanVien(string username, string password)
         {
-            string cnnString1 = @"Data Source=msi;Initial Catalog=Quanlycuahangtienloi;User ID=" + username + ";Password=" + password + ";";
+            string cnnString1 = @"Data Source=MSI;Initial Catalog=Quanlycuahangtienloi;User ID=" + username + ";Password=" + password + ";";
             return new SqlConnection(cnnString1);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using DuLich;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +25,11 @@ namespace dbms
         public Label LABEL = new Label();
         public string tenTaiKhoan;
         public string matkhau;
+        public string sdt;
         public FMenu()
         {
             InitializeComponent();
-            
+
         }
 
         public void FMenu_Load(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace dbms
             else
             {
                 Label label = new Label();
-                string str = "Mã hàng hóa "+"       " + "Tên hàng hóa" + "          " + "Giá bán" + "           " + "Số lượng" + "          " + "Tổng".ToString();
+                string str = "Mã hàng hóa " + "       " + "Tên hàng hóa" + "          " + "Giá bán" + "           " + "Số lượng" + "          " + "Tổng".ToString();
                 label.Size = new Size(1000, 30);
                 label.Text = str;
                 flp_bangThanhToan.Controls.Add(label);
@@ -68,7 +70,7 @@ namespace dbms
                 //MaPhong++;
                 //MessageBox.Show(lastIndex.ToString());
                 string query = string.Format("SELECT * FROM LoaiHangHoa");
-                SqlConnection conn =  Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan,matkhau);
+                SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                 conn.Open();
                 SqlCommand command = new SqlCommand(query, conn);
                 SqlDataReader reader = command.ExecuteReader();
@@ -89,7 +91,6 @@ namespace dbms
                             count = (int)command2.ExecuteScalar();
                         }
                     }
-                    //MessageBox.Show(count.ToString());
                     if (count > 0)
                     {
                         int i = 0;
@@ -97,8 +98,7 @@ namespace dbms
                         TabPage tabPage1 = guna2TabControl1.TabPages[lastIndex];
                         tabPage1.AutoScroll = true;
                         string query1 = string.Format("SELECT * FROM HangHoa, ChiTietPhieuNH WHERE HangHoa.MaHangHoa = ChiTietPhieuNH.MaHH AND HangHoa.MaLoaiHang = @maLoaiHang");
-                        SqlConnection conn1 = null;
-                        conn1 = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+                        SqlConnection conn1 =  Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
                         conn1.Open();
                         SqlCommand command1 = new SqlCommand(query1, conn1);
                         command1.Parameters.AddWithValue("@maLoaiHang", maLoaiHH);
@@ -110,7 +110,7 @@ namespace dbms
                             string tenHangHoa = reader1.GetString(reader1.GetOrdinal("TenHang"));
                             decimal giaBan = reader1.GetDecimal(reader1.GetOrdinal("GiaBan"));
                             double giaBanDouble = (double)giaBan;
-                            int soLuong = reader1.GetInt32(reader1.GetOrdinal("SoLuong"));
+                            int soLuong = reader1.GetInt32(reader1.GetOrdinal("SoLuongConLai"));
                             UC_LoaiHH uLoaiHH = new UC_LoaiHH(this);
                             uLoaiHH.viTri = 170 * i;
                             uLoaiHH.viTriXuong = 220 * j;
@@ -207,7 +207,7 @@ namespace dbms
         }
         public void hienThi(string tenBang, DataGridView dvg)
         {
-            
+
             SqlConnection conn = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             try
             {
@@ -369,11 +369,11 @@ namespace dbms
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_themNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@manhaCC", txt_MaNhaCungCap.Text);
+            cmd.Parameters.AddWithValue("@manhaCC", txt_maNhaCC.Text);
             cmd.Parameters.AddWithValue("@tennhaCC", txt_tenNhaCC.Text);
             cmd.Parameters.AddWithValue("@dc", txt_diaChiNhaCC.Text);
             cmd.Parameters.AddWithValue("@tk", txt_taiKhoan.Text);
-            cmd.Parameters.AddWithValue("@msthue", txt_maSoThue);
+            cmd.Parameters.AddWithValue("@msthue", txt_maSoThue.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -445,7 +445,7 @@ namespace dbms
             connection.Open();
             SqlCommand cmd = new SqlCommand("proc_suaNhaCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@manhaCC", txt_MaNhaCungCap.Text);
+            cmd.Parameters.AddWithValue("@manhaCC", txt_maNhaCC.Text);
             cmd.Parameters.AddWithValue("@tennhaCC", txt_tenNhaCC.Text);
             cmd.Parameters.AddWithValue("@dc", txt_diaChiNhaCC.Text);
             cmd.Parameters.AddWithValue("@tk", txt_taiKhoan.Text);
@@ -465,7 +465,7 @@ namespace dbms
             connection.Open();
             SqlCommand cmd = new SqlCommand("pro_timKiemNhaCCbyTenNCC", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@TenNCC", txt_tenNhaCC.Text);
+            cmd.Parameters.AddWithValue("@TennhaCC", txt_tenNhaCC.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -479,7 +479,6 @@ namespace dbms
         {
             DataGridViewRow row = dgv_nhaCC.Rows[e.RowIndex];
             txt_maNhaCC.Text = Convert.ToString(row.Cells["MaNhaCungCap"].Value);
-            txt_maNhaCC.ReadOnly = true;
             txt_tenNhaCC.Text = Convert.ToString(row.Cells["TenNhaCungCap"].Value);
             txt_maSoThue.Text = Convert.ToString(row.Cells["MaSoThue"].Value);
             txt_diaChiNhaCC.Text = Convert.ToString(row.Cells["DiaChi"].Value);
@@ -596,6 +595,7 @@ namespace dbms
             cmd.Parameters.AddWithValue("@donVi", txt_donVi.Text);
             cmd.Parameters.AddWithValue("@hsd", date_HSD.Value);
             cmd.Parameters.AddWithValue("@maLH", txt_maLoaiHangHH.Text);
+            cmd.Parameters.AddWithValue("@soluongconlai", txt_soLuongConLai.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -625,12 +625,12 @@ namespace dbms
         {
             DataGridViewRow row = dgv_HangHoa.Rows[e.RowIndex];
             txt_maHH.Text = Convert.ToString(row.Cells["MaHangHoa"].Value);
-            txt_maHH.ReadOnly = true;
             txt_tenHH.Text = Convert.ToString(row.Cells["TenHang"].Value);
             txt_giaBan.Text = Convert.ToString(row.Cells["GiaBan"].Value);
             txt_donVi.Text = Convert.ToString(row.Cells["DonViTinh"].Value);
             date_HSD.Value = Convert.ToDateTime(row.Cells["HanSuDung"].Value);
             txt_maLoaiHangHH.Text = Convert.ToString(row.Cells["MaLoaiHang"].Value);
+            txt_soLuongConLai.Text = Convert.ToString(row.Cells["SoLuongConLai"].Value);
         }
 
         private void btn_xoaPhieuNhapHang_Click_1(object sender, EventArgs e)
@@ -692,11 +692,9 @@ namespace dbms
         {
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
-            SqlCommand cmd = new SqlCommand("proc_suaLoaiHH", connection);
+            SqlCommand cmd = new SqlCommand("proc_xoaLoaiHH", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@maLoaiHH", txt_maLoaiHang.Text);
-            cmd.Parameters.AddWithValue("@tenLoaiHH", txt_tenLoaiHang.Text);
-            cmd.Parameters.AddWithValue("@maKeHang", txt_maKeHangHH.Text);
+            cmd.Parameters.AddWithValue("@maloaihang", txt_maLoaiHang.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
@@ -830,7 +828,7 @@ namespace dbms
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
-            connection.Close();        
+            connection.Close();
             connection.Open();
             SqlCommand cmd1 = new SqlCommand("proc_themHangHoa", connection);
             cmd1.CommandType = CommandType.StoredProcedure;
@@ -845,7 +843,7 @@ namespace dbms
             SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
             DataTable dataTable1 = new DataTable();
             adapter1.Fill(dataTable1);
-            connection.Close();      
+            connection.Close();
             connection.Open();
             SqlCommand cmd2 = new SqlCommand("proc_themChiTietHH", connection);
             cmd2.CommandType = CommandType.StoredProcedure;
@@ -956,7 +954,7 @@ namespace dbms
             dgv_LoaiHang.DataSource = dataTable;
             hienThi("LoaiHangHoa", dgv_LoaiHang);
             connection.Close();
-            Application.Restart();
+            //Application.Restart();
             //FMenu_Load(sender, e);
 
         }
@@ -974,7 +972,7 @@ namespace dbms
 
         private void guna2Button3_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_xoaHoaDon_Click(object sender, EventArgs e)
@@ -1005,6 +1003,7 @@ namespace dbms
             txt_soDiemTra.Text = Convert.ToString(row.Cells["soDiemTra"].Value);
             txt_maPhieuTich.Text = Convert.ToString(row.Cells["MaPhieu"].Value);
             txt_soDiemTich.Text = Convert.ToString(row.Cells["soDiemTich"].Value);
+            txt_thanhToan.Text = Convert.ToString(row.Cells["ThanhToan"].Value);
         }
         int tongTienThanhToan = 0;
         private void guna2Button3_Click_2(object sender, EventArgs e)
@@ -1019,8 +1018,8 @@ namespace dbms
                 {
                     string before2 = "       "; //mahh... tenhh
                     string before1 = "              ";// hang hoa .... gia ban
-                    string before  = "                ";// gia ban ... soluong
-                    string after   = "                  ";// soluong ... tong
+                    string before = "                ";// gia ban ... soluong
+                    string after = "                  ";// soluong ... tong
                     input = control.Text;
 
                     // Tìm vị trí của giá trị trước và sau
@@ -1037,7 +1036,7 @@ namespace dbms
                     {
                         // Thay thế chuỗi
                         string replacement = soLuong.ToString();
-                        string replacedString = input.Substring(0, startIndex + before.Length) +"    " + replacement + "              " + tongTien;
+                        string replacedString = input.Substring(0, startIndex + before.Length) + "    " + replacement + "              " + tongTien;
                         MessageBox.Show(input.Substring(0, startIndex2));
                         control.Text = replacedString;
                     }
@@ -1055,7 +1054,7 @@ namespace dbms
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
-                     adapter.Fill(dataTable);
+                    adapter.Fill(dataTable);
                     dgv_hoaDon.DataSource = dataTable;
                     hienThi("ViewHoaDon", dgv_hoaDon);
                     connection.Close();
@@ -1072,9 +1071,9 @@ namespace dbms
                     hienThi("HangHoa", dgv_HangHoa);
                     connection.Close();
                 }
-                
+
             }
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1082,10 +1081,6 @@ namespace dbms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_SuaKeHang_Click_1(object sender, EventArgs e)
         {
@@ -1109,17 +1104,24 @@ namespace dbms
         {
             SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
             connection.Open();
-            SqlCommand cmd = new SqlCommand("proc_suaKeHang", connection);
+            SqlCommand cmd = new SqlCommand("proc_suaHoaDon", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@maKeHang", txt_maKeHang.Text);
-            cmd.Parameters.AddWithValue("@tenKeHang", txt_tenKeHang.Text);
-            cmd.Parameters.AddWithValue("@viTriKe", txt_viTriKeHang.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", txt_maHoaDon.Text);
+            cmd.Parameters.AddWithValue("@ngaylap", date_ngayLap.Value);
+            cmd.Parameters.AddWithValue("@manv", txt_maNhanVienHD.Text);
+            cmd.Parameters.AddWithValue("@makh", txt_maKhachHang.Text);
+            cmd.Parameters.AddWithValue("@thanhtoan", txt_thanhToan.Text);
+            cmd.Parameters.AddWithValue("@maphieutra", txt_maPhieuTra.Text);
+            cmd.Parameters.AddWithValue("@maphieutich", txt_maPhieuTich.Text);
+            cmd.Parameters.AddWithValue("@soLuongTra", txt_soDiemTra.Text);
+            cmd.Parameters.AddWithValue("@soLuongTich", txt_soDiemTich.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
-            dgv_KeHang.DataSource = dataTable;
-            hienThi("KeHang", dgv_KeHang);
+            dgv_hoaDon.DataSource = dataTable;
+            hienThi("ViewHoaDon", dgv_hoaDon);
             connection.Close();
         }
 
@@ -1171,6 +1173,12 @@ namespace dbms
             dgv_hoaDon.DataSource = dataTable;
             hienThi("ViewHoaDon", dgv_hoaDon);
             connection.Close();
+            if(cb_TichDiem.Checked || cb_SuDungTheTichDiem.Checked)
+            {
+                MessageBox.Show("vao duoc");
+                panel_SuDungDiem.Visible = true;
+            }
+
         }
 
         private void btn_chiTietHoaDon_Click(object sender, EventArgs e)
@@ -1297,7 +1305,18 @@ namespace dbms
 
         private void btn_TKKeHang_Click(object sender, EventArgs e)
         {
-
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKeHang", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tenKeHang", txt_tenKeHang.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_KeHang.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
         }
 
         private void btn_ThemTK_Click(object sender, EventArgs e)
@@ -1359,8 +1378,69 @@ namespace dbms
             hienThi("DangNhap", dgv_TaiKhoan);
             connection.Close();
         }
-
         private void uC_TinhDoanhThuTheoNgay1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void panel_SuDungDiem_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (txt_SDT.Text != "")
+            {
+                sdt = txt_SDT.Text;
+                panel_SuDungDiem.Visible = false;
+            }
+            if (cb_TichDiem.Checked)
+            {
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("proc_TichDiem", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+                cmd.Parameters.AddWithValue("@MAHOADON", txt_maHoaDonTT.Text);
+                cmd.Parameters.AddWithValue("@MAPHIEUTICH", txt_maPhieuTichDiem.Text);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Thanh Cong tich diem");
+            }
+            if (cb_SuDungTheTichDiem.Checked)
+            {
+                SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("proc_TraDiem", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+                cmd.Parameters.AddWithValue("@MAHOADON", txt_maHoaDonTT.Text);
+                cmd.Parameters.AddWithValue("@MAPHIEUTRA", txt_maPhieuTraDiem.Text);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Thanh Cong tra diem");
+            }
+        }
+
+        private void btn_TKLoaiHH_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = Connection_to_SQL.getConnectionNhanVien(tenTaiKhoan, matkhau);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("pro_timKiemLoaiHH", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tenLoaiHH", txt_tenLoaiHang.Text);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dgv_LoaiHang.DataSource = dataTable;
+            //hienThi();
+            connection.Close();
+        }
+
+        private void cb_TichDiem_CheckedChanged(object sender, EventArgs e)
         {
 
         }

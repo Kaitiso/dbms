@@ -175,7 +175,7 @@ namespace dbms
             this.label22 = new System.Windows.Forms.Label();
             this.tabQuanLyLoaiHangHoa = new System.Windows.Forms.TabPage();
             this.btn_themLoaiHang = new Guna.UI2.WinForms.Guna2Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_TKLoaiHH = new System.Windows.Forms.Button();
             this.btn_suaLoaiHangHoa = new System.Windows.Forms.Button();
             this.btn_xoaLoaiHang = new System.Windows.Forms.Button();
             this.dgv_LoaiHang = new System.Windows.Forms.DataGridView();
@@ -208,6 +208,8 @@ namespace dbms
             this.dgv_hoaDon = new System.Windows.Forms.DataGridView();
             this.btn_suaHoaDon = new System.Windows.Forms.Button();
             this.panel_QLHoaDon = new System.Windows.Forms.Panel();
+            this.txt_thanhToan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_thanhToan = new System.Windows.Forms.Label();
             this.date_ngayLap = new System.Windows.Forms.DateTimePicker();
             this.txt_soDiemTich = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_maPhieuTich = new Guna.UI2.WinForms.Guna2TextBox();
@@ -242,10 +244,16 @@ namespace dbms
             this.TabHome = new System.Windows.Forms.TabPage();
             this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel_SuDungDiem = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_SDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.txt_SoLuong1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cb_TichDiem = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cb_SuDungTheTichDiem = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -259,6 +267,8 @@ namespace dbms
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabThongKe = new System.Windows.Forms.TabPage();
             this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
+            this.txt_maPhieuTichDiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_maPhieuTraDiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).BeginInit();
             this.panel6.SuspendLayout();
@@ -304,6 +314,7 @@ namespace dbms
             this.TabHome.SuspendLayout();
             this.flp_bangThanhToan.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel_SuDungDiem.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -2279,7 +2290,7 @@ namespace dbms
             // tabQuanLyLoaiHangHoa
             // 
             this.tabQuanLyLoaiHangHoa.Controls.Add(this.btn_themLoaiHang);
-            this.tabQuanLyLoaiHangHoa.Controls.Add(this.button2);
+            this.tabQuanLyLoaiHangHoa.Controls.Add(this.btn_TKLoaiHH);
             this.tabQuanLyLoaiHangHoa.Controls.Add(this.btn_suaLoaiHangHoa);
             this.tabQuanLyLoaiHangHoa.Controls.Add(this.btn_xoaLoaiHang);
             this.tabQuanLyLoaiHangHoa.Controls.Add(this.dgv_LoaiHang);
@@ -2310,17 +2321,17 @@ namespace dbms
             this.btn_themLoaiHang.Text = "Thêm";
             this.btn_themLoaiHang.Click += new System.EventHandler(this.btn_themLoaiHang_Click_2);
             // 
-            // button2
+            // btn_TKLoaiHH
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(872, 634);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 43);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_TKLoaiHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TKLoaiHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TKLoaiHH.Location = new System.Drawing.Point(872, 634);
+            this.btn_TKLoaiHH.Name = "btn_TKLoaiHH";
+            this.btn_TKLoaiHH.Size = new System.Drawing.Size(130, 43);
+            this.btn_TKLoaiHH.TabIndex = 41;
+            this.btn_TKLoaiHH.Text = "Tìm kiếm";
+            this.btn_TKLoaiHH.UseVisualStyleBackColor = true;
+            this.btn_TKLoaiHH.Click += new System.EventHandler(this.btn_TKLoaiHH_Click);
             // 
             // btn_suaLoaiHangHoa
             // 
@@ -2713,11 +2724,11 @@ namespace dbms
             // dgv_hoaDon
             // 
             this.dgv_hoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_hoaDon.Location = new System.Drawing.Point(66, 339);
+            this.dgv_hoaDon.Location = new System.Drawing.Point(66, 359);
             this.dgv_hoaDon.Name = "dgv_hoaDon";
             this.dgv_hoaDon.RowHeadersWidth = 51;
             this.dgv_hoaDon.RowTemplate.Height = 24;
-            this.dgv_hoaDon.Size = new System.Drawing.Size(1134, 275);
+            this.dgv_hoaDon.Size = new System.Drawing.Size(1134, 255);
             this.dgv_hoaDon.TabIndex = 30;
             this.dgv_hoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_hoaDon_CellContentClick);
             // 
@@ -2735,6 +2746,8 @@ namespace dbms
             // 
             // panel_QLHoaDon
             // 
+            this.panel_QLHoaDon.Controls.Add(this.txt_thanhToan);
+            this.panel_QLHoaDon.Controls.Add(this.lbl_thanhToan);
             this.panel_QLHoaDon.Controls.Add(this.date_ngayLap);
             this.panel_QLHoaDon.Controls.Add(this.txt_soDiemTich);
             this.panel_QLHoaDon.Controls.Add(this.txt_maPhieuTich);
@@ -2753,8 +2766,38 @@ namespace dbms
             this.panel_QLHoaDon.Controls.Add(this.lbl_maHoaDon);
             this.panel_QLHoaDon.Location = new System.Drawing.Point(66, 90);
             this.panel_QLHoaDon.Name = "panel_QLHoaDon";
-            this.panel_QLHoaDon.Size = new System.Drawing.Size(1134, 205);
+            this.panel_QLHoaDon.Size = new System.Drawing.Size(1134, 250);
             this.panel_QLHoaDon.TabIndex = 29;
+            // 
+            // txt_thanhToan
+            // 
+            this.txt_thanhToan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_thanhToan.DefaultText = "";
+            this.txt_thanhToan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_thanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_thanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_thanhToan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_thanhToan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_thanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_thanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_thanhToan.Location = new System.Drawing.Point(199, 202);
+            this.txt_thanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_thanhToan.Name = "txt_thanhToan";
+            this.txt_thanhToan.PasswordChar = '\0';
+            this.txt_thanhToan.PlaceholderText = "VD: 10000";
+            this.txt_thanhToan.SelectedText = "";
+            this.txt_thanhToan.Size = new System.Drawing.Size(309, 32);
+            this.txt_thanhToan.TabIndex = 38;
+            // 
+            // lbl_thanhToan
+            // 
+            this.lbl_thanhToan.AutoSize = true;
+            this.lbl_thanhToan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbl_thanhToan.Location = new System.Drawing.Point(25, 211);
+            this.lbl_thanhToan.Name = "lbl_thanhToan";
+            this.lbl_thanhToan.Size = new System.Drawing.Size(98, 23);
+            this.lbl_thanhToan.TabIndex = 37;
+            this.lbl_thanhToan.Text = "Thanh toán";
             // 
             // date_ngayLap
             // 
@@ -3184,6 +3227,7 @@ namespace dbms
             // 
             // TabHome
             // 
+            this.TabHome.Controls.Add(this.panel_SuDungDiem);
             this.TabHome.Controls.Add(this.flp_bangThanhToan);
             this.TabHome.Controls.Add(this.panel2);
             this.TabHome.Controls.Add(this.panel1);
@@ -3216,6 +3260,73 @@ namespace dbms
             this.panel9.Size = new System.Drawing.Size(383, 460);
             this.panel9.TabIndex = 36;
             this.panel9.Visible = false;
+            // 
+            // panel_SuDungDiem
+            // 
+            this.panel_SuDungDiem.Controls.Add(this.txt_maPhieuTraDiem);
+            this.panel_SuDungDiem.Controls.Add(this.txt_maPhieuTichDiem);
+            this.panel_SuDungDiem.Controls.Add(this.guna2Button2);
+            this.panel_SuDungDiem.Controls.Add(this.txt_SDT);
+            this.panel_SuDungDiem.Controls.Add(this.label1);
+            this.panel_SuDungDiem.Location = new System.Drawing.Point(1077, 150);
+            this.panel_SuDungDiem.Name = "panel_SuDungDiem";
+            this.panel_SuDungDiem.Size = new System.Drawing.Size(373, 446);
+            this.panel_SuDungDiem.TabIndex = 37;
+            this.panel_SuDungDiem.Visible = false;
+            this.panel_SuDungDiem.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_SuDungDiem_Paint);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 13;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(270, 152);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(94, 28);
+            this.guna2Button2.TabIndex = 8;
+            this.guna2Button2.Text = "Xác nhận";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // txt_SDT
+            // 
+            this.txt_SDT.BorderColor = System.Drawing.Color.Black;
+            this.txt_SDT.BorderRadius = 10;
+            this.txt_SDT.BorderThickness = 2;
+            this.txt_SDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_SDT.DefaultText = "";
+            this.txt_SDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_SDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_SDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_SDT.ForeColor = System.Drawing.Color.Silver;
+            this.txt_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Location = new System.Drawing.Point(30, 55);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.PasswordChar = '\0';
+            this.txt_SDT.PlaceholderText = "Hãy nhập số điện thoại";
+            this.txt_SDT.SelectedText = "";
+            this.txt_SDT.Size = new System.Drawing.Size(232, 26);
+            this.txt_SDT.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(26, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Hãy nhập số điện thoại để sử dụng điểm";
             // 
             // guna2Button3
             // 
@@ -3273,12 +3384,51 @@ namespace dbms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cb_TichDiem);
+            this.panel2.Controls.Add(this.cb_SuDungTheTichDiem);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Location = new System.Drawing.Point(1076, 619);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(388, 100);
             this.panel2.TabIndex = 4;
+            // 
+            // cb_TichDiem
+            // 
+            this.cb_TichDiem.AutoSize = true;
+            this.cb_TichDiem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TichDiem.CheckedState.BorderRadius = 0;
+            this.cb_TichDiem.CheckedState.BorderThickness = 0;
+            this.cb_TichDiem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TichDiem.ForeColor = System.Drawing.Color.Black;
+            this.cb_TichDiem.Location = new System.Drawing.Point(206, 19);
+            this.cb_TichDiem.Name = "cb_TichDiem";
+            this.cb_TichDiem.Size = new System.Drawing.Size(88, 20);
+            this.cb_TichDiem.TabIndex = 3;
+            this.cb_TichDiem.Text = "Tích điểm";
+            this.cb_TichDiem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_TichDiem.UncheckedState.BorderRadius = 0;
+            this.cb_TichDiem.UncheckedState.BorderThickness = 0;
+            this.cb_TichDiem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_TichDiem.CheckedChanged += new System.EventHandler(this.cb_TichDiem_CheckedChanged);
+            // 
+            // cb_SuDungTheTichDiem
+            // 
+            this.cb_SuDungTheTichDiem.AutoSize = true;
+            this.cb_SuDungTheTichDiem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungTheTichDiem.CheckedState.BorderRadius = 0;
+            this.cb_SuDungTheTichDiem.CheckedState.BorderThickness = 0;
+            this.cb_SuDungTheTichDiem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_SuDungTheTichDiem.ForeColor = System.Drawing.Color.Black;
+            this.cb_SuDungTheTichDiem.Location = new System.Drawing.Point(19, 19);
+            this.cb_SuDungTheTichDiem.Name = "cb_SuDungTheTichDiem";
+            this.cb_SuDungTheTichDiem.Size = new System.Drawing.Size(155, 20);
+            this.cb_SuDungTheTichDiem.TabIndex = 2;
+            this.cb_SuDungTheTichDiem.Text = "Sử dụng thẻ tích điểm";
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderRadius = 0;
+            this.cb_SuDungTheTichDiem.UncheckedState.BorderThickness = 0;
+            this.cb_SuDungTheTichDiem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // guna2Button1
             // 
@@ -3497,6 +3647,54 @@ namespace dbms
             this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
             this.uC_TinhDoanhThuTheoNgay1.Load += new System.EventHandler(this.uC_TinhDoanhThuTheoNgay1_Load);
             // 
+            // txt_maPhieuTichDiem
+            // 
+            this.txt_maPhieuTichDiem.BorderColor = System.Drawing.Color.Black;
+            this.txt_maPhieuTichDiem.BorderRadius = 10;
+            this.txt_maPhieuTichDiem.BorderThickness = 2;
+            this.txt_maPhieuTichDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_maPhieuTichDiem.DefaultText = "";
+            this.txt_maPhieuTichDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_maPhieuTichDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_maPhieuTichDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maPhieuTichDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maPhieuTichDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maPhieuTichDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_maPhieuTichDiem.ForeColor = System.Drawing.Color.Silver;
+            this.txt_maPhieuTichDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maPhieuTichDiem.Location = new System.Drawing.Point(30, 92);
+            this.txt_maPhieuTichDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_maPhieuTichDiem.Name = "txt_maPhieuTichDiem";
+            this.txt_maPhieuTichDiem.PasswordChar = '\0';
+            this.txt_maPhieuTichDiem.PlaceholderText = "Hãy nhập mã phiếu tích điểm";
+            this.txt_maPhieuTichDiem.SelectedText = "";
+            this.txt_maPhieuTichDiem.Size = new System.Drawing.Size(232, 26);
+            this.txt_maPhieuTichDiem.TabIndex = 9;
+            // 
+            // txt_maPhieuTraDiem
+            // 
+            this.txt_maPhieuTraDiem.BorderColor = System.Drawing.Color.Black;
+            this.txt_maPhieuTraDiem.BorderRadius = 10;
+            this.txt_maPhieuTraDiem.BorderThickness = 2;
+            this.txt_maPhieuTraDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_maPhieuTraDiem.DefaultText = "";
+            this.txt_maPhieuTraDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_maPhieuTraDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_maPhieuTraDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maPhieuTraDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_maPhieuTraDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maPhieuTraDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_maPhieuTraDiem.ForeColor = System.Drawing.Color.Silver;
+            this.txt_maPhieuTraDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_maPhieuTraDiem.Location = new System.Drawing.Point(32, 126);
+            this.txt_maPhieuTraDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_maPhieuTraDiem.Name = "txt_maPhieuTraDiem";
+            this.txt_maPhieuTraDiem.PasswordChar = '\0';
+            this.txt_maPhieuTraDiem.PlaceholderText = "Hãy nhập mã phiếu trả điểm";
+            this.txt_maPhieuTraDiem.SelectedText = "";
+            this.txt_maPhieuTraDiem.Size = new System.Drawing.Size(232, 26);
+            this.txt_maPhieuTraDiem.TabIndex = 10;
+            // 
             // FMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3575,7 +3773,10 @@ namespace dbms
             this.flp_bangThanhToan.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel_SuDungDiem.ResumeLayout(false);
+            this.panel_SuDungDiem.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabMenu.ResumeLayout(false);
@@ -3729,7 +3930,7 @@ namespace dbms
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TabPage tabQuanLyLoaiHangHoa;
         private Guna.UI2.WinForms.Guna2Button btn_themLoaiHang;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_TKLoaiHH;
         private System.Windows.Forms.Button btn_suaLoaiHangHoa;
         private System.Windows.Forms.Button btn_xoaLoaiHang;
         private System.Windows.Forms.DataGridView dgv_LoaiHang;
@@ -3815,5 +4016,15 @@ namespace dbms
         private System.Windows.Forms.Label lbl_MatKhau;
         private System.Windows.Forms.Label lbl_tenTaiKhoan;
         private System.Windows.Forms.Label lbl_QLTaiKhoan;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_SuDungTheTichDiem;
+        private System.Windows.Forms.Panel panel_SuDungDiem;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox txt_SDT;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CheckBox cb_TichDiem;
+        private Guna.UI2.WinForms.Guna2TextBox txt_thanhToan;
+        private System.Windows.Forms.Label lbl_thanhToan;
+        private Guna.UI2.WinForms.Guna2TextBox txt_maPhieuTichDiem;
+        private Guna.UI2.WinForms.Guna2TextBox txt_maPhieuTraDiem;
     }
 }
