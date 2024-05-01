@@ -168,7 +168,6 @@ namespace dbms
             this.label20 = new System.Windows.Forms.Label();
             this.lbl_maNhanVienNH = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_suaPhieuNhapHang = new System.Windows.Forms.Button();
             this.btn_xoaPhieuNhapHang = new System.Windows.Forms.Button();
             this.dgv_phieuNhapHang = new System.Windows.Forms.DataGridView();
@@ -203,7 +202,6 @@ namespace dbms
             this.label24 = new System.Windows.Forms.Label();
             this.tabQuanLyHoaDon = new System.Windows.Forms.TabPage();
             this.btn_chiTietHoaDon = new System.Windows.Forms.Button();
-            this.btn_timKiemHoaDon = new System.Windows.Forms.Button();
             this.btn_xoaHoaDon = new System.Windows.Forms.Button();
             this.dgv_hoaDon = new System.Windows.Forms.DataGridView();
             this.btn_suaHoaDon = new System.Windows.Forms.Button();
@@ -228,7 +226,6 @@ namespace dbms
             this.lbl_maHoaDon = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabQuanLyTaiKhoan = new System.Windows.Forms.TabPage();
-            this.btn_TimKiemTK = new System.Windows.Forms.Button();
             this.btn_suaTK = new System.Windows.Forms.Button();
             this.btn_xoaTK = new System.Windows.Forms.Button();
             this.btn_ThemTK = new System.Windows.Forms.Button();
@@ -242,12 +239,12 @@ namespace dbms
             this.lbl_tenTaiKhoan = new System.Windows.Forms.Label();
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.TabHome = new System.Windows.Forms.TabPage();
-            this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel_SuDungDiem = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.txt_SDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.flp_bangThanhToan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.txt_SoLuong1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -267,8 +264,6 @@ namespace dbms
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabThongKe = new System.Windows.Forms.TabPage();
             this.uC_TinhDoanhThuTheoNgay1 = new dbms.UC_TinhDoanhThuTheoNgay();
-            this.txt_maPhieuTichDiem = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_maPhieuTraDiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhapHang)).BeginInit();
             this.panel6.SuspendLayout();
@@ -312,9 +307,9 @@ namespace dbms
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.panel3.SuspendLayout();
             this.TabHome.SuspendLayout();
+            this.panel_SuDungDiem.SuspendLayout();
             this.flp_bangThanhToan.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel_SuDungDiem.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -2089,7 +2084,6 @@ namespace dbms
             // tabQuanLyPhieuNhapHang
             // 
             this.tabQuanLyPhieuNhapHang.Controls.Add(this.panel10);
-            this.tabQuanLyPhieuNhapHang.Controls.Add(this.button4);
             this.tabQuanLyPhieuNhapHang.Controls.Add(this.btn_suaPhieuNhapHang);
             this.tabQuanLyPhieuNhapHang.Controls.Add(this.btn_xoaPhieuNhapHang);
             this.tabQuanLyPhieuNhapHang.Controls.Add(this.dgv_phieuNhapHang);
@@ -2230,23 +2224,11 @@ namespace dbms
             this.label21.TabIndex = 0;
             this.label21.Text = "Mã phiếu nhập hàng";
             // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(768, 633);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 43);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Tìm kiếm";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // btn_suaPhieuNhapHang
             // 
             this.btn_suaPhieuNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_suaPhieuNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suaPhieuNhapHang.Location = new System.Drawing.Point(557, 633);
+            this.btn_suaPhieuNhapHang.Location = new System.Drawing.Point(758, 629);
             this.btn_suaPhieuNhapHang.Name = "btn_suaPhieuNhapHang";
             this.btn_suaPhieuNhapHang.Size = new System.Drawing.Size(130, 43);
             this.btn_suaPhieuNhapHang.TabIndex = 45;
@@ -2258,7 +2240,7 @@ namespace dbms
             // 
             this.btn_xoaPhieuNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoaPhieuNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoaPhieuNhapHang.Location = new System.Drawing.Point(330, 633);
+            this.btn_xoaPhieuNhapHang.Location = new System.Drawing.Point(345, 629);
             this.btn_xoaPhieuNhapHang.Name = "btn_xoaPhieuNhapHang";
             this.btn_xoaPhieuNhapHang.Size = new System.Drawing.Size(130, 43);
             this.btn_xoaPhieuNhapHang.TabIndex = 44;
@@ -2672,7 +2654,6 @@ namespace dbms
             // tabQuanLyHoaDon
             // 
             this.tabQuanLyHoaDon.Controls.Add(this.btn_chiTietHoaDon);
-            this.tabQuanLyHoaDon.Controls.Add(this.btn_timKiemHoaDon);
             this.tabQuanLyHoaDon.Controls.Add(this.btn_xoaHoaDon);
             this.tabQuanLyHoaDon.Controls.Add(this.dgv_hoaDon);
             this.tabQuanLyHoaDon.Controls.Add(this.btn_suaHoaDon);
@@ -2690,7 +2671,7 @@ namespace dbms
             // 
             this.btn_chiTietHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_chiTietHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_chiTietHoaDon.Location = new System.Drawing.Point(872, 637);
+            this.btn_chiTietHoaDon.Location = new System.Drawing.Point(813, 637);
             this.btn_chiTietHoaDon.Name = "btn_chiTietHoaDon";
             this.btn_chiTietHoaDon.Size = new System.Drawing.Size(210, 43);
             this.btn_chiTietHoaDon.TabIndex = 35;
@@ -2698,22 +2679,11 @@ namespace dbms
             this.btn_chiTietHoaDon.UseVisualStyleBackColor = true;
             this.btn_chiTietHoaDon.Click += new System.EventHandler(this.btn_chiTietHoaDon_Click);
             // 
-            // btn_timKiemHoaDon
-            // 
-            this.btn_timKiemHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_timKiemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_timKiemHoaDon.Location = new System.Drawing.Point(655, 637);
-            this.btn_timKiemHoaDon.Name = "btn_timKiemHoaDon";
-            this.btn_timKiemHoaDon.Size = new System.Drawing.Size(130, 43);
-            this.btn_timKiemHoaDon.TabIndex = 34;
-            this.btn_timKiemHoaDon.Text = "Tìm kiếm";
-            this.btn_timKiemHoaDon.UseVisualStyleBackColor = true;
-            // 
             // btn_xoaHoaDon
             // 
             this.btn_xoaHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoaHoaDon.Location = new System.Drawing.Point(217, 637);
+            this.btn_xoaHoaDon.Location = new System.Drawing.Point(275, 637);
             this.btn_xoaHoaDon.Name = "btn_xoaHoaDon";
             this.btn_xoaHoaDon.Size = new System.Drawing.Size(130, 43);
             this.btn_xoaHoaDon.TabIndex = 32;
@@ -2736,7 +2706,7 @@ namespace dbms
             // 
             this.btn_suaHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_suaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suaHoaDon.Location = new System.Drawing.Point(444, 637);
+            this.btn_suaHoaDon.Location = new System.Drawing.Point(546, 637);
             this.btn_suaHoaDon.Name = "btn_suaHoaDon";
             this.btn_suaHoaDon.Size = new System.Drawing.Size(130, 43);
             this.btn_suaHoaDon.TabIndex = 33;
@@ -3039,7 +3009,6 @@ namespace dbms
             // 
             // tabQuanLyTaiKhoan
             // 
-            this.tabQuanLyTaiKhoan.Controls.Add(this.btn_TimKiemTK);
             this.tabQuanLyTaiKhoan.Controls.Add(this.btn_suaTK);
             this.tabQuanLyTaiKhoan.Controls.Add(this.btn_xoaTK);
             this.tabQuanLyTaiKhoan.Controls.Add(this.btn_ThemTK);
@@ -3054,22 +3023,11 @@ namespace dbms
             this.tabQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.tabQuanLyTaiKhoan.UseVisualStyleBackColor = true;
             // 
-            // btn_TimKiemTK
-            // 
-            this.btn_TimKiemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TimKiemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimKiemTK.Location = new System.Drawing.Point(872, 634);
-            this.btn_TimKiemTK.Name = "btn_TimKiemTK";
-            this.btn_TimKiemTK.Size = new System.Drawing.Size(130, 43);
-            this.btn_TimKiemTK.TabIndex = 41;
-            this.btn_TimKiemTK.Text = "Tìm kiếm";
-            this.btn_TimKiemTK.UseVisualStyleBackColor = true;
-            // 
             // btn_suaTK
             // 
             this.btn_suaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_suaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suaTK.Location = new System.Drawing.Point(661, 634);
+            this.btn_suaTK.Location = new System.Drawing.Point(782, 634);
             this.btn_suaTK.Name = "btn_suaTK";
             this.btn_suaTK.Size = new System.Drawing.Size(130, 43);
             this.btn_suaTK.TabIndex = 40;
@@ -3081,7 +3039,7 @@ namespace dbms
             // 
             this.btn_xoaTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoaTK.Location = new System.Drawing.Point(442, 634);
+            this.btn_xoaTK.Location = new System.Drawing.Point(563, 634);
             this.btn_xoaTK.Name = "btn_xoaTK";
             this.btn_xoaTK.Size = new System.Drawing.Size(130, 43);
             this.btn_xoaTK.TabIndex = 39;
@@ -3093,7 +3051,7 @@ namespace dbms
             // 
             this.btn_ThemTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ThemTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemTK.Location = new System.Drawing.Point(226, 634);
+            this.btn_ThemTK.Location = new System.Drawing.Point(347, 634);
             this.btn_ThemTK.Name = "btn_ThemTK";
             this.btn_ThemTK.Size = new System.Drawing.Size(130, 43);
             this.btn_ThemTK.TabIndex = 38;
@@ -3227,7 +3185,6 @@ namespace dbms
             // 
             // TabHome
             // 
-            this.TabHome.Controls.Add(this.panel_SuDungDiem);
             this.TabHome.Controls.Add(this.flp_bangThanhToan);
             this.TabHome.Controls.Add(this.panel2);
             this.TabHome.Controls.Add(this.panel1);
@@ -3242,33 +3199,12 @@ namespace dbms
             this.TabHome.UseVisualStyleBackColor = true;
             this.TabHome.Click += new System.EventHandler(this.TabHome_Click);
             // 
-            // flp_bangThanhToan
-            // 
-            this.flp_bangThanhToan.Controls.Add(this.panel9);
-            this.flp_bangThanhToan.Location = new System.Drawing.Point(1077, 150);
-            this.flp_bangThanhToan.Name = "flp_bangThanhToan";
-            this.flp_bangThanhToan.Size = new System.Drawing.Size(383, 463);
-            this.flp_bangThanhToan.TabIndex = 5;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.guna2Button3);
-            this.panel9.Controls.Add(this.txt_SoLuong1);
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(383, 460);
-            this.panel9.TabIndex = 36;
-            this.panel9.Visible = false;
-            // 
             // panel_SuDungDiem
             // 
-            this.panel_SuDungDiem.Controls.Add(this.txt_maPhieuTraDiem);
-            this.panel_SuDungDiem.Controls.Add(this.txt_maPhieuTichDiem);
             this.panel_SuDungDiem.Controls.Add(this.guna2Button2);
             this.panel_SuDungDiem.Controls.Add(this.txt_SDT);
             this.panel_SuDungDiem.Controls.Add(this.label1);
-            this.panel_SuDungDiem.Location = new System.Drawing.Point(1077, 150);
+            this.panel_SuDungDiem.Location = new System.Drawing.Point(8, 164);
             this.panel_SuDungDiem.Name = "panel_SuDungDiem";
             this.panel_SuDungDiem.Size = new System.Drawing.Size(373, 446);
             this.panel_SuDungDiem.TabIndex = 37;
@@ -3286,7 +3222,7 @@ namespace dbms
             this.guna2Button2.FillColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(270, 152);
+            this.guna2Button2.Location = new System.Drawing.Point(270, 118);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(94, 28);
             this.guna2Button2.TabIndex = 8;
@@ -3327,6 +3263,26 @@ namespace dbms
             this.label1.Size = new System.Drawing.Size(290, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Hãy nhập số điện thoại để sử dụng điểm";
+            // 
+            // flp_bangThanhToan
+            // 
+            this.flp_bangThanhToan.Controls.Add(this.panel9);
+            this.flp_bangThanhToan.Location = new System.Drawing.Point(1077, 150);
+            this.flp_bangThanhToan.Name = "flp_bangThanhToan";
+            this.flp_bangThanhToan.Size = new System.Drawing.Size(383, 463);
+            this.flp_bangThanhToan.TabIndex = 5;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel_SuDungDiem);
+            this.panel9.Controls.Add(this.guna2Button3);
+            this.panel9.Controls.Add(this.txt_SoLuong1);
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(383, 460);
+            this.panel9.TabIndex = 36;
+            this.panel9.Visible = false;
             // 
             // guna2Button3
             // 
@@ -3641,59 +3597,11 @@ namespace dbms
             // 
             // uC_TinhDoanhThuTheoNgay1
             // 
-            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(95, 32);
+            this.uC_TinhDoanhThuTheoNgay1.Location = new System.Drawing.Point(156, 32);
             this.uC_TinhDoanhThuTheoNgay1.Name = "uC_TinhDoanhThuTheoNgay1";
             this.uC_TinhDoanhThuTheoNgay1.Size = new System.Drawing.Size(1221, 682);
             this.uC_TinhDoanhThuTheoNgay1.TabIndex = 0;
             this.uC_TinhDoanhThuTheoNgay1.Load += new System.EventHandler(this.uC_TinhDoanhThuTheoNgay1_Load);
-            // 
-            // txt_maPhieuTichDiem
-            // 
-            this.txt_maPhieuTichDiem.BorderColor = System.Drawing.Color.Black;
-            this.txt_maPhieuTichDiem.BorderRadius = 10;
-            this.txt_maPhieuTichDiem.BorderThickness = 2;
-            this.txt_maPhieuTichDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_maPhieuTichDiem.DefaultText = "";
-            this.txt_maPhieuTichDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_maPhieuTichDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_maPhieuTichDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maPhieuTichDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maPhieuTichDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maPhieuTichDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_maPhieuTichDiem.ForeColor = System.Drawing.Color.Silver;
-            this.txt_maPhieuTichDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maPhieuTichDiem.Location = new System.Drawing.Point(30, 92);
-            this.txt_maPhieuTichDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_maPhieuTichDiem.Name = "txt_maPhieuTichDiem";
-            this.txt_maPhieuTichDiem.PasswordChar = '\0';
-            this.txt_maPhieuTichDiem.PlaceholderText = "Hãy nhập mã phiếu tích điểm";
-            this.txt_maPhieuTichDiem.SelectedText = "";
-            this.txt_maPhieuTichDiem.Size = new System.Drawing.Size(232, 26);
-            this.txt_maPhieuTichDiem.TabIndex = 9;
-            // 
-            // txt_maPhieuTraDiem
-            // 
-            this.txt_maPhieuTraDiem.BorderColor = System.Drawing.Color.Black;
-            this.txt_maPhieuTraDiem.BorderRadius = 10;
-            this.txt_maPhieuTraDiem.BorderThickness = 2;
-            this.txt_maPhieuTraDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_maPhieuTraDiem.DefaultText = "";
-            this.txt_maPhieuTraDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_maPhieuTraDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_maPhieuTraDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maPhieuTraDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_maPhieuTraDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maPhieuTraDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_maPhieuTraDiem.ForeColor = System.Drawing.Color.Silver;
-            this.txt_maPhieuTraDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_maPhieuTraDiem.Location = new System.Drawing.Point(32, 126);
-            this.txt_maPhieuTraDiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_maPhieuTraDiem.Name = "txt_maPhieuTraDiem";
-            this.txt_maPhieuTraDiem.PasswordChar = '\0';
-            this.txt_maPhieuTraDiem.PlaceholderText = "Hãy nhập mã phiếu trả điểm";
-            this.txt_maPhieuTraDiem.SelectedText = "";
-            this.txt_maPhieuTraDiem.Size = new System.Drawing.Size(232, 26);
-            this.txt_maPhieuTraDiem.TabIndex = 10;
             // 
             // FMenu
             // 
@@ -3770,11 +3678,11 @@ namespace dbms
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.TabHome.ResumeLayout(false);
+            this.panel_SuDungDiem.ResumeLayout(false);
+            this.panel_SuDungDiem.PerformLayout();
             this.flp_bangThanhToan.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel_SuDungDiem.ResumeLayout(false);
-            this.panel_SuDungDiem.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -3923,7 +3831,6 @@ namespace dbms
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lbl_maNhanVienNH;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_suaPhieuNhapHang;
         private System.Windows.Forms.Button btn_xoaPhieuNhapHang;
         private System.Windows.Forms.DataGridView dgv_phieuNhapHang;
@@ -3958,7 +3865,6 @@ namespace dbms
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TabPage tabQuanLyHoaDon;
         private System.Windows.Forms.Button btn_chiTietHoaDon;
-        private System.Windows.Forms.Button btn_timKiemHoaDon;
         private System.Windows.Forms.Button btn_xoaHoaDon;
         private System.Windows.Forms.DataGridView dgv_hoaDon;
         private System.Windows.Forms.Button btn_suaHoaDon;
@@ -4003,7 +3909,6 @@ namespace dbms
         private Guna.UI2.WinForms.Guna2TextBox txt_soLuongConLai;
         private System.Windows.Forms.Label lbl_soLuongConLai;
         private System.Windows.Forms.TabPage tabQuanLyTaiKhoan;
-        private System.Windows.Forms.Button btn_TimKiemTK;
         private System.Windows.Forms.Button btn_suaTK;
         private System.Windows.Forms.Button btn_xoaTK;
         private System.Windows.Forms.Button btn_ThemTK;
@@ -4024,7 +3929,5 @@ namespace dbms
         private Guna.UI2.WinForms.Guna2CheckBox cb_TichDiem;
         private Guna.UI2.WinForms.Guna2TextBox txt_thanhToan;
         private System.Windows.Forms.Label lbl_thanhToan;
-        private Guna.UI2.WinForms.Guna2TextBox txt_maPhieuTichDiem;
-        private Guna.UI2.WinForms.Guna2TextBox txt_maPhieuTraDiem;
     }
 }

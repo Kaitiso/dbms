@@ -531,12 +531,14 @@ namespace dbms
             cmd.Parameters.AddWithValue("@sdt", txt_SĐT.Text);
             cmd.Parameters.AddWithValue("@maKH", txt_maKH.Text);
             cmd.Parameters.AddWithValue("@tennKH", txt_tenKhachHang.Text);
+            cmd.Parameters.AddWithValue("@mathe", txt_maTheTichDiem.Text);
+            cmd.Parameters.AddWithValue("@sodiem", txt_soDiem.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dgv_KhachHang.DataSource = dataTable;
-            hienThi("KhachHang", dgv_KhachHang);
+            hienThi("ViewKhachHang", dgv_KhachHang);
             connection.Close();
         }
 
@@ -1175,7 +1177,7 @@ namespace dbms
             connection.Close();
             if(cb_TichDiem.Checked || cb_SuDungTheTichDiem.Checked)
             {
-                MessageBox.Show("vao duoc");
+                //MessageBox.Show("vao duoc");
                 panel_SuDungDiem.Visible = true;
             }
 
@@ -1402,7 +1404,6 @@ namespace dbms
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@MAHOADON", txt_maHoaDonTT.Text);
-                cmd.Parameters.AddWithValue("@MAPHIEUTICH", txt_maPhieuTichDiem.Text);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -1416,7 +1417,6 @@ namespace dbms
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@MAHOADON", txt_maHoaDonTT.Text);
-                cmd.Parameters.AddWithValue("@MAPHIEUTRA", txt_maPhieuTraDiem.Text);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -1441,6 +1441,16 @@ namespace dbms
         }
 
         private void cb_TichDiem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_timKiemHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TimKiemTK_Click(object sender, EventArgs e)
         {
 
         }

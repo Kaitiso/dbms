@@ -65,11 +65,11 @@
             // 
             this.lbl_QuanLyDoanhThuNgay.AutoSize = true;
             this.lbl_QuanLyDoanhThuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QuanLyDoanhThuNgay.Location = new System.Drawing.Point(382, 20);
+            this.lbl_QuanLyDoanhThuNgay.Location = new System.Drawing.Point(454, 20);
             this.lbl_QuanLyDoanhThuNgay.Name = "lbl_QuanLyDoanhThuNgay";
-            this.lbl_QuanLyDoanhThuNgay.Size = new System.Drawing.Size(425, 36);
+            this.lbl_QuanLyDoanhThuNgay.Size = new System.Drawing.Size(276, 36);
             this.lbl_QuanLyDoanhThuNgay.TabIndex = 7;
-            this.lbl_QuanLyDoanhThuNgay.Text = "Quản lý doanh thu theo ngày\r\n";
+            this.lbl_QuanLyDoanhThuNgay.Text = "Quản lý doanh thu";
             // 
             // lbl_NhapNgay
             // 
@@ -112,6 +112,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 155);
             this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbl_VND1
             // 

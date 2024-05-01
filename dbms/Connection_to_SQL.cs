@@ -14,11 +14,11 @@ namespace DuLich
     public class Connection_to_SQL
     {
         static string cnnString = @"Data Source=MSI;Initial Catalog=QuanLyCuaHangTienLoi;Integrated Security=True";
-        
         public static SqlConnection getConnection()
         {
-            return new SqlConnection(cnnString);     
+            return new SqlConnection(cnnString);
         }
+
         public static SqlConnection getConnectionNhanVien(string username, string password)
         {
             string cnnString1 = @"Data Source=MSI;Initial Catalog=Quanlycuahangtienloi;User ID=" + username + ";Password=" + password + ";";

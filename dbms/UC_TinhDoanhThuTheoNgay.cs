@@ -162,5 +162,10 @@ namespace dbms
             //lbl_VND4.Location = new Point(198, 67);
             //lbl_VND4.Size = new Size(54, 25);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
